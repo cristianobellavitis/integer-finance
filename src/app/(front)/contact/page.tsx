@@ -3,7 +3,7 @@ import React from "react";
 
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import ImageOpacity from "@/components/common/ImageOpacity";
-import ContactForm from "./_component/contactForm";
+import ContactForm from "./_component/ContactFormLoader";
 
 export default function Page() {
   return (

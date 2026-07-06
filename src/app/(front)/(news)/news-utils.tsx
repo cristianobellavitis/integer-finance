@@ -6,10 +6,16 @@ import type { markDefs } from "./types";
 import type { Image as TImage } from "sanity";
 import { client } from "@/../sanity/lib/client";
 import { urlForImage } from "@/../sanity/lib/image";
+import { isSanityConfigured } from "@/../sanity/env";
 import { getImageDimensions } from "@sanity/asset-utils";
 import type { SanityImageSource } from "@sanity/asset-utils";
 
 export const getPostPreviews = async () => {
+  // PREVIEW-SAFE FALLBACK: no real Sanity credentials configured, so skip
+  // the network call and render an empty list rather than failing the
+  // build. Remove this guard once real Sanity keys are set (see sanity/env.ts).
+  if (!isSanityConfigured) return [];
+
   const query = `*[_type == "post" && !(_id in path("drafts.**"))]{
     _id,
     _updatedAt,
@@ -20,13 +26,23 @@ export const getPostPreviews = async () => {
     categories,
     "previewText": body[0].children[0].text,
   }`;
-  // eslint-disable-next-line
-  const posts = await client.fetch(query);
-  // eslint-disable-next-line
-  return posts;
+  try {
+    // eslint-disable-next-line
+    const posts = await client.fetch(query);
+    // eslint-disable-next-line
+    return posts;
+  } catch (error) {
+    console.error("Failed to fetch post previews from Sanity:", error);
+    return [];
+  }
 };
 import { type Post } from "@/../sanity.types";
 export const getPostConetent = async (slug: string) => {
+  // PREVIEW-SAFE FALLBACK: no real Sanity credentials configured, so skip
+  // the network call rather than failing the build. Remove this guard once
+  // real Sanity keys are set (see sanity/env.ts).
+  if (!isSanityConfigured) return [];
+
   // const query = `*[_type == "post" && !(_id in path("drafts.**")) && slug.current == '${slug}'] {
   //   _id,
   //   _updatedAt,
@@ -59,13 +75,17 @@ export const getPostConetent = async (slug: string) => {
     },
   }`;
 
-  // eslint-disable-next-line
-
-  const posts = await client.fetch<Post[]>(query);
-  if (posts.length > 0) {
-    return posts[0];
+  try {
+    // eslint-disable-next-line
+    const posts = await client.fetch<Post[]>(query);
+    if (posts.length > 0) {
+      return posts[0];
+    }
+    return [];
+  } catch (error) {
+    console.error("Failed to fetch post content from Sanity:", error);
+    return [];
   }
-  return [];
 };
 
 const portableImageComponent = ({

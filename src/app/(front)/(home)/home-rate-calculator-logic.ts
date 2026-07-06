@@ -127,9 +127,10 @@ function computeLtvStatus(
   }
 
   // ltvPercent <= 80: map up to the nearest of 65/70/75/80.
-  const band = (LTV_BANDS.find(
-    (b) => ltvPercent <= b && b <= REPEAT_BORROWER_ONLY_LTV_PERCENT,
-  ) ?? REPEAT_BORROWER_ONLY_LTV_PERCENT) as LtvBand;
+  const band =
+    LTV_BANDS.find(
+      (b) => ltvPercent <= b && b <= REPEAT_BORROWER_ONLY_LTV_PERCENT,
+    ) ?? REPEAT_BORROWER_ONLY_LTV_PERCENT;
 
   return { kind: "ok", band, ltvPercent };
 }
