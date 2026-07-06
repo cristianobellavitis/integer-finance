@@ -1,0 +1,75 @@
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Dynamic homepage concept for Integer Finance with animated bar-mark graphics, counting statistics, a scrolling sector ticker and interactive product cards, in the company's steel blue palette.</h2>
+<style>
+@keyframes grow{from{transform:skewX(-6deg) scaleY(0)}to{transform:skewX(-6deg) scaleY(1)}}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes fadeup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.hb{transform-origin:bottom;transform:skewX(-6deg) scaleY(0);animation:grow 1s cubic-bezier(.2,.8,.2,1) forwards}
+.fu{opacity:0;animation:fadeup .8s ease forwards}
+.pc{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;cursor:pointer;background:#FFFFFF}
+.pc:hover{transform:translateY(-6px);border-color:#4C77A8}
+.pc .acc{height:3px;width:34px;transition:width .4s ease}
+.pc:hover .acc{width:100%}
+.tk{display:flex;gap:56px;white-space:nowrap;animation:tick 24s linear infinite;will-change:transform}
+.cta{transition:background .2s ease}
+.cta:hover{background:#35506E}
+.cta .ar{display:inline-block;transition:transform .25s ease}
+.cta:hover .ar{transform:translateX(6px)}
+</style>
+<div style="border-radius:12px;overflow:hidden;border:1px solid #E3E6EB;background:#FFFFFF">
+<div style="background:#FFFFFF;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2">
+<div style="display:flex;align-items:center;gap:10px">
+<svg width="20" height="24" viewBox="0 0 170 190" aria-hidden="true"><g transform="translate(22,0) skewX(-6)"><rect x="0" y="42" width="20" height="32" fill="#A9BEDA"/><rect x="0" y="74" width="20" height="96" fill="#567FAD"/><rect x="32" y="0" width="22" height="80" fill="#B8CBE0"/><rect x="32" y="80" width="22" height="110" fill="#7B9CC6"/><rect x="66" y="16" width="22" height="70" fill="#AFC4DE"/><rect x="66" y="86" width="22" height="28" fill="#6E93BD"/><rect x="66" y="128" width="22" height="36" fill="#4C77A8"/><rect x="100" y="34" width="20" height="42" fill="#C4D3E6"/><rect x="100" y="76" width="20" height="100" fill="#6E93BD"/></g></svg>
+<div><p style="font-size:13px;font-weight:500;letter-spacing:3px;color:#7B7D80;margin:0;line-height:1.1">INTEGER</p><p style="font-size:9px;letter-spacing:4px;color:#BEC0C2;margin:0">FINANCE</p></div>
+</div>
+<div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+<span style="font-size:12px;color:#7B7D80">Lending</span><span style="font-size:12px;color:#7B7D80">Investments</span><span style="font-size:12px;color:#7B7D80">Our mission</span><span style="font-size:12px;color:#7B7D80">Team</span>
+<span class="cta" style="font-size:12px;font-weight:500;color:#FFFFFF;background:#4C77A8;padding:8px 16px;border-radius:4px">Get a decision <span class="ar">→</span></span>
+</div>
+</div>
+<div style="background:#35506E;position:relative;padding:56px 24px 70px;clip-path:polygon(0 0,100% 0,100% 88%,0 100%)">
+<div style="position:absolute;right:24px;bottom:0;top:40px;display:flex;align-items:flex-end;gap:14px" aria-hidden="true">
+<div class="hb" style="width:34px;height:52%;animation-delay:.1s"><div style="height:28%;background:#B8CBE0"></div><div style="height:72%;background:#567FAD"></div></div>
+<div class="hb" style="width:38px;height:88%;animation-delay:.25s"><div style="height:38%;background:#D6E2F0"></div><div style="height:62%;background:#7B9CC6"></div></div>
+<div class="hb" style="width:38px;height:66%;animation-delay:.4s"><div style="height:40%;background:#AFC4DE"></div><div style="height:22%;background:#6E93BD"></div><div style="height:14%"></div><div style="height:24%;background:#4C77A8"></div></div>
+<div class="hb" style="width:34px;height:76%;animation-delay:.55s"><div style="height:30%;background:#C4D3E6"></div><div style="height:70%;background:#6E93BD"></div></div>
+</div>
+<div style="position:relative;max-width:440px">
+<p class="fu" style="font-size:12px;letter-spacing:4px;color:#93AFD0;font-weight:500;margin:0 0 16px;animation-delay:.1s">PROPERTY DEVELOPMENT FINANCE</p>
+<p class="fu" style="font-size:40px;font-weight:500;color:#FFFFFF;margin:0 0 16px;line-height:1.15;animation-delay:.25s">A financial institution with <span id="rot" style="color:#B8CBE0">purpose.</span></p>
+<p class="fu" style="font-size:15px;color:#C7D7E8;margin:0 0 26px;line-height:1.65;animation-delay:.4s">Tailored development loans and direct investment in affordable housing, driven by regional knowledge of the ground you build on.</p>
+<div class="fu" style="display:flex;gap:12px;animation-delay:.55s">
+<span style="font-size:13px;font-weight:500;color:#35506E;background:#FFFFFF;padding:12px 22px;border-radius:4px">Explore lending</span>
+<span style="font-size:13px;font-weight:500;color:#FFFFFF;border:1px solid #6E93BD;padding:12px 22px;border-radius:4px">Our investments</span>
+</div>
+<div class="fu" style="display:flex;gap:34px;margin-top:38px;animation-delay:.7s">
+<div><p style="font-size:24px;font-weight:500;color:#FFFFFF;margin:0">£<span id="c1">0</span>bn+</p><p style="font-size:11px;letter-spacing:1px;color:#93AFD0;margin:4px 0 0">MARKET OPPORTUNITY</p></div>
+<div><p style="font-size:24px;font-weight:500;color:#FFFFFF;margin:0">£<span id="c2">0</span>k</p><p style="font-size:11px;letter-spacing:1px;color:#93AFD0;margin:4px 0 0">MAX LOAN SIZE</p></div>
+<div><p style="font-size:24px;font-weight:500;color:#FFFFFF;margin:0"><span id="c3">0</span>%</p><p style="font-size:11px;letter-spacing:1px;color:#93AFD0;margin:4px 0 0">MAX LTV</p></div>
+</div>
+</div>
+</div>
+<div style="background:#F5F7FA;padding:14px 0;overflow:hidden;border-bottom:1px solid #E3E6EB">
+<div class="tk">
+<span style="font-size:12px;letter-spacing:3px;color:#6E93BD;font-weight:500">HMO CONVERSIONS · REFURBISHMENT · SMALL DEVELOPMENT · AUCTION PURCHASE · REGIONAL LENDING · £50K–£250K ·&nbsp;</span>
+<span style="font-size:12px;letter-spacing:3px;color:#6E93BD;font-weight:500">HMO CONVERSIONS · REFURBISHMENT · SMALL DEVELOPMENT · AUCTION PURCHASE · REGIONAL LENDING · £50K–£250K ·&nbsp;</span>
+</div>
+</div>
+<div style="padding:32px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px">
+<div class="pc" style="border:1px solid #E3E6EB;border-radius:10px;padding:20px 18px"><div class="acc" style="background:#4C77A8;margin-bottom:14px"></div><i class="ti ti-building-community" style="font-size:22px;color:#4C77A8" aria-hidden="true"></i><p style="font-size:14px;font-weight:500;color:#35506E;margin:10px 0 5px">HMO conversions</p><p style="font-size:12px;color:#8A8C90;margin:0;line-height:1.55">Our specialist focus and core expertise.</p></div>
+<div class="pc" style="border:1px solid #E3E6EB;border-radius:10px;padding:20px 18px"><div class="acc" style="background:#6E93BD;margin-bottom:14px"></div><i class="ti ti-hammer" style="font-size:22px;color:#6E93BD" aria-hidden="true"></i><p style="font-size:14px;font-weight:500;color:#35506E;margin:10px 0 5px">Refurbishment</p><p style="font-size:12px;color:#8A8C90;margin:0;line-height:1.55">Light and heavy works, priced to the project.</p></div>
+<div class="pc" style="border:1px solid #E3E6EB;border-radius:10px;padding:20px 18px"><div class="acc" style="background:#93AFD0;margin-bottom:14px"></div><i class="ti ti-crane" style="font-size:22px;color:#93AFD0" aria-hidden="true"></i><p style="font-size:14px;font-weight:500;color:#35506E;margin:10px 0 5px">Small development</p><p style="font-size:12px;color:#8A8C90;margin:0;line-height:1.55">Ground-up schemes in underserved regions.</p></div>
+<div class="pc" style="border:1px solid #E3E6EB;border-radius:10px;padding:20px 18px"><div class="acc" style="background:#B8CBE0;margin-bottom:14px"></div><i class="ti ti-gavel" style="font-size:22px;color:#7B9CC6" aria-hidden="true"></i><p style="font-size:14px;font-weight:500;color:#35506E;margin:10px 0 5px">Auction purchase</p><p style="font-size:12px;color:#8A8C90;margin:0;line-height:1.55">Certainty of funds to completion deadlines.</p></div>
+</div>
+<div style="background:#35506E;padding:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;clip-path:polygon(0 18%,100% 0,100% 100%,0 100%)">
+<p style="font-size:17px;font-weight:500;color:#FFFFFF;margin:6px 0 0">Ready to talk through a deal?</p>
+<span class="cta" style="font-size:13px;font-weight:500;color:#35506E;background:#FFFFFF;padding:11px 22px;border-radius:4px;margin-top:6px">Speak to a relationship manager <span class="ar" style="color:#4C77A8">→</span></span>
+</div>
+</div>
+<script>
+(function(){
+var words=["purpose.","developers.","communities.","the regions."],i=0,el=document.getElementById("rot");
+setInterval(function(){i=(i+1)%words.length;el.style.opacity=0;el.style.transition="opacity .35s";setTimeout(function(){el.textContent=words[i];el.style.opacity=1;},360);},2600);
+function count(id,target,dur){var el=document.getElementById(id),t0=null;function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);el.textContent=Math.round(target*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+count("c1",166,1500);count("c2",250,1500);count("c3",85,1500);
+})();
+</script>
