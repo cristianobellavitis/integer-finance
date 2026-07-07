@@ -6,7 +6,7 @@ const TICKER_TEXT =
 export default function HomeTicker() {
   return (
     <div className="overflow-hidden border-b border-border bg-muted/40 py-3.5">
-      <div className="flex w-max gap-14 whitespace-nowrap motion-safe:animate-marquee motion-reduce:animate-none">
+      <div className="flex w-max whitespace-nowrap motion-safe:animate-marquee motion-reduce:animate-none">
         <span className="text-xs font-medium tracking-[0.2em] text-brand-600">
           {TICKER_TEXT}
         </span>
