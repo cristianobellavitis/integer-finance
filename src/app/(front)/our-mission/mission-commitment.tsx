@@ -1,42 +1,36 @@
 import React from "react";
 import Image from "next/image";
 
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
+import RevealOnScroll from "@/components/common/RevealOnScroll";
 
 export default function MissionCommitment() {
   return (
-    <MaxWidthWrapper>
-      <div className="my-24 grid grid-cols-1 items-center gap-6 md:grid-cols-12">
-        <div className="col-span-6">
-          <div className="mb-3 flex items-start text-center sm:px-12 md:text-left">
-            <div className="max-w-xl">
-              <h2 className="text-4xl font-bold text-primary">
-                Our Commitment
-              </h2>
-              <p className="mt-4 text-lg font-semibold leading-relaxed tracking-tight text-gray-400">
-                We are committed to supporting regional growth by offering
-                financial solutions that benefit both developers and the
-                communities they serve. We value innovation, growth, and the
-                creation of lasting value for our clients.
-              </p>
-            </div>
-          </div>
+    <SectionWrapper>
+      <RevealOnScroll className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
+        <div className="md:col-span-7">
+          <SectionHeading title="Our Commitment" />
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            We are committed to supporting regional growth by offering
+            financial solutions that benefit both developers and the
+            communities they serve. We value innovation, growth, and the
+            creation of lasting value for our clients.
+          </p>
         </div>
 
-        <div className="col-span-6">
-          <div className="mx-auto w-full max-w-lg">
-            <Image
-              src="/images/mission/commitment.png"
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: "100%", height: "auto" }}
-              className="rounded-lg"
-              alt=""
-            />
-          </div>
+        <div className="md:col-span-5">
+          <Image
+            src="/images/mission/commitment.png"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+            className="rounded-xl border border-border"
+            alt=""
+          />
         </div>
-      </div>
-    </MaxWidthWrapper>
+      </RevealOnScroll>
+    </SectionWrapper>
   );
 }

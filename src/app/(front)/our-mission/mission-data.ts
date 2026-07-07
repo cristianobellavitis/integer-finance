@@ -27,7 +27,7 @@ export const missionPromiseData = [
   {
     icon: HeartHandshake,
     title: "Achieving Success Together",
-    desc: "Our ambitious goals for Integer Investments can only be realized through collaboration. We rely on our team, suppliers, partners, customers, and communities to transform the world and achieve our full potential. We excel in building lasting relationships and connecting people within the ecosystems we create. We prioritize collective success over individual gains and value diverse perspectives, believing they make us stronger.",
+    desc: "Our ambitious goals for Integer Finance can only be realized through collaboration. We rely on our team, suppliers, partners, customers, and communities to transform the world and achieve our full potential. We excel in building lasting relationships and connecting people within the ecosystems we create. We prioritize collective success over individual gains and value diverse perspectives, believing they make us stronger.",
   },
   {
     icon: BookCheck,

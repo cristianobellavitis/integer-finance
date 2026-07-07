@@ -1,7 +1,8 @@
 import * as React from "react";
 import Image from "next/image";
 
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import SectionWrapper from "@/components/common/SectionWrapper";
+import RevealOnScroll from "@/components/common/RevealOnScroll";
 import {
   Carousel,
   CarouselContent,
@@ -14,24 +15,28 @@ import { missionCarouselData } from "./mission-data";
 
 export default function MissionCarousel() {
   return (
-    <MaxWidthWrapper className="my-12">
-      <Carousel>
-        <CarouselContent>
-          {missionCarouselData.map((item, index) => (
-            <CarouselItem key={index} className="basis-1/3">
-              <Image
-                src={item.image}
-                alt="Image 2"
-                width={500}
-                height={300}
-                className="object-cover"
-              />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious className="hidden md:flex" />
-        <CarouselNext className="hidden md:flex" />
-      </Carousel>
-    </MaxWidthWrapper>
+    <SectionWrapper className="py-14 md:py-16">
+      <RevealOnScroll>
+        <Carousel>
+          <CarouselContent>
+            {missionCarouselData.map((item, index) => (
+              <CarouselItem key={index} className="basis-1/3">
+                <div className="overflow-hidden rounded-xl border border-border">
+                  <Image
+                    src={item.image}
+                    alt=""
+                    width={500}
+                    height={300}
+                    className="aspect-[5/3] object-cover"
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden border-brand-600 bg-white text-brand-900 hover:border-brand-900 hover:bg-brand-900 hover:text-white md:flex" />
+          <CarouselNext className="hidden border-brand-600 bg-white text-brand-900 hover:border-brand-900 hover:bg-brand-900 hover:text-white md:flex" />
+        </Carousel>
+      </RevealOnScroll>
+    </SectionWrapper>
   );
 }
