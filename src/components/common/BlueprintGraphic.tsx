@@ -24,7 +24,6 @@ interface BlueprintGraphicProps {
 
 // Shared stroke styling: thin brand-blue lines, no fills, on a pale-blue
 // backdrop — decorative architectural line-art, not a literal blueprint.
-const STROKE = "#6E93BD";
 
 function FloorPlan() {
   return (
@@ -154,15 +153,14 @@ export default function BlueprintGraphic({
       aria-hidden="true"
       className={cn(
         "flex items-center justify-center overflow-hidden rounded-[10px]",
-        onDark ? "bg-transparent" : "bg-[#EEF2F7] p-10",
+        onDark ? "bg-transparent" : "bg-surface-200 p-10",
         className,
       )}
     >
       <svg
         viewBox="0 0 400 400"
-        className={svgClassName}
+        className={cn(svgClassName, onDark ? "stroke-brand-400" : "stroke-brand-600")}
         fill="none"
-        stroke={onDark ? "#93AFD0" : STROKE}
         strokeWidth="1.25"
         strokeLinecap="round"
         strokeLinejoin="round"

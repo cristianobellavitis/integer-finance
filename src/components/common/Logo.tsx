@@ -41,15 +41,18 @@ const Logo = ({ className, variant = "default", scale = 1 }: LogoProps) => {
         className="shrink-0"
       >
         <g transform="translate(22,0) skewX(-6)">
-          <rect x="0" y="42" width="20" height="32" fill="#A9BEDA" />
-          <rect x="0" y="74" width="20" height="96" fill="#567FAD" />
-          <rect x="32" y="0" width="22" height="80" fill="#B8CBE0" />
-          <rect x="32" y="80" width="22" height="110" fill="#7B9CC6" />
-          <rect x="66" y="16" width="22" height="70" fill="#AFC4DE" />
-          <rect x="66" y="86" width="22" height="28" fill="#6E93BD" />
-          <rect x="66" y="128" width="22" height="36" fill="#4C77A8" />
-          <rect x="100" y="34" width="20" height="42" fill="#C4D3E6" />
-          <rect x="100" y="76" width="20" height="100" fill="#6E93BD" />
+          <rect x="0" y="42" width="20" height="32" className="fill-brand-350" />
+          <rect x="0" y="74" width="20" height="96" className="fill-brand-700" />
+          <rect x="32" y="0" width="22" height="80" className="fill-brand-200" />
+          <rect x="32" y="80" width="22" height="110" className="fill-brand-500" />
+          <rect x="66" y="16" width="22" height="70" className="fill-brand-300" />
+          <rect x="66" y="86" width="22" height="28" className="fill-brand-600" />
+          {/* This shade matches `primary` (see tailwind.config.ts) rather
+              than the brand-blue scale, so it references that token
+              directly instead of duplicating the value. */}
+          <rect x="66" y="128" width="22" height="36" className="fill-primary" />
+          <rect x="100" y="34" width="20" height="42" className="fill-brand-100" />
+          <rect x="100" y="76" width="20" height="100" className="fill-brand-600" />
         </g>
       </svg>
       <svg

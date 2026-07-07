@@ -85,6 +85,14 @@ const config = {
           700: "#567FAD",
           900: "#35506E",
         },
+        // Pale neutral panel backgrounds used behind BlueprintGraphic and a
+        // couple of section backgrounds — distinct from the brand-blue scale
+        // above (too light/neutral to read as "brand"), but still shared
+        // across multiple files, so centralized the same way.
+        surface: {
+          100: "#F5F7FA",
+          200: "#EEF2F7",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
