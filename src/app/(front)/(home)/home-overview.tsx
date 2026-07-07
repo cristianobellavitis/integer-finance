@@ -8,12 +8,9 @@ import SectionWrapper from "@/components/common/SectionWrapper";
 export default function HomeOverview() {
   return (
     <SectionWrapper>
-      <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
+      <div className="grid grid-cols-1 items-stretch gap-10 md:grid-cols-12 md:gap-12">
         <div className="md:col-span-5">
-          <BlueprintGraphic
-            variant="grid"
-            className="aspect-square w-full"
-          />
+          <BlueprintGraphic variant="grid" className="h-full w-full" />
         </div>
 
         <div className="md:col-span-7">
