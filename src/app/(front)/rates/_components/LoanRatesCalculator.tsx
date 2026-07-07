@@ -142,29 +142,20 @@ export default function LoanRatesCalculator() {
       return;
     }
 
-    // Start with base rate
+    // Start with base rate. hasExperience/previousBorrower only gate which
+    // LTV bands are selectable (see availableLtvs above) - they are not
+    // separate rate adjustments.
     let monthlyRate = baseRates[ltv];
 
-    // This page's own eligibility-driven adjustments (not part of the
-    // shared rate card) - continue to stack on top as before.
-    if (data.hasExperience === "no") {
-      monthlyRate += adjustments.inexperienced;
-    }
-    if (data.previousBorrower === "yes") {
-      monthlyRate += adjustments.repeatBorrower;
-    }
-
-    // Shared rate-card adjustments are NOT cumulative - only the single
-    // most favourable applicable one applies.
-    const rateCardAdjustments: number[] = [];
+    // Shared rate-card adjustments are cumulative - sum every applicable
+    // one. Credit-score brackets are mutually exclusive (a score is either
+    // >950, 850-950, or <850), so at most one of highScore/lowScore ever
+    // applies, but it still adds alongside any other applicable adjustment.
     if (creditScore > 950) {
-      rateCardAdjustments.push(adjustments.highScore);
+      monthlyRate += adjustments.highScore;
     }
     if (creditScore < 850) {
-      rateCardAdjustments.push(adjustments.lowScore);
-    }
-    if (rateCardAdjustments.length > 0) {
-      monthlyRate += Math.min(...rateCardAdjustments);
+      monthlyRate += adjustments.lowScore;
     }
 
     // Calculate fees

@@ -52,15 +52,12 @@ export const rateTableData: RateTableRow[] = LTV_BANDS.map((ltv) => ({
   brokerFee: brokerFees[ltv],
 }));
 
-// `highScore`/`lowScore`/`structuralLegal`/`secondCharge` are the shared,
-// non-cumulative rate-card adjustments (see src/constants/rates.ts) - only
-// the single most favourable applicable one should be used, not all of
-// them summed. `inexperienced`/`repeatBorrower` are this page's own
-// eligibility-driven adjustments, not part of the shared rate card, and
-// continue to apply on top as before.
+// The shared rate-card adjustments (see src/constants/rates.ts) - these are
+// CUMULATIVE, every applicable one is summed onto the base rate.
+// hasExperience/previousBorrower are no longer separate rate nudges here -
+// they still gate which LTV bands are selectable (see availableLtvs in
+// LoanRatesCalculator.tsx), that's their only role now.
 export const adjustments = {
-  inexperienced: 0.025,
-  repeatBorrower: -0.025,
   highScore: ADJUSTMENT_THOUSANDTHS.creditAbove950 / 1000,
   lowScore: ADJUSTMENT_THOUSANDTHS.creditBelow850 / 1000,
   structuralLegal: ADJUSTMENT_THOUSANDTHS.structuralLegal / 1000,

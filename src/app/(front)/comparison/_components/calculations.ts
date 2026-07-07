@@ -9,6 +9,7 @@ import {
   BASE_RATE_THOUSANDTHS,
   ARRANGEMENT_FEE_HUNDREDTHS,
   EXIT_FEE_HUNDREDTHS,
+  ADJUSTMENT_THOUSANDTHS,
 } from "@/constants/rates";
 
 // Finds the smallest available LTV band that is >= the given percentage
@@ -17,6 +18,16 @@ import {
 // if it exceeds the maximum band offered.
 function findLtvBand(ltvPercent: number): LtvBand | null {
   return LTV_BANDS.find((band) => ltvPercent <= band) ?? null;
+}
+
+// Shared rate-card adjustment, cumulative with anything else that applies
+// (this page only collects an average credit score, no structural/legal
+// field, so that's the only adjustment wired in here).
+function getAdjustmentThousandths(avgCreditScoreAll: number): number {
+  let total = 0;
+  if (avgCreditScoreAll > 950) total += ADJUSTMENT_THOUSANDTHS.creditAbove950;
+  if (avgCreditScoreAll < 850) total += ADJUSTMENT_THOUSANDTHS.creditBelow850;
+  return total;
 }
 
 export function financeCalculationOthers(
@@ -70,7 +81,11 @@ export function financeCalculationInteger(
   const monthlyDiscountedRate = 0;
   const monthsDiscountedRate = 0;
   // Thousandths-of-a-percent / 100_000 = a plain fraction (e.g. 780 -> 0.0078).
-  const regularMonthlyRate = band ? BASE_RATE_THOUSANDTHS[band] / 100_000 : 0;
+  const baseAndAdjustmentThousandths = band
+    ? BASE_RATE_THOUSANDTHS[band] +
+      getAdjustmentThousandths(values.avgCreditScoreAll)
+    : 0;
+  const regularMonthlyRate = baseAndAdjustmentThousandths / 100_000;
   // Hundredths-of-a-percent / 10_000 = a plain fraction (e.g. 225 -> 0.0225).
   const applicationFee = band ? ARRANGEMENT_FEE_HUNDREDTHS[band] / 10_000 : 0;
   const exitFee = band ? EXIT_FEE_HUNDREDTHS / 10_000 : 0;

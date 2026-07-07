@@ -86,26 +86,28 @@ function computeLtvStatus(
   return { kind: "ok", band, ltvPercent };
 }
 
-// Adjustments are NOT cumulative — only the single most favourable one
-// (lowest resulting rate) applies, matching the business rule exactly.
-function getSelectedAdjustmentThousandths(inputs: RateCalculatorInputs): number {
-  const candidates: number[] = [];
+// Adjustments are CUMULATIVE — every one that applies is summed onto the
+// base rate. Credit-score brackets are mutually exclusive by construction
+// (creditBand is exactly one of the three), so at most one of
+// creditAbove950/creditBelow850 is ever included, but it still adds
+// alongside any other applicable adjustment (e.g. structuralLegal).
+function getAdjustmentThousandths(inputs: RateCalculatorInputs): number {
+  let total = 0;
 
   if (inputs.creditBand === "above950") {
-    candidates.push(ADJUSTMENT_THOUSANDTHS.creditAbove950);
+    total += ADJUSTMENT_THOUSANDTHS.creditAbove950;
   }
   if (inputs.creditBand === "below850") {
-    candidates.push(ADJUSTMENT_THOUSANDTHS.creditBelow850);
+    total += ADJUSTMENT_THOUSANDTHS.creditBelow850;
   }
   if (inputs.structuralLegal) {
-    candidates.push(ADJUSTMENT_THOUSANDTHS.structuralLegal);
+    total += ADJUSTMENT_THOUSANDTHS.structuralLegal;
   }
   if (inputs.secondCharge) {
-    candidates.push(ADJUSTMENT_THOUSANDTHS.secondCharge);
+    total += ADJUSTMENT_THOUSANDTHS.secondCharge;
   }
 
-  if (candidates.length === 0) return 0;
-  return Math.min(...candidates);
+  return total;
 }
 
 export interface RateQuoteOk {
@@ -168,7 +170,7 @@ export function computeRateQuote(inputs: RateCalculatorInputs): RateQuote {
   const totalLoanAmount = inputs.loanAmount + renovationAmount;
 
   const baseThousandths = BASE_RATE_THOUSANDTHS[band];
-  const adjustmentThousandths = getSelectedAdjustmentThousandths(inputs);
+  const adjustmentThousandths = getAdjustmentThousandths(inputs);
   const totalThousandths = baseThousandths + adjustmentThousandths;
   // Round from thousandths to hundredths-of-a-percent (i.e. to 2 display
   // decimals) using integer-safe half-up rounding. The £ figures below are

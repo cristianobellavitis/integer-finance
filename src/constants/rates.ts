@@ -48,11 +48,22 @@ export const SEVENTY_PERCENT_FULL_RENOVATION = {
   arrangementFeeHundredths: 235,
 };
 
-// Non-cumulative: only the single most favourable of these applies.
+// Cumulative: every adjustment below that applies is SUMMED onto the base
+// rate — e.g. structural/legal (+0.125%) together with credit >950 (-0.025%)
+// nets +0.100%. creditAbove950/creditBelow850 are mutually exclusive by
+// construction (an average credit score falls in exactly one of the three
+// brackets: >950, 850-950, or <850), so at most one of that pair is ever
+// included — but anything else that also applies adds on top of it, it
+// does not replace it.
 export const ADJUSTMENT_THOUSANDTHS = {
   creditAbove950: -25,
   creditBelow850: 25,
   structuralLegal: 125,
+  // Not part of the official adjustments list as of the latest rate review
+  // (credit-score brackets + structural/legal only) — kept because the
+  // homepage calculator's "Second charge" toggle is live and wired to this
+  // value; removing it would silently break that control. Flag to product
+  // whether second charge should be dropped entirely.
   secondCharge: 100,
 };
 
