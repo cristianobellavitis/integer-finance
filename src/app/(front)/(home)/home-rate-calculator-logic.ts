@@ -1,6 +1,25 @@
 // Internal pricing logic for the homepage rate calculator. Nothing here is
 // rendered as a table or list — only the single computed quote for the
 // visitor's own inputs is ever displayed.
+//
+// Rate/fee figures come from src/constants/rates.ts, the single shared
+// source of truth also used by /rates and /comparison — do not hardcode
+// figures here again.
+
+import {
+  LTV_BANDS,
+  type LtvBand,
+  MAX_LTV_PERCENT,
+  REPEAT_BORROWER_ONLY_LTV_PERCENT,
+  BASE_RATE_THOUSANDTHS,
+  ARRANGEMENT_FEE_HUNDREDTHS,
+  EXIT_FEE_HUNDREDTHS,
+  ADJUSTMENT_THOUSANDTHS,
+  LEGALS_FEE,
+  LOAN_MANAGEMENT_FEE,
+  LOAN_DISBURSEMENT_FEE,
+} from "@/constants/rates";
+import { divideRoundHalfUp, formatHundredthsAsPercent } from "@/lib/rate-math";
 
 export const LOAN_MIN = 50_000;
 export const LOAN_MAX = 250_000;
@@ -14,12 +33,6 @@ export const RENOVATION_MIN = 0;
 export const RENOVATION_MAX = 150_000;
 export const RENOVATION_STEP = 5_000;
 
-// 90% is intentionally not offered on this public calculator.
-export const LTV_BANDS = [65, 70, 75, 80, 85] as const;
-export type LtvBand = (typeof LTV_BANDS)[number];
-const MAX_LTV_PERCENT = 85;
-const REPEAT_BORROWER_ONLY_LTV_PERCENT = 80; // above this, 85% band requires the toggle
-
 export type CreditBand = "above950" | "850to950" | "below850";
 
 export interface RateCalculatorInputs {
@@ -32,68 +45,6 @@ export interface RateCalculatorInputs {
   structuralLegal: boolean;
   secondCharge: boolean;
   retainedInterest: boolean;
-}
-
-// All rate figures are stored as integer thousandths-of-a-percent (e.g. 900
-// means 0.900%) so every intermediate sum is exact integer arithmetic. Several
-// realistic base+adjustment combinations land exactly on a X.XX5 boundary
-// (e.g. 0.900 + 0.125 = 1.025), where naive float math + toFixed can misround
-// due to binary floating-point representation — integer math avoids that
-// entirely.
-const BASE_RATE_THOUSANDTHS: Record<LtvBand, number> = {
-  65: 780,
-  70: 820,
-  75: 900,
-  80: 925,
-  85: 1000,
-};
-
-// Stored as integer hundredths-of-a-percent (e.g. 225 means 2.25%).
-const ARRANGEMENT_FEE_HUNDREDTHS: Record<LtvBand, number> = {
-  65: 225,
-  70: 225,
-  75: 235,
-  80: 235,
-  85: 250,
-};
-
-const EXIT_FEE_HUNDREDTHS = 95;
-
-// Fixed fees. Legals are explicitly NOT part of the day-one deduction — the
-// borrower pays them separately — so it's kept out of the deducted total and
-// surfaced only as its own note.
-export const LEGALS_FEE = 500;
-export const LOAN_MANAGEMENT_FEE = 695;
-export const LOAN_DISBURSEMENT_FEE = 295;
-
-const ADJUSTMENT_THOUSANDTHS = {
-  creditAbove950: -25,
-  creditBelow850: 25,
-  structuralLegal: 125,
-  secondCharge: 100,
-};
-
-// Rounds the integer division numerator/denominator half-up, using only
-// integer arithmetic (floor + exact-integer remainder comparison) so there's
-// no binary floating-point representation error anywhere in the rounding
-// decision — unlike `Math.round(a / b)` or `(a / b).toFixed(n)`, which can
-// misround values that aren't exactly representable in base 2 (e.g. 1.025).
-function divideRoundHalfUp(numerator: number, denominator: number): number {
-  const quotient = Math.floor(numerator / denominator);
-  const remainder = numerator - quotient * denominator;
-  return remainder * 2 >= denominator ? quotient + 1 : quotient;
-}
-
-// Formats an integer "hundredths of a percent" value (e.g. 103 -> "1.03")
-// via integer truncation/modulo only — never a float division formatted with
-// toFixed — so there's no way for a binary floating-point representation
-// error to shift the displayed digit.
-function formatHundredthsAsPercent(hundredths: number): string {
-  const negative = hundredths < 0;
-  const abs = Math.abs(hundredths);
-  const whole = Math.trunc(abs / 100);
-  const frac = abs % 100;
-  return `${negative ? "-" : ""}${whole}.${String(frac).padStart(2, "0")}`;
 }
 
 type LtvStatus =

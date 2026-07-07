@@ -145,18 +145,26 @@ export default function LoanRatesCalculator() {
     // Start with base rate
     let monthlyRate = baseRates[ltv];
 
-    // Apply adjustments
+    // This page's own eligibility-driven adjustments (not part of the
+    // shared rate card) - continue to stack on top as before.
     if (data.hasExperience === "no") {
       monthlyRate += adjustments.inexperienced;
     }
     if (data.previousBorrower === "yes") {
       monthlyRate += adjustments.repeatBorrower;
     }
+
+    // Shared rate-card adjustments are NOT cumulative - only the single
+    // most favourable applicable one applies.
+    const rateCardAdjustments: number[] = [];
     if (creditScore > 950) {
-      monthlyRate += adjustments.highScore;
+      rateCardAdjustments.push(adjustments.highScore);
     }
     if (creditScore < 850) {
-      monthlyRate += adjustments.lowScore;
+      rateCardAdjustments.push(adjustments.lowScore);
+    }
+    if (rateCardAdjustments.length > 0) {
+      monthlyRate += Math.min(...rateCardAdjustments);
     }
 
     // Calculate fees
