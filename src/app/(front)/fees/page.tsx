@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { buttonVariants } from "@/components/ui/button";
+import { SITE } from "@/constants/site";
 
 function Page() {
   return (
@@ -32,7 +33,7 @@ function Page() {
             your loan payments. If you have any questions, please do not
             hesitate to{" "}
             <Link
-              href="mailto:info@integerinvestments.com"
+              href={`mailto:${SITE.contact.email}`}
               className="text-primary hover:underline"
             >
               contact us

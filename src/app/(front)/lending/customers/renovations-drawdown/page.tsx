@@ -1,5 +1,5 @@
 import React from "react";
-import CustomerForm from "@/components/common/CustomerForm.tsx";
+import CustomerForm from "@/components/common/CustomerForm";
 import { FORM_URLS } from "@/constants/form";
 
 function page() {

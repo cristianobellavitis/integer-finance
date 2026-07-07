@@ -6,6 +6,7 @@ import Logo from "../common/Logo";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import MaxWidthWrapper from "../MaxWidthWrapper";
+import { SITE } from "@/constants/site";
 
 const Footer = () => {
   return (
@@ -18,10 +19,10 @@ const Footer = () => {
             <ul className="text-md space-y-2">
               {/* <li>Integer Inv US LLC (US)</li> */}
               {/* <li>Integer Investments Europe LTD (UK)</li> */}
-              <li>Email: info@integerinvestments.com</li>
-              <li>Phone: +44 7441395334</li>
-              <li>Whatsapp: +44 7909050331</li>
-              <li>LONDON | NYC</li>
+              <li>Email: {SITE.contact.email}</li>
+              <li>Phone: {SITE.contact.phone}</li>
+              <li>Whatsapp: {SITE.contact.whatsapp}</li>
+              <li>{SITE.locations}</li>
             </ul>
           </div>
 
