@@ -2,88 +2,74 @@ import React from "react";
 import Image from "next/image";
 
 import { founderData } from "./founder-data";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
+import RevealOnScroll from "@/components/common/RevealOnScroll";
+
+function ProfileBullets({ items }: { items: string[] }) {
+  return (
+    <>
+      {items.map((item, index) => (
+        <div key={index} className="mb-6">
+          <div className="mb-3 flex items-start">
+            <div className="me-3 mt-1.5 flex-shrink-0">
+              <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+            </div>
+            <p className="max-w-xl text-base text-muted-foreground">{item}</p>
+          </div>
+          {index < items.length - 1 && <hr className="my-6 border-border" />}
+        </div>
+      ))}
+    </>
+  );
+}
 
 export default function TeamFounder() {
   return (
-    <MaxWidthWrapper>
-      <div className="mb-2 mt-8 grid grid-cols-1 items-center gap-6 md:grid-cols-12">
-        <div className="relative col-span-6 flex flex-col gap-6">
-          <div className="mx-auto w-full max-w-lg">
-            <Image
-              src="/images/team/founder.png"
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: "100%", height: "auto" }}
-              className="rounded-lg"
-              alt="founder"
-            />
-          </div>
+    <SectionWrapper className="pt-0">
+      <RevealOnScroll className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
+        <div className="md:col-span-5">
+          <Image
+            src="/images/team/founder.png"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+            className="rounded-xl border border-border"
+            alt="Cristiano Bellavitis"
+          />
         </div>
 
-        <div className="col-span-6 m-6">
-          <h3 className="mb-2 text-4xl font-semibold leading-normal text-primary">
-            Our Founder
-          </h3>
-          <h3 className="mb-4 text-xl font-bold leading-normal text-gray-500">
+        <div className="md:col-span-7">
+          <SectionHeading title="Our Founder" size="lg" />
+          <p className="mb-4 mt-2 text-xl font-semibold text-brand-900">
             Cristiano Bellavitis
-          </h3>
+          </p>
+          <ProfileBullets items={founderData.cristiano} />
+        </div>
+      </RevealOnScroll>
 
-          {founderData.cristiano.map((item, index) => (
-            <div key={index} className="mb-6">
-              <div className="mb-3 flex items-start">
-                <div className="me-3 mt-1.5 flex-shrink-0">
-                  <div className="h-2.5 w-2.5 rounded-full bg-primary"></div>
-                </div>
-                <div className="max-w-xl text-base font-bold text-gray-400">
-                  {item}
-                </div>
-              </div>
-              {index < founderData.cristiano.length - 1 && (
-                <hr className="my-6" />
-              )}
-            </div>
-          ))}
+      <RevealOnScroll className="mt-16 grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
+        <div className="md:order-2 md:col-span-5">
+          <Image
+            src="/images/team/luke.jpg"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "60%", height: "auto" }}
+            className="mx-auto rounded-xl border border-border"
+            alt="Luke Higgins"
+          />
         </div>
 
-        <div className="col-span-6 m-6">
-          <h3 className="mb-2 text-4xl font-semibold leading-normal text-primary">
-            Head of Business Development
-          </h3>
-          <h3 className="mb-4 text-xl font-bold leading-normal text-gray-500">
+        <div className="md:order-1 md:col-span-7">
+          <SectionHeading title="Head of Business Development" size="lg" />
+          <p className="mb-4 mt-2 text-xl font-semibold text-brand-900">
             Luke Higgins
-          </h3>
-
-          {founderData.luke.map((item, index) => (
-            <div key={index} className="mb-6">
-              <div className="mb-3 flex items-start">
-                <div className="me-3 mt-1.5 flex-shrink-0">
-                  <div className="h-2.5 w-2.5 rounded-full bg-primary"></div>
-                </div>
-                <div className="max-w-xl text-base font-bold text-gray-400">
-                  {item}
-                </div>
-              </div>
-              {index < founderData.luke.length - 1 && <hr className="my-6" />}
-            </div>
-          ))}
+          </p>
+          <ProfileBullets items={founderData.luke} />
         </div>
-
-        <div className="relative col-span-6 flex flex-col gap-6">
-          <div className="mx-auto flex w-full max-w-lg justify-center">
-            <Image
-              src="/images/team/luke.jpg"
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: "60%", height: "auto" }}
-              className="rounded-lg"
-              alt="head of business development"
-            />
-          </div>
-        </div>
-      </div>
-    </MaxWidthWrapper>
+      </RevealOnScroll>
+    </SectionWrapper>
   );
 }
