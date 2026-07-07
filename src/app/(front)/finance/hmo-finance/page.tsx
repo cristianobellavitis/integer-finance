@@ -11,8 +11,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import ImageOpacity from "@/components/common/ImageOpacity";
 import LendingForm from "@/components/forms/LendingForm";
+import FinanceHero from "../_components/FinanceHero";
+import FinanceSolutionsGrid from "../_components/FinanceSolutionsGrid";
 
 const financeData = [
   {
@@ -78,27 +79,11 @@ const Page = () => {
   return (
     <>
       {/* 1 start */}
-      <MaxWidthWrapper
-        className="md:py-18 relative max-w-full overflow-hidden bg-cover bg-center py-12 lg:py-24"
-        style={{ backgroundImage: `url("/images/hmo-finance/cover.png")` }}
-      >
-        <ImageOpacity opacity={50} />
-        <div className="container relative mt-8">
-          <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2">
-            <div>
-              <h1 className="mb-5 text-4xl font-semibold leading-normal tracking-wide text-white lg:text-5xl lg:leading-normal">
-                The Right Solution for HMO Conversion Finance
-              </h1>
-              <p className="max-w-xl text-lg font-medium tracking-tight text-white">
-                Our HMO conversion loans are designed specifically for real
-                estate investors looking to convert properties into Houses in
-                Multiple Occupation. These tailored finance solutions provide
-                the necessary
-              </p>
-            </div>
-          </div>
-        </div>
-      </MaxWidthWrapper>
+      <FinanceHero
+        coverImage="/images/hmo-finance/cover.png"
+        title="The Right Solution for HMO Conversion Finance"
+        description="Our HMO conversion loans are designed specifically for real estate investors looking to convert properties into Houses in Multiple Occupation. These tailored finance solutions provide the necessary"
+      />
       {/* 1 end */}
 
       {/* 2 start */}
@@ -153,35 +138,11 @@ const Page = () => {
       {/* 2 end */}
 
       {/* 3 start */}
-      <MaxWidthWrapper className="my-12">
-        <div className="grid grid-cols-1 pb-6 text-center">
-          <div className="text-center">
-            <h3 className="mb-4 text-5xl font-semibold leading-normal text-primary">
-              FINANCE SOLUTIONS
-            </h3>
-          </div>
-        </div>
-
-        <div className="mx-2 mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:mx-40">
-          {bridgingData.map((item, index) => (
-            <div
-              key={index}
-              className="relative flex h-full flex-col overflow-hidden rounded-md bg-white p-6 shadow dark:bg-gray-900 dark:shadow-gray-700"
-            >
-              <item.icon className="mb-1 text-primary" />
-
-              <div className="content z-1 relative mt-2 flex-grow">
-                <h6 className="title text-2xl font-semibold text-primary">
-                  {item.title}
-                </h6>
-                <p className="mt-3 text-lg font-semibold tracking-tight text-gray-400">
-                  {item.desc}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </MaxWidthWrapper>
+      <FinanceSolutionsGrid
+        heading="FINANCE SOLUTIONS"
+        items={bridgingData}
+        columns={2}
+      />
       {/* 3 end */}
 
       <LendingForm />
