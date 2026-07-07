@@ -1,7 +1,6 @@
 // Single source of truth for bridging-loan rate/fee figures, for loans
-// under £250,000. All three consumers (homepage calculator, /rates,
-// /comparison) must read from here rather than hold their own copy — this
-// module exists because those three had silently diverged.
+// under £250,000. The homepage calculator (the only rate calculator on the
+// site) reads from here rather than holding its own copy.
 //
 // Figures below integer thousandths/hundredths-of-a-percent (e.g. 780 means
 // 0.780%) rather than plain floats, so downstream arithmetic stays exact —
@@ -59,12 +58,6 @@ export const ADJUSTMENT_THOUSANDTHS = {
   creditAbove950: -25,
   creditBelow850: 25,
   structuralLegal: 125,
-  // Not part of the official adjustments list as of the latest rate review
-  // (credit-score brackets + structural/legal only) — kept because the
-  // homepage calculator's "Second charge" toggle is live and wired to this
-  // value; removing it would silently break that control. Flag to product
-  // whether second charge should be dropped entirely.
-  secondCharge: 100,
 };
 
 export const LEGALS_FEE = 500;

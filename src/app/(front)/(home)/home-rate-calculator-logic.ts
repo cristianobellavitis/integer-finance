@@ -3,8 +3,7 @@
 // visitor's own inputs is ever displayed.
 //
 // Rate/fee figures come from src/constants/rates.ts, the single shared
-// source of truth also used by /rates and /comparison — do not hardcode
-// figures here again.
+// source of truth — do not hardcode figures here again.
 
 import {
   LTV_BANDS,
@@ -43,7 +42,6 @@ export interface RateCalculatorInputs {
   repeatBorrower: boolean;
   creditBand: CreditBand;
   structuralLegal: boolean;
-  secondCharge: boolean;
   retainedInterest: boolean;
 }
 
@@ -102,9 +100,6 @@ function getAdjustmentThousandths(inputs: RateCalculatorInputs): number {
   }
   if (inputs.structuralLegal) {
     total += ADJUSTMENT_THOUSANDTHS.structuralLegal;
-  }
-  if (inputs.secondCharge) {
-    total += ADJUSTMENT_THOUSANDTHS.secondCharge;
   }
 
   return total;

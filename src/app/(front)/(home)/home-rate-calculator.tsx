@@ -46,7 +46,6 @@ export default function HomeRateCalculator() {
   const [repeatBorrower, setRepeatBorrower] = useState(false);
   const [creditBand, setCreditBand] = useState<CreditBand>("850to950");
   const [structuralLegal, setStructuralLegal] = useState(false);
-  const [secondCharge, setSecondCharge] = useState(false);
 
   const quote = useMemo(
     () =>
@@ -59,7 +58,6 @@ export default function HomeRateCalculator() {
         repeatBorrower,
         creditBand,
         structuralLegal,
-        secondCharge,
       }),
     [
       loanAmount,
@@ -70,7 +68,6 @@ export default function HomeRateCalculator() {
       repeatBorrower,
       creditBand,
       structuralLegal,
-      secondCharge,
     ],
   );
 
@@ -224,20 +221,6 @@ export default function HomeRateCalculator() {
                 id="structural-legal"
                 checked={structuralLegal}
                 onCheckedChange={setStructuralLegal}
-              />
-            </div>
-
-            <div className="flex items-center justify-between rounded-[10px] border border-border p-4">
-              <Label
-                htmlFor="second-charge"
-                className="pr-4 text-sm font-medium text-brand-900"
-              >
-                Second charge
-              </Label>
-              <Switch
-                id="second-charge"
-                checked={secondCharge}
-                onCheckedChange={setSecondCharge}
               />
             </div>
           </div>
