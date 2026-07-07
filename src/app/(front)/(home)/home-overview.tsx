@@ -10,7 +10,7 @@ export default function HomeOverview() {
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
         <div className="md:col-span-5">
           <BlueprintGraphic
-            variant="site-plan"
+            variant="grid"
             className="aspect-square w-full"
           />
         </div>

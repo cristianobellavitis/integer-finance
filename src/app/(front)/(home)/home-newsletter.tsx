@@ -6,12 +6,12 @@ import { Button } from "@/components/ui/button";
 export default function HomeNewsletter() {
   return (
     <div
-      className="relative items-center overflow-hidden bg-cover bg-center py-8"
+      className="relative items-center overflow-hidden bg-cover bg-center pb-20 pt-10 md:pb-28 md:pt-14"
       style={{ backgroundImage: 'url("/images/home/newsletter.png")' }}
     >
       <div className="absolute inset-0 bg-white bg-opacity-50"></div>
       <div className="container relative">
-        <div className="mt-10 grid grid-cols-1 text-center md:mt-24">
+        <div className="grid grid-cols-1 text-center">
           <h4 className="mb-5 font-heading text-4xl font-bold capitalize leading-normal tracking-wide text-primary lg:text-5xl lg:leading-normal">
             SUBSCRIBE TO OUR NEWSLETTER
           </h4>

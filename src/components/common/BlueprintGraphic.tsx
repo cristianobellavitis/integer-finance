@@ -2,7 +2,13 @@ import React from "react";
 
 import { cn } from "@/lib/utils";
 
-export type BlueprintVariant = "floor-plan" | "elevation" | "compass" | "site-plan";
+export type BlueprintVariant =
+  | "floor-plan"
+  | "elevation"
+  | "compass"
+  | "site-plan"
+  | "skyline"
+  | "grid";
 
 interface BlueprintGraphicProps {
   variant?: BlueprintVariant;
@@ -91,11 +97,48 @@ function SitePlan() {
   );
 }
 
+function Skyline() {
+  return (
+    <>
+      <line x1="40" y1="340" x2="360" y2="340" />
+      <rect x="60" y="200" width="40" height="140" />
+      <rect x="115" y="140" width="40" height="200" />
+      <rect x="170" y="180" width="40" height="160" />
+      <rect x="225" y="100" width="40" height="240" />
+      <rect x="280" y="220" width="40" height="120" />
+      <line x1="235" y1="130" x2="245" y2="130" />
+      <line x1="235" y1="160" x2="245" y2="160" />
+      <line x1="235" y1="190" x2="245" y2="190" />
+    </>
+  );
+}
+
+function Grid() {
+  return (
+    <>
+      <rect x="60" y="60" width="280" height="280" />
+      <line x1="60" y1="150" x2="340" y2="150" />
+      <line x1="60" y1="240" x2="340" y2="240" />
+      <line x1="150" y1="60" x2="150" y2="340" />
+      <line x1="250" y1="60" x2="250" y2="340" />
+      {/* diagonal bracing */}
+      <line x1="150" y1="150" x2="250" y2="240" />
+      <line x1="250" y1="150" x2="150" y2="240" />
+      <circle cx="150" cy="150" r="4" />
+      <circle cx="250" cy="150" r="4" />
+      <circle cx="150" cy="240" r="4" />
+      <circle cx="250" cy="240" r="4" />
+    </>
+  );
+}
+
 const VARIANTS: Record<BlueprintVariant, () => JSX.Element> = {
   "floor-plan": FloorPlan,
   elevation: Elevation,
   compass: Compass,
   "site-plan": SitePlan,
+  skyline: Skyline,
+  grid: Grid,
 };
 
 export default function BlueprintGraphic({

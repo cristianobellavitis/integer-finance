@@ -12,12 +12,14 @@ import BlueprintGraphic, {
 import { focusCarouselData } from "./home-data";
 
 // Cycled across the 5 slides so each one reads as visually distinct rather
-// than repeating the same drawing.
+// than repeating the same drawing. Deliberately excludes "floor-plan" (used
+// by the Mission section) and "grid" (used by Overview) so no section on the
+// page shows the exact same drawing as this carousel.
 const VARIANTS: BlueprintVariant[] = [
-  "floor-plan",
   "elevation",
   "compass",
   "site-plan",
+  "skyline",
 ];
 
 export default function HomeFocusCarousel() {
@@ -55,20 +57,20 @@ export default function HomeFocusCarousel() {
                 <div className="relative overflow-hidden rounded-lg bg-brand-900 [clip-path:polygon(0_0,100%_0,100%_100%,0_95%)]">
                   <div className="h-0 pb-[62%] md:pb-[46%]" />
 
-                  <BlueprintGraphic
-                    variant={variant}
-                    onDark
-                    svgClassName="h-[88%] w-[88%]"
-                    className="absolute inset-y-0 right-0 hidden w-3/5 md:flex"
-                  />
-
-                  <div className="absolute inset-y-0 left-0 flex w-full items-center p-8 md:w-3/5 lg:p-12">
-                    <div className="text-left">
+                  <div className="absolute inset-0 flex items-center gap-6 p-8 lg:gap-10 lg:p-12">
+                    <div className="w-full text-left md:w-1/2">
                       <h3 className="font-heading text-2xl font-semibold text-white sm:text-4xl lg:text-5xl">
                         {item.title}
                       </h3>
                       <div className="mt-5 h-[3px] w-14 bg-primary" />
                     </div>
+
+                    <BlueprintGraphic
+                      variant={variant}
+                      onDark
+                      svgClassName="h-[85%] w-[85%]"
+                      className="hidden h-full w-1/2 shrink-0 md:flex"
+                    />
                   </div>
                 </div>
               </div>
