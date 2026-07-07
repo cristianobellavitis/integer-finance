@@ -3,7 +3,8 @@
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
 
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
 import { buttonVariants } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
@@ -74,13 +75,10 @@ export default function HomeRateCalculator() {
   );
 
   return (
-    <MaxWidthWrapper className="py-20 md:py-28">
+    <SectionWrapper>
       <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16">
         <div>
-          <h3 className="font-heading text-4xl font-semibold leading-normal text-brand-900 md:text-5xl">
-            Size your deal
-          </h3>
-          <div className="mt-5 h-[3px] w-14 bg-primary" />
+          <SectionHeading title="Size your deal" />
           <p className="mb-8 mt-6 max-w-md text-lg leading-relaxed text-muted-foreground">
             Move the sliders to match your deal and see your own indicative
             rate — nothing here is shared or saved.
@@ -403,6 +401,6 @@ export default function HomeRateCalculator() {
           </Link>
         </div>
       </div>
-    </MaxWidthWrapper>
+    </SectionWrapper>
   );
 }

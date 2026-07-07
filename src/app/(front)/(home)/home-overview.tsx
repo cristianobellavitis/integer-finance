@@ -1,12 +1,13 @@
 import React from "react";
 
 import { overviewData } from "./home-data";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import BlueprintGraphic from "@/components/common/BlueprintGraphic";
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
 
 export default function HomeOverview() {
   return (
-    <MaxWidthWrapper className="py-20 md:py-28">
+    <SectionWrapper>
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
         <div className="md:col-span-5">
           <BlueprintGraphic
@@ -16,13 +17,12 @@ export default function HomeOverview() {
         </div>
 
         <div className="md:col-span-7">
-          <h6 className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">
-            Industry Overview
-          </h6>
-          <h3 className="font-heading text-3xl font-semibold leading-normal text-brand-900 md:text-4xl">
-            Addressing a Critical Need
-          </h3>
-          <div className="mb-8 mt-5 h-[3px] w-14 bg-primary" />
+          <SectionHeading
+            eyebrow="Industry Overview"
+            title="Addressing a Critical Need"
+            size="lg"
+            ruleClassName="mb-8"
+          />
 
           {overviewData.map((item, index) => (
             <div key={index} className="mb-6">
@@ -42,6 +42,6 @@ export default function HomeOverview() {
           ))}
         </div>
       </div>
-    </MaxWidthWrapper>
+    </SectionWrapper>
   );
 }

@@ -2,20 +2,20 @@ import React from "react";
 import Link from "next/link";
 
 import { buttonVariants } from "@/components/ui/button";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import BlueprintGraphic from "@/components/common/BlueprintGraphic";
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
 import { cn } from "@/lib/utils";
 
 export default function HomeMission() {
   return (
-    <MaxWidthWrapper className="py-20 md:py-28">
+    <SectionWrapper>
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
         <div className="md:col-span-7">
-          <h1 className="text-left font-heading text-4xl font-semibold leading-tight tracking-tight text-brand-900 md:text-5xl">
-            Our regional expertise and dedication will drive significant
-            economic growth.
-          </h1>
-          <div className="mt-5 h-[3px] w-14 bg-primary" />
+          <SectionHeading
+            as="h1"
+            title="Our regional expertise and dedication will drive significant economic growth."
+          />
 
           <p className="mb-6 mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
             At Integer Investments, we prioritize innovation, value creation,
@@ -44,6 +44,6 @@ export default function HomeMission() {
           />
         </div>
       </div>
-    </MaxWidthWrapper>
+    </SectionWrapper>
   );
 }

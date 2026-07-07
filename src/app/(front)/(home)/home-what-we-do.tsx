@@ -1,17 +1,15 @@
 import React from "react";
 
 import { whatWeDoData } from "./home-data";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
 
 export default function HomeWhatWeDo() {
   return (
     <div className="bg-[#F5F7FA]">
-      <MaxWidthWrapper className="py-20 md:py-28">
-        <div className="mb-16 grid grid-cols-1 text-center">
-          <h3 className="font-heading text-4xl font-semibold leading-normal text-brand-900 md:text-5xl">
-            WHAT WE DO
-          </h3>
-          <div className="mx-auto mt-5 h-[3px] w-14 bg-primary" />
+      <SectionWrapper>
+        <div className="mb-16">
+          <SectionHeading align="center" title="WHAT WE DO" />
         </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -33,7 +31,7 @@ export default function HomeWhatWeDo() {
             </div>
           ))}
         </div>
-      </MaxWidthWrapper>
+      </SectionWrapper>
     </div>
   );
 }
