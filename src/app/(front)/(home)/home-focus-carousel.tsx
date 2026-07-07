@@ -3,12 +3,13 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 
 import BlueprintGraphic, {
   type BlueprintVariant,
 } from "@/components/common/BlueprintGraphic";
+import { cn } from "@/lib/utils";
 import { focusCarouselData } from "./home-data";
 
 // Cycled across the 5 slides so each one reads as visually distinct rather
@@ -23,19 +24,25 @@ const VARIANTS: BlueprintVariant[] = [
 ];
 
 export default function HomeFocusCarousel() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    fade: true,
+    speed: 700,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplaySpeed: 1000,
+    adaptiveHeight: true,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    beforeChange: (_current: number, next: number) => setActiveIndex(next),
     customPaging: () => <div className="h-3 w-3 rounded-full bg-white" />,
     appendDots: (dots: React.ReactNode) => (
       <div
         style={{
           position: "absolute",
-          bottom: "10px",
+          bottom: "18px",
           width: "100%",
           display: "flex",
           justifyContent: "center",
@@ -52,24 +59,30 @@ export default function HomeFocusCarousel() {
         <Slider {...settings}>
           {focusCarouselData.map((item, index) => {
             const variant = VARIANTS[index % VARIANTS.length];
+            const isActive = index === activeIndex;
             return (
               <div key={index} className="relative">
                 <div className="relative overflow-hidden rounded-lg bg-brand-900 [clip-path:polygon(0_0,100%_0,100%_100%,0_95%)]">
-                  <div className="h-0 pb-[62%] md:pb-[46%]" />
-
-                  <div className="absolute inset-0 flex items-center gap-6 p-8 lg:gap-10 lg:p-12">
+                  <div className="flex flex-col gap-8 px-8 pb-16 pt-12 md:flex-row md:items-center md:gap-10 md:px-12 md:py-16 lg:gap-12 lg:px-16">
                     <div className="w-full text-left md:w-1/2">
                       <h3 className="font-heading text-2xl font-semibold text-white sm:text-4xl lg:text-5xl">
                         {item.title}
                       </h3>
                       <div className="mt-5 h-[3px] w-14 bg-primary" />
+                      <p className="mt-4 max-w-md text-sm leading-relaxed text-brand-300 sm:text-base">
+                        {item.caption}
+                      </p>
                     </div>
 
                     <BlueprintGraphic
+                      key={isActive ? `${index}-active` : index}
                       variant={variant}
                       onDark
                       svgClassName="h-[85%] w-[85%]"
-                      className="hidden h-full w-1/2 shrink-0 md:flex"
+                      className={cn(
+                        "hidden shrink-0 md:flex md:h-64 md:w-1/2 lg:h-72",
+                        isActive && "motion-safe:animate-fade-up",
+                      )}
                     />
                   </div>
                 </div>

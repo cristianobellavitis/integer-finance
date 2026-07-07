@@ -11,22 +11,32 @@ export const focusCarouselData = [
   {
     image: "/images/home/carousel1.png",
     title: "A financial institution that promotes regional prosperity",
+    caption:
+      "Backing property developers who are regenerating underserved regions across the UK.",
   },
   {
     image: "/images/home/carousel2.png",
     title: "A financial institution that creates regional jobs",
+    caption:
+      "Every development we finance supports local employment and long-term economic growth.",
   },
   {
     image: "/images/home/carousel3.png",
     title: "A financial institution that helps develop social housing",
+    caption:
+      "Funding the conversions and refurbishments that ease the UK's housing shortage.",
   },
   {
     image: "/images/home/carousel4.png",
     title: "A financial institution that's building communities",
+    caption:
+      "From HMO conversions to ground-up schemes, we back projects that regenerate neighbourhoods.",
   },
   {
     image: "/images/home/carousel5.png",
     title: "A financial institution that supports your dreams",
+    caption:
+      "Flexible, relationship-led lending for developers ready to bring ambitious projects to life.",
   },
 ];
 
