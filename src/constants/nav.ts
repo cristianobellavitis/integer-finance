@@ -33,10 +33,6 @@ export const NAV_ITEMS: MainMenuItem[] = [
             title: "Comparison",
             href: "/comparison",
           },
-          {
-            title: "Rates",
-            href: "/rates",
-          },
         ],
       },
       {
