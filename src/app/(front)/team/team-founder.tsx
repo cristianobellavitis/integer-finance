@@ -49,7 +49,7 @@ export default function TeamFounder() {
         </div>
       </RevealOnScroll>
 
-      <RevealOnScroll className="mt-16 grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
+      <RevealOnScroll className="mt-8 grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
         <div className="md:order-2 md:col-span-5">
           <Image
             src="/images/team/luke.jpg"

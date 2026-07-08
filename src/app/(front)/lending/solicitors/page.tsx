@@ -14,7 +14,7 @@ const page = () => {
 
       <SolicitorsSolutions />
 
-      <div className="flex justify-center pb-10 md:pb-14">
+      <div className="flex justify-center pb-5 md:pb-7">
         <iframe
           width={560 * 1.5}
           height={315 * 1.5}

@@ -6,7 +6,7 @@ import RevealOnScroll from "@/components/common/RevealOnScroll";
 
 const MissionCover = () => {
   return (
-    <SectionWrapper className="pb-0 pt-10 md:pt-12">
+    <SectionWrapper className="pb-0">
       <RevealOnScroll>
         <SectionHeading as="h1" title="Building Better Futures" />
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">

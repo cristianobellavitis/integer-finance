@@ -13,7 +13,7 @@ export default function SectionWrapper({
   children,
 }: SectionWrapperProps) {
   return (
-    <MaxWidthWrapper className={cn("py-20 md:py-28", className)}>
+    <MaxWidthWrapper className={cn("py-5 md:py-7", className)}>
       {children}
     </MaxWidthWrapper>
   );

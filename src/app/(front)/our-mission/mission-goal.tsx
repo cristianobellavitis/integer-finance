@@ -7,7 +7,7 @@ import RevealOnScroll from "@/components/common/RevealOnScroll";
 
 export default function MissionGoal() {
   return (
-    <SectionWrapper className="pb-8 pt-0 md:pb-10">
+    <SectionWrapper className="pt-0">
       <RevealOnScroll className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
         <div className="md:col-span-5 md:order-1">
           <Image

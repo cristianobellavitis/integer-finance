@@ -17,7 +17,7 @@ const solutionsData = [
 
 export default function SolicitorsSolutions() {
   return (
-    <SectionWrapper className="py-10 md:py-14">
+    <SectionWrapper className="pt-0">
       <RevealOnScroll>
         <SectionHeading align="center" title="Technology Solutions" />
       </RevealOnScroll>

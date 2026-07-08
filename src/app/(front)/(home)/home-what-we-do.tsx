@@ -7,8 +7,8 @@ import SectionWrapper from "@/components/common/SectionWrapper";
 export default function HomeWhatWeDo() {
   return (
     <div className="bg-surface-100">
-      <SectionWrapper className="py-12 md:py-16">
-        <div className="mb-16">
+      <SectionWrapper>
+        <div className="mb-8">
           <SectionHeading align="center" title="WHAT WE DO" />
         </div>
 

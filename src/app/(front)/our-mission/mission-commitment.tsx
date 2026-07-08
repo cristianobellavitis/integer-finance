@@ -7,7 +7,7 @@ import RevealOnScroll from "@/components/common/RevealOnScroll";
 
 export default function MissionCommitment() {
   return (
-    <SectionWrapper className="py-8 md:py-10">
+    <SectionWrapper className="pt-0">
       <RevealOnScroll className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
         <div className="md:col-span-7">
           <SectionHeading title="Our Commitment" />

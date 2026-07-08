@@ -7,7 +7,7 @@ import SectionWrapper from "@/components/common/SectionWrapper";
 
 export default function HomeNewsletter() {
   return (
-    <div className="bg-brand-900 pb-8 pt-8 md:pb-10 md:pt-10">
+    <div className="bg-brand-900 pb-5 pt-0 md:pb-7">
       <SectionWrapper className="py-0 md:py-0">
         <div className="text-center">
           <SectionHeading

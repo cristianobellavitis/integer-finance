@@ -6,7 +6,7 @@ import RevealOnScroll from "@/components/common/RevealOnScroll";
 
 export default function SailingWhere() {
   return (
-    <SectionWrapper className="py-10 md:py-14">
+    <SectionWrapper className="pt-0">
       <RevealOnScroll>
         <SectionHeading title="Where We'll Sail" />
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">

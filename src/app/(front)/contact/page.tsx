@@ -43,7 +43,7 @@ export default function Page() {
         </SectionWrapper>
       </div>
 
-      <SectionWrapper className="py-10 md:py-14">
+      <SectionWrapper className="pt-0">
         <RevealOnScroll className="mx-auto max-w-2xl text-center">
           <div className="mb-6">
             <h2 className="font-heading text-xl font-semibold text-brand-900">

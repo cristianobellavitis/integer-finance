@@ -7,7 +7,7 @@ import RevealOnScroll from "@/components/common/RevealOnScroll";
 
 export default function SolicitorsFinance() {
   return (
-    <SectionWrapper className="py-10 md:py-14">
+    <SectionWrapper className="pt-0">
       <RevealOnScroll className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
         <div className="md:col-span-5">
           <Image

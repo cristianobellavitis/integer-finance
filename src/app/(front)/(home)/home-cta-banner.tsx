@@ -7,7 +7,7 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 export default function HomeCtaBanner() {
   return (
     <div className="w-full max-w-full overflow-hidden bg-brand-900 [clip-path:polygon(0_18%,100%_0,100%_100%,0_100%)]">
-      <MaxWidthWrapper className="flex flex-wrap items-center justify-between gap-3.5 pb-8 pt-14">
+      <MaxWidthWrapper className="flex flex-wrap items-center justify-between gap-3.5 pb-6 pt-10">
         <p className="font-heading text-lg font-medium text-white">
           Ready to talk through a deal?
         </p>

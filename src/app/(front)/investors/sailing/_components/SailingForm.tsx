@@ -11,7 +11,7 @@ const SailingForm = () => {
       style={{ backgroundImage: `url("/images/sailing/bottom.jpg")` }}
     >
       <div className="absolute inset-0 bg-brand-900/70" />
-      <SectionWrapper className="relative">
+      <SectionWrapper className="relative pt-0">
         <RevealOnScroll className="mx-auto max-w-2xl text-center">
           <SectionHeading
             align="center"

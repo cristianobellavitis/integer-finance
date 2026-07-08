@@ -7,7 +7,7 @@ import RevealOnScroll from "@/components/common/RevealOnScroll";
 
 export default function SolicitorsForm() {
   return (
-    <SectionWrapper className="py-10 md:py-14">
+    <SectionWrapper className="pt-0">
       <RevealOnScroll className="mx-auto max-w-3xl text-center">
         <SectionHeading
           align="center"

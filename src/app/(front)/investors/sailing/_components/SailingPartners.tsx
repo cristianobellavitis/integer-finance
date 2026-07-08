@@ -12,7 +12,7 @@ const PERKS = [
 
 export default function SailingPartners() {
   return (
-    <SectionWrapper className="py-10 md:py-14">
+    <SectionWrapper className="pt-0">
       <RevealOnScroll>
         <SectionHeading title="A Thank You to Our Partners" />
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
