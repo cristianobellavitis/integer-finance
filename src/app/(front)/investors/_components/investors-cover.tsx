@@ -1,31 +1,38 @@
 import React from "react";
 
-import ImageOpacity from "@/components/common/ImageOpacity";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
+import RevealOnScroll from "@/components/common/RevealOnScroll";
+import BlueprintGraphic from "@/components/common/BlueprintGraphic";
 
 const InvestorsCover = () => {
   return (
-    <MaxWidthWrapper
-      className="md:py-18 relative max-w-full overflow-hidden bg-cover bg-center py-12 lg:py-24"
-      style={{ backgroundImage: `url("/images/investors/cover.png")` }}
-    >
-      <ImageOpacity opacity={50} />
-      <div className="container relative mt-8">
-        <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2">
-          <div>
-            <h1 className="mb-5 text-4xl font-semibold leading-normal tracking-wide text-white lg:text-5xl lg:leading-normal">
-              Investor Relations
-            </h1>
-            <p className="max-w-xl text-lg font-medium tracking-tight text-white">
-              Integer Investments is driven by a clear purpose: to build better
-              futures for communities across the UK that need it the most. Our
-              mission is centred around creating meaningful change and fostering
-              growth in underserved regions.
+    <div className="bg-brand-900">
+      <SectionWrapper>
+        <RevealOnScroll className="flex flex-col items-center gap-10 md:flex-row md:gap-12">
+          <div className="w-full md:w-1/2">
+            <SectionHeading
+              as="h1"
+              title="Investor Relations"
+              className="text-white"
+            />
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-brand-300">
+              Integer Finance is driven by a clear purpose: to build better
+              futures for communities across the UK that need it the most.
+              Our mission is centred around creating meaningful change and
+              fostering growth in underserved regions.
             </p>
           </div>
-        </div>
-      </div>
-    </MaxWidthWrapper>
+
+          <BlueprintGraphic
+            variant="grid"
+            onDark
+            svgClassName="h-[85%] w-[85%]"
+            className="hidden shrink-0 md:flex md:h-64 md:w-1/2 lg:h-72"
+          />
+        </RevealOnScroll>
+      </SectionWrapper>
+    </div>
   );
 };
 

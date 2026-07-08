@@ -1,45 +1,39 @@
 import React from "react";
 import Image from "next/image";
 
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
+import RevealOnScroll from "@/components/common/RevealOnScroll";
 
 export default function InvestorsExecellence() {
   return (
-    <MaxWidthWrapper>
-      <div className="my-12 grid grid-cols-1 items-center gap-6 md:grid-cols-12">
-        <div className="col-span-6">
-          <div className="mb-3 flex items-start text-center sm:px-12 md:text-left">
-            <div className="max-w-xl">
-              <h2 className="text-4xl font-bold text-primary">
-                Supported by Excellence{" "}
-              </h2>
-              <p className="mt-4 text-lg font-semibold leading-relaxed tracking-tight text-gray-400">
-                We take pride in building a purpose-driven financial institution
-                dedicated to driving change within the property development
-                ecosystem. We have secured essential capital through investments
-                from high-net-worth individuals, small businesses, and banks.
-                With their support, Integer Investments is well on its way to
-                achieving our ambition of creating better futures and driving
-                meaningful change in the communities we serve.
-              </p>
-            </div>
-          </div>
+    <SectionWrapper className="py-10 md:py-14">
+      <RevealOnScroll className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
+        <div className="md:col-span-7">
+          <SectionHeading title="Supported by Excellence" />
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            We take pride in building a purpose-driven financial institution
+            dedicated to driving change within the property development
+            ecosystem. We have secured essential capital through investments
+            from high-net-worth individuals, small businesses, and banks.
+            With their support, Integer Finance is well on its way to
+            achieving our ambition of creating better futures and driving
+            meaningful change in the communities we serve.
+          </p>
         </div>
 
-        <div className="col-span-6">
-          <div className="mx-auto w-full max-w-lg">
-            <Image
-              src="/images/investors/excellence.png"
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: "100%", height: "auto" }}
-              className="rounded-lg"
-              alt=""
-            />
-          </div>
+        <div className="md:col-span-5">
+          <Image
+            src="/images/investors/excellence.png"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+            className="rounded-xl border border-border"
+            alt=""
+          />
         </div>
-      </div>
-    </MaxWidthWrapper>
+      </RevealOnScroll>
+    </SectionWrapper>
   );
 }

@@ -1,53 +1,46 @@
 import React from "react";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
+
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
+import RevealOnScroll from "@/components/common/RevealOnScroll";
 
 export default function InvestorsSailing() {
   return (
-    <MaxWidthWrapper>
-      <div className="my-12 grid grid-cols-1 items-center gap-6 md:grid-cols-12">
-        <div className="col-span-6">
-          <div className="mx-auto w-full max-w-lg">
-            <Image
-              src="/images/sailing/sailing.jpg"
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: "100%", height: "80%" }}
-              className="rounded-lg"
-              alt=""
-            />
-          </div>
+    <SectionWrapper className="pt-0">
+      <RevealOnScroll className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
+        <div className="md:col-span-5">
+          <Image
+            src="/images/sailing/sailing.jpg"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "80%" }}
+            className="rounded-xl border border-border"
+            alt=""
+          />
         </div>
 
-        <div className="col-span-6">
-          <div className="mb-3 flex items-start text-center sm:px-12 md:text-left">
-            <div className="max-w-xl">
-              <h2 className="text-4xl font-bold text-primary">
-                Sailing with Integer Investments
-              </h2>
-              <p className="mt-4 text-lg font-semibold leading-relaxed tracking-tight text-gray-400">
-                At Integer Investments, we value the trust and partnership of
-                our investors and clients. To celebrate this journey together,
-                we are delighted to invite our most dedicated partners aboard
-                our newly acquired luxury catamaran for an unforgettable sailing
-                experience in the Mediterranean.
-              </p>
-              <Link
-                href="/investors/sailing"
-                className={buttonVariants({
-                  className:
-                    "lg:max-w-42 mt-6 max-w-full items-center lg:mt-12",
-                })}
-              >
-                Find out more
-              </Link>
-            </div>
-          </div>
+        <div className="md:col-span-7">
+          <SectionHeading title="Sailing with Integer Finance" />
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            At Integer Finance, we value the trust and partnership of our
+            investors and clients. To celebrate this journey together, we
+            are delighted to invite our most dedicated partners aboard our
+            newly acquired luxury catamaran for an unforgettable sailing
+            experience in the Mediterranean.
+          </p>
+          <Link
+            href="/investors/sailing"
+            className={cn(buttonVariants({ size: "lg" }), "mt-6")}
+          >
+            Find out more
+          </Link>
         </div>
-      </div>
-    </MaxWidthWrapper>
+      </RevealOnScroll>
+    </SectionWrapper>
   );
 }
