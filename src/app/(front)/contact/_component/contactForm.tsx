@@ -49,7 +49,7 @@ const ContactForm = () => {
             name="firstName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="font-semibold text-white">
+                <FormLabel className="font-semibold text-brand-900">
                   First Name *
                 </FormLabel>
                 <FormControl>
@@ -66,7 +66,7 @@ const ContactForm = () => {
             name="lastName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="font-semibold text-white">
+                <FormLabel className="font-semibold text-brand-900">
                   Last Name *
                 </FormLabel>
                 <FormControl>
@@ -83,7 +83,7 @@ const ContactForm = () => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="font-semibold text-white">
+                <FormLabel className="font-semibold text-brand-900">
                   Email *
                 </FormLabel>
                 <FormControl>
@@ -100,7 +100,7 @@ const ContactForm = () => {
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="font-semibold text-white">
+                <FormLabel className="font-semibold text-brand-900">
                   Phone *
                 </FormLabel>
                 <FormControl>
@@ -117,7 +117,7 @@ const ContactForm = () => {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="font-semibold text-white">
+                <FormLabel className="font-semibold text-brand-900">
                   Message *
                 </FormLabel>
                 <FormControl>
@@ -133,7 +133,7 @@ const ContactForm = () => {
           />
         </div>
         <div className="flex items-center justify-center">
-          <Button disabled className="px-4 py-2 font-bold" type="submit">
+          <Button className="px-8 py-2 font-bold" type="submit">
             Submit
           </Button>
         </div>

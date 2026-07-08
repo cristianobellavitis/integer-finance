@@ -1,68 +1,93 @@
 import Link from "next/link";
 import React from "react";
 
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import ImageOpacity from "@/components/common/ImageOpacity";
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
+import RevealOnScroll from "@/components/common/RevealOnScroll";
+import { SITE } from "@/constants/site";
 import ContactForm from "./_component/ContactFormLoader";
 
 export default function Page() {
   return (
-    <MaxWidthWrapper
-      className="relative max-w-full overflow-hidden bg-cover bg-center md:py-12"
-      style={{ backgroundImage: `url("/images/contact/bg.png")` }}
-    >
-      <ImageOpacity opacity={55} />
-
-      <div className="relative flex h-full flex-col items-center justify-center px-4 py-8 md:py-20">
-        <h1 className="mb-8 text-3xl font-semibold text-white md:text-6xl">
-          Contact us
-        </h1>
-
-        <div className="mb-8 text-center text-white">
-          <div className="mb-6">
-            <p className="mb-2 text-base">
-              Get in touch with Integer Investments for inquiries or support.
-              Our team is here to assist you with all your financial needs. Fill
-              out our contact form or call us directly for immediate assistance.
+    <>
+      <div className="bg-brand-900">
+        <SectionWrapper>
+          <RevealOnScroll>
+            <SectionHeading
+              as="h1"
+              title="Contact us"
+              className="text-white"
+            />
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-brand-300">
+              Get in touch with Integer Finance for inquiries or support. Our
+              team is here to assist you with all your financial needs. Fill
+              out our contact form or call us directly for immediate
+              assistance.
             </p>
-          </div>
+            <div className="mt-6 flex flex-wrap gap-x-8 gap-y-2 text-sm text-brand-300">
+              <a
+                href={`mailto:${SITE.contact.email}`}
+                className="hover:text-white"
+              >
+                {SITE.contact.email}
+              </a>
+              <a
+                href={`tel:${SITE.contact.phone}`}
+                className="hover:text-white"
+              >
+                {SITE.contact.phone}
+              </a>
+              <span>WhatsApp: {SITE.contact.whatsapp}</span>
+            </div>
+          </RevealOnScroll>
+        </SectionWrapper>
+      </div>
 
+      <SectionWrapper className="py-10 md:py-14">
+        <RevealOnScroll className="mx-auto max-w-2xl text-center">
           <div className="mb-6">
-            <h2 className="mb-2 text-2xl font-semibold">Brokers</h2>
-            <p className="mb-2 text-base">
+            <h2 className="font-heading text-xl font-semibold text-brand-900">
+              Brokers
+            </h2>
+            <p className="mt-2 text-base leading-relaxed text-muted-foreground">
               If you would like to join our panel or are looking to finance a
               development for your client, please use the contact form on our{" "}
-              <Link href="/lending-brokers" className="text-blue-500 underline">
+              <Link
+                href="/lending/brokers"
+                className="text-primary underline"
+              >
                 Lending Brokers
               </Link>{" "}
               page.
             </p>
           </div>
 
-          <div className="mb-6">
-            <h2 className="mb-2 text-2xl font-semibold">Developers</h2>
-            <div className="text-base">
-              <p>
-                If you are looking to finance your own development, please use
-                the contact form on our {" "}
-                <Link
-                  href="/lending-customers"
-                  className="text-blue-500 underline"
-                >
-                  Lending Customers
-                </Link>{" "}
-                page.
-              </p>
-              <p className="mt-1">
-                If your query relates to anything else, please complete the form
-                below.
-              </p>
-            </div>{" "}
+          <div>
+            <h2 className="font-heading text-xl font-semibold text-brand-900">
+              Developers
+            </h2>
+            <p className="mt-2 text-base leading-relaxed text-muted-foreground">
+              If you are looking to finance your own development, please use
+              the contact form on our{" "}
+              <Link
+                href="/lending/customers"
+                className="text-primary underline"
+              >
+                Lending Customers
+              </Link>{" "}
+              page.
+            </p>
+            <p className="mt-2 text-base leading-relaxed text-muted-foreground">
+              If your query relates to anything else, please complete the
+              form below.
+            </p>
           </div>
-        </div>
+        </RevealOnScroll>
 
-        <ContactForm />
-      </div>
-    </MaxWidthWrapper>
+        <RevealOnScroll delayMs={150} className="mt-10 flex justify-center">
+          <ContactForm />
+        </RevealOnScroll>
+      </SectionWrapper>
+    </>
   );
 }
