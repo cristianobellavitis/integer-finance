@@ -37,7 +37,7 @@ const HomeCover = () => {
     <div className="relative overflow-hidden bg-brand-900 [clip-path:polygon(0_0,100%_0,100%_88%,0_100%)]">
       <HomeCoverBars />
 
-      <MaxWidthWrapper className="relative py-14 md:py-20">
+      <MaxWidthWrapper className="relative pb-8 pt-12 md:pb-10 md:pt-14">
         <div className="max-w-xl">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-brand-400 motion-safe:animate-fade-up motion-safe:[animation-delay:100ms]">
             Property development finance
