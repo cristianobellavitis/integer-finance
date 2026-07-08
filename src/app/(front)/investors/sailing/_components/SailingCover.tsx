@@ -1,32 +1,33 @@
 import React from "react";
 
-import ImageOpacity from "@/components/common/ImageOpacity";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
+import RevealOnScroll from "@/components/common/RevealOnScroll";
 
 const SailingCover = () => {
   return (
-    <MaxWidthWrapper
-      className="md:py-18 relative max-w-full overflow-hidden bg-cover bg-center py-12 lg:py-24"
+    <div
+      className="relative max-w-full overflow-hidden bg-cover bg-center"
       style={{ backgroundImage: `url("/images/sailing/cover.jpg")` }}
     >
-      <ImageOpacity opacity={50} />
-      <div className="container relative mt-8">
-        <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2">
-          <div>
-            <h1 className="mb-5 text-4xl font-semibold leading-normal tracking-wide text-white lg:text-5xl lg:leading-normal">
-              Exclusive Sailing Experience with Integer Investments
-            </h1>
-            <p className="max-w-xl text-lg font-medium tracking-tight text-white">
-              At Integer Investments, we value the trust and partnership of our
-              investors and clients. To celebrate this journey together, we are
-              delighted to invite our most dedicated partners aboard our newly
-              acquired luxury catamaran for an unforgettable sailing experience
-              in the Mediterranean.
-            </p>
-          </div>
-        </div>
-      </div>
-    </MaxWidthWrapper>
+      <div className="absolute inset-0 bg-brand-900/70" />
+      <SectionWrapper className="relative">
+        <RevealOnScroll className="max-w-2xl">
+          <SectionHeading
+            as="h1"
+            title="Exclusive Sailing Experience with Integer Finance"
+            className="text-white"
+          />
+          <p className="mt-6 text-lg leading-relaxed text-brand-300">
+            At Integer Finance, we value the trust and partnership of our
+            investors and clients. To celebrate this journey together, we are
+            delighted to invite our most dedicated partners aboard our newly
+            acquired luxury catamaran for an unforgettable sailing experience
+            in the Mediterranean.
+          </p>
+        </RevealOnScroll>
+      </SectionWrapper>
+    </div>
   );
 };
 

@@ -1,30 +1,37 @@
 import React from "react";
 
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
+import RevealOnScroll from "@/components/common/RevealOnScroll";
+
+const PERKS = [
+  "Luxurious surroundings aboard our modern catamaran.",
+  "Unique itineraries tailored to the spirit of adventure.",
+  "The opportunity to relax, network, and share in the growth of Integer Finance in a one-of-a-kind setting.",
+];
 
 export default function SailingPartners() {
   return (
-    <MaxWidthWrapper>
-      <div className="my-16 sm:my-8">
-        <div className="my-3 text-center sm:px-12 md:text-left">
-          <h2 className="text-4xl font-bold text-primary">
-            A Thank You to Our Partners
-          </h2>
-          <div className="my-6 text-xl font-semibold text-gray-400">
-            This is not a charter service — it is our way of saying thank you.
-            Our valued capital providers and long-term partners will have the
-            chance to join us on board for selected sails, enjoying:
-            <ul className="mt-4 list-inside list-disc space-y-4">
-              <li>Luxurious surroundings aboard our modern catamaran.</li>
-              <li>Unique itineraries tailored to the spirit of adventure.</li>
-              <li>
-                The opportunity to relax, network, and share in the growth of
-                Integer Investments in a one-of-a-kind setting.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </MaxWidthWrapper>
+    <SectionWrapper className="py-10 md:py-14">
+      <RevealOnScroll>
+        <SectionHeading title="A Thank You to Our Partners" />
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          This is not a charter service &mdash; it is our way of saying
+          thank you. Our valued capital providers and long-term partners
+          will have the chance to join us on board for selected sails,
+          enjoying:
+        </p>
+        <ul className="mt-6 max-w-2xl space-y-3">
+          {PERKS.map((perk, index) => (
+            <li key={index} className="flex items-start">
+              <div className="me-3 mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-primary" />
+              <span className="text-lg leading-relaxed text-muted-foreground">
+                {perk}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </RevealOnScroll>
+    </SectionWrapper>
   );
 }

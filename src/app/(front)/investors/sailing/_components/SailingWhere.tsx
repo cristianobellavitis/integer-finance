@@ -1,24 +1,21 @@
 import React from "react";
 
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
+import RevealOnScroll from "@/components/common/RevealOnScroll";
 
 export default function SailingWhere() {
   return (
-    <MaxWidthWrapper>
-      <div className="my-16 sm:my-8">
-        <div className="mt-3 text-center sm:px-12 md:text-left">
-          <h2 className="text-4xl font-bold text-primary">Where We’ll Sail</h2>
-          <p className="my-6 text-xl font-semibold text-gray-400">
-            From{" "}
-            <span className="font-extrabold">
-              {" "}
-              mid-May to the end of August
-            </span>
-            , we’ll be cruising some of the most stunning coastlines in Europe
-            on a new modern Bali Catsmart catamaran.
-          </p>
-        </div>
-      </div>
-    </MaxWidthWrapper>
+    <SectionWrapper className="py-10 md:py-14">
+      <RevealOnScroll>
+        <SectionHeading title="Where We'll Sail" />
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          From <span className="font-semibold text-brand-900">mid-May to
+          the end of August</span>, we&rsquo;ll be cruising some of the most
+          stunning coastlines in Europe on a new modern Bali Catsmart
+          catamaran.
+        </p>
+      </RevealOnScroll>
+    </SectionWrapper>
   );
 }
