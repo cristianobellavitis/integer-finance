@@ -1,43 +1,37 @@
 import React from "react";
 import Image from "next/image";
 
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
+import RevealOnScroll from "@/components/common/RevealOnScroll";
 
 export default function TeamCommunity() {
   return (
-    <MaxWidthWrapper>
-      <div className="my-20 grid grid-cols-1 items-center gap-6 md:grid-cols-12">
-        <div className="col-span-6">
-          <div className="mx-auto w-full max-w-lg">
-            <Image
-              src="/images/team/community.png"
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: "100%", height: "auto" }}
-              className="rounded-lg"
-              alt=""
-            />
-          </div>
+    <SectionWrapper className="pt-0">
+      <RevealOnScroll className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
+        <div className="md:col-span-5">
+          <Image
+            src="/images/team/community.png"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+            className="rounded-xl border border-border"
+            alt=""
+          />
         </div>
 
-        <div className="col-span-6">
-          <div className="mb-3 flex items-start text-center sm:px-12 md:text-left">
-            <div className="max-w-xl">
-              <h2 className="text-4xl font-bold tracking-tight text-primary">
-                Share Your Passion
-              </h2>
-              <p className="mt-4 text-lg font-semibold leading-relaxed tracking-tight text-gray-400">
-                Join our community of investors dedicated to driving regional
-                growth. Access exclusive resources, reports, and updates to make
-                informed investment decisions. Meet our board, including our
-                Chair, Investor Director, and Executive Directors, who are
-                committed to building better futures.
-              </p>
-            </div>
-          </div>
+        <div className="md:col-span-7">
+          <SectionHeading title="Share Your Passion" />
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            Join our community of investors dedicated to driving regional
+            growth. Access exclusive resources, reports, and updates to make
+            informed investment decisions. Meet our board, including our
+            Chair, Investor Director, and Executive Directors, who are
+            committed to building better futures.
+          </p>
         </div>
-      </div>
-    </MaxWidthWrapper>
+      </RevealOnScroll>
+    </SectionWrapper>
   );
 }
