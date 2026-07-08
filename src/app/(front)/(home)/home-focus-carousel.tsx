@@ -3,7 +3,7 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 
 import BlueprintGraphic, {
@@ -25,19 +25,43 @@ const VARIANTS: BlueprintVariant[] = [
 
 export default function HomeFocusCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  // react-slick's slide transition is a JS-driven inline transform, not a
+  // CSS class, so Tailwind's motion-safe:/motion-reduce: variants can't
+  // reach it - this reads the media query directly and drops the
+  // transition duration to 0 (an instant switch, not a slide) for
+  // prefers-reduced-motion.
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(query.matches);
+    const handleChange = (event: MediaQueryListEvent) =>
+      setReducedMotion(event.matches);
+    query.addEventListener("change", handleChange);
+    return () => query.removeEventListener("change", handleChange);
+  }, []);
 
   const settings = {
     dots: true,
     infinite: true,
-    fade: true,
-    speed: 700,
+    fade: false,
+    speed: reducedMotion ? 0 : 600,
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: true,
     autoplay: true,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+    pauseOnDotsHover: true,
     beforeChange: (_current: number, next: number) => setActiveIndex(next),
-    customPaging: () => <div className="h-3 w-3 rounded-full bg-white" />,
+    customPaging: (i: number) => (
+      <div
+        className={cn(
+          "h-3 w-3 rounded-full transition-colors",
+          i === activeIndex ? "bg-white" : "bg-white/40",
+        )}
+      />
+    ),
     appendDots: (dots: React.ReactNode) => (
       <div
         style={{
