@@ -7,12 +7,12 @@ import RevealOnScroll from "@/components/common/RevealOnScroll";
 
 export default function MissionPromise() {
   return (
-    <SectionWrapper className="pt-0">
+    <SectionWrapper className="pb-16 pt-0 md:pb-20">
       <RevealOnScroll>
         <SectionHeading eyebrow="Our Values" title="This is our promise to you" />
       </RevealOnScroll>
 
-      <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
         {missionPromiseData.map((item, index) => (
           <RevealOnScroll key={index} delayMs={index * 100}>
             <div className="group flex h-full flex-col rounded-xl border border-border bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary hover:shadow-md">

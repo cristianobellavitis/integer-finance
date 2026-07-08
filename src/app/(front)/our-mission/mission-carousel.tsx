@@ -15,7 +15,7 @@ import { missionCarouselData } from "./mission-data";
 
 export default function MissionCarousel() {
   return (
-    <SectionWrapper className="py-14 md:py-16">
+    <SectionWrapper className="py-8 md:py-10">
       <RevealOnScroll>
         <Carousel>
           <CarouselContent>
