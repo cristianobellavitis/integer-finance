@@ -79,7 +79,7 @@ export default function HomeFocusCarousel() {
 
   return (
     <div className="max-w-full overflow-hidden bg-cover bg-center">
-      <div className="relative mt-24">
+      <div className="relative mt-8">
         <Slider {...settings}>
           {focusCarouselData.map((item, index) => {
             const variant = VARIANTS[index % VARIANTS.length];

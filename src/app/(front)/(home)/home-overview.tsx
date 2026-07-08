@@ -7,7 +7,7 @@ import SectionWrapper from "@/components/common/SectionWrapper";
 
 export default function HomeOverview() {
   return (
-    <SectionWrapper>
+    <SectionWrapper className="py-12 md:py-16">
       <div className="grid grid-cols-1 items-stretch gap-10 md:grid-cols-12 md:gap-12">
         <div className="md:col-span-5">
           <BlueprintGraphic variant="grid" className="h-full w-full" />

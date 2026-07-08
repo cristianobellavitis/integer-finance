@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 export default function HomeMission() {
   return (
-    <SectionWrapper>
+    <SectionWrapper className="py-12 md:py-16">
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
         <div className="md:col-span-7">
           <SectionHeading

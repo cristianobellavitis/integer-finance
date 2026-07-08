@@ -72,7 +72,7 @@ export default function HomeRateCalculator() {
   );
 
   return (
-    <SectionWrapper>
+    <SectionWrapper className="py-12 md:py-16">
       <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16">
         <div>
           <SectionHeading title="Size your deal" />
