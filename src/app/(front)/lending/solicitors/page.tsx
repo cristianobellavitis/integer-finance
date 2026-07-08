@@ -14,13 +14,13 @@ const page = () => {
 
       <SolicitorsSolutions />
 
-      <div className="mb-6 flex justify-center">
+      <div className="flex justify-center pb-10 md:pb-14">
         <iframe
           width={560 * 1.5}
           height={315 * 1.5}
           src="https://www.youtube.com/embed/zF9mRXLZhDY?si=LTPmKkAJmj9sO9uA"
           title="YouTube video player"
-          // frameBorder="0"
+          className="rounded-xl border border-border"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
