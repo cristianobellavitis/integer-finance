@@ -24,7 +24,7 @@ export const financeSolutionsData = [
   {
     title: "Commercial Development Finance",
     desc: [
-      "Integer Investments offers short-term commercial development finance solutions tailored for real estate investors and developers. Our lending products support the redevelopment, or renovation of commercial properties, addressing the demand for high-quality commercial spaces in key communities.",
+      "Integer Finance offers short-term commercial development finance solutions tailored for real estate investors and developers. Our lending products support the redevelopment, or renovation of commercial properties, addressing the demand for high-quality commercial spaces in key communities.",
     ],
     href: "/finance/commercial-finance",
   },

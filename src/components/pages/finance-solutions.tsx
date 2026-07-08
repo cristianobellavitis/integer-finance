@@ -3,50 +3,47 @@ import Link from "next/link";
 
 import { financeSolutionsData } from "./finance-solutions-data";
 import { buttonVariants } from "@/components/ui/button";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import { cn } from "@/lib/utils";
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
+import RevealOnScroll from "@/components/common/RevealOnScroll";
 
 export default function FinanceSolutions() {
   return (
-    <MaxWidthWrapper className="my-12">
-      <div className="grid grid-cols-1 pb-6 text-center">
-        <div className="text-center">
-          <h3
-            className="mb-4 text-5xl font-semibold leading-normal text-primary"
-            id="brokers-finance-solutions"
-          >
-            FINANCE SOLUTIONS
-          </h3>
+    <SectionWrapper className="pt-0">
+      <div id="brokers-finance-solutions">
+        <RevealOnScroll>
+          <SectionHeading align="center" title="Finance Solutions" />
+        </RevealOnScroll>
+
+        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {financeSolutionsData.map((item, index) => (
+            <RevealOnScroll key={index} delayMs={index * 100}>
+              <div className="group flex h-full flex-col rounded-xl border border-border bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary hover:shadow-md">
+                <h6 className="font-heading text-lg font-semibold text-brand-900">
+                  {item.title}
+                </h6>
+                <div className="mt-2 flex-grow space-y-3">
+                  {item.desc.map((paragraph, pIndex) => (
+                    <p
+                      key={pIndex}
+                      className="text-base leading-relaxed text-muted-foreground"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+                <Link
+                  href={item.href}
+                  className={cn(buttonVariants(), "mt-6 self-start")}
+                >
+                  Learn More
+                </Link>
+              </div>
+            </RevealOnScroll>
+          ))}
         </div>
       </div>
-
-      <div className="mx-2 mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:mx-40">
-        {financeSolutionsData.map((item, index) => (
-          <div
-            key={index}
-            className="relative flex h-full flex-col overflow-hidden rounded-md bg-white p-6 shadow dark:bg-gray-900 dark:shadow-gray-700"
-          >
-            {/* <item.icon className="h-12 w-12 text-primary" /> */}
-
-            <div className="content z-1 relative mt-2 flex-grow">
-              <h6 className="title text-2xl font-semibold text-primary">
-                {item.title}
-              </h6>
-              <p className="mt-3 text-lg font-semibold tracking-tight text-gray-400">
-                {item.desc}
-              </p>
-            </div>
-
-            <Link
-              href={item.href}
-              className={buttonVariants({
-                className: "mt-6 max-w-full lg:mt-12 lg:max-w-36",
-              })}
-            >
-              Learn More
-            </Link>
-          </div>
-        ))}
-      </div>
-    </MaxWidthWrapper>
+    </SectionWrapper>
   );
 }
