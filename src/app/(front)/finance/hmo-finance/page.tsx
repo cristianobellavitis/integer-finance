@@ -103,11 +103,8 @@ const Page = () => {
 
       <SectionWrapper className="pt-0">
         <RevealOnScroll>
-          <SectionHeading
-            align="center"
-            title="The Right Solution for HMO Conversion Finance"
-          />
-          <p className="mx-auto mt-4 max-w-2xl text-center text-lg leading-relaxed text-muted-foreground">
+          <SectionHeading title="The Right Solution for HMO Conversion Finance" />
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             Our HMO conversion loans are designed specifically for real
             estate investors aiming to convert properties into Houses in
             Multiple Occupation. These tailored finance solutions provide

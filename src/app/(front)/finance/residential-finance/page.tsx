@@ -108,11 +108,8 @@ const Page = () => {
 
       <SectionWrapper className="pt-0">
         <RevealOnScroll>
-          <SectionHeading
-            align="center"
-            title="The Right Solution for Short-Term Secured Finance"
-          />
-          <p className="mx-auto mt-4 max-w-2xl text-center text-lg leading-relaxed text-muted-foreground">
+          <SectionHeading title="The Right Solution for Short-Term Secured Finance" />
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             Our residential bridging products cater to a range of investment
             properties, offering flexible funding solutions for various
             needs. Whether you require financing for a purchase,

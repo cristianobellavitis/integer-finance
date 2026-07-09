@@ -25,7 +25,7 @@ export default function FinanceSolutionsGrid({
   return (
     <SectionWrapper className="pt-0">
       <RevealOnScroll>
-        <SectionHeading align="center" title={heading} />
+        <SectionHeading title={heading} />
       </RevealOnScroll>
 
       <div
