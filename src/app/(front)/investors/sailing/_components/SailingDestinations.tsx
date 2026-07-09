@@ -237,7 +237,7 @@ export default function SailingDestinations() {
                         <button
                           type="button"
                           onClick={() => setOpenVideoId(item.videoId)}
-                          className="mt-4 inline-flex items-center gap-2 self-start text-sm font-semibold text-primary hover:underline"
+                          className="-my-3 mt-1 inline-flex items-center gap-2 self-start py-3 text-sm font-semibold text-primary hover:underline"
                         >
                           <Play className="h-4 w-4 fill-current" />
                           Watch the video

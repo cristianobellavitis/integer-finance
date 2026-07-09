@@ -13,12 +13,19 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 212 38% 48%;
+    /* Darkened from 48% to 47% lightness - white button text on the
+       original measured ~4.44:1, just under WCAG AA's 4.5:1. 47%
+       measures ~4.58:1. A one-point HSL lightness change, imperceptible
+       visually. */
+    --primary: 212 38% 47%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 3% 75%;
     --secondary-foreground: 212 38% 48%;
     --muted: 210 3% 75%;
-    --muted-foreground: 216 2% 49%;
+    /* Darkened from 49% to 44% lightness - the original measured ~4.19:1
+       contrast against white body backgrounds, just under WCAG AA's 4.5:1
+       minimum for normal-size text. 44% measures ~4.97:1. */
+    --muted-foreground: 216 2% 44%;
     --accent: 210 3% 75%;
     --accent-foreground: 212 38% 48%;
     --destructive: 0 84.2% 60.2%;

@@ -229,12 +229,12 @@ export default function HomeRateCalculator() {
         <div className="rounded-[10px] bg-brand-900 p-8 text-white md:p-10">
           {quote.status === "over-max" ? (
             <>
-              <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-400">
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-200">
                 Your indicative quote
               </p>
               <p className="mt-3 text-2xl font-medium text-white">
                 {quote.ltvPercent}%
-                <span className="ml-2 text-[11px] font-medium uppercase tracking-wider text-brand-400">
+                <span className="ml-2 text-[11px] font-medium uppercase tracking-wider text-brand-200">
                   Loan to value
                 </span>
               </p>
@@ -247,12 +247,12 @@ export default function HomeRateCalculator() {
             </>
           ) : quote.status === "needs-repeat-borrower" ? (
             <>
-              <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-400">
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-200">
                 Your indicative quote
               </p>
               <p className="mt-3 text-2xl font-medium text-white">
                 {quote.ltvPercent}%
-                <span className="ml-2 text-[11px] font-medium uppercase tracking-wider text-brand-400">
+                <span className="ml-2 text-[11px] font-medium uppercase tracking-wider text-brand-200">
                   Loan to value
                 </span>
               </p>
@@ -265,7 +265,7 @@ export default function HomeRateCalculator() {
             </>
           ) : (
             <>
-              <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-400">
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-200">
                 Your indicative quote
               </p>
               <p className="mt-3 font-heading text-4xl font-semibold md:text-5xl">
@@ -281,7 +281,7 @@ export default function HomeRateCalculator() {
                   <p className="font-heading text-2xl font-semibold text-white">
                     {currency.format(quote.purchaseLoanReceivedDayOne)}
                   </p>
-                  <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-brand-400">
+                  <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-brand-200">
                     Purchase loan received day one
                   </p>
                 </div>
@@ -291,7 +291,7 @@ export default function HomeRateCalculator() {
                     <p className="font-heading text-2xl font-semibold text-white">
                       {currency.format(quote.renovationAmount)}
                     </p>
-                    <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-brand-400">
+                    <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-brand-200">
                       Renovation loan
                     </p>
                   </div>
@@ -301,7 +301,7 @@ export default function HomeRateCalculator() {
                   <p className="font-heading text-2xl font-semibold text-white">
                     {currency.format(quote.monthlyInterestPayment)}
                   </p>
-                  <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-brand-400">
+                  <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-brand-200">
                     Monthly interest payment
                   </p>
                 </div>
@@ -312,7 +312,7 @@ export default function HomeRateCalculator() {
                   <p className="text-2xl font-medium text-white">
                     {quote.ltvPercent}%
                   </p>
-                  <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-brand-400">
+                  <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-brand-200">
                     Loan to value
                   </p>
                 </div>
@@ -320,7 +320,7 @@ export default function HomeRateCalculator() {
                   <p className="text-2xl font-medium text-white">
                     {quote.arrangementFeePercent}%
                   </p>
-                  <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-brand-400">
+                  <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-brand-200">
                     Arrangement fee
                   </p>
                 </div>
@@ -328,14 +328,14 @@ export default function HomeRateCalculator() {
                   <p className="text-2xl font-medium text-white">
                     {quote.exitFeePercent}%
                   </p>
-                  <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-brand-400">
+                  <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-brand-200">
                     Exit fee
                   </p>
                 </div>
               </div>
 
               <div className="mt-8 space-y-1.5 border-t border-white/15 pt-6 text-sm text-brand-100">
-                <p className="mb-2 text-[11px] font-medium uppercase tracking-wider text-brand-400">
+                <p className="mb-2 text-[11px] font-medium uppercase tracking-wider text-brand-200">
                   Fees deducted from day one
                 </p>
                 <div className="flex justify-between">

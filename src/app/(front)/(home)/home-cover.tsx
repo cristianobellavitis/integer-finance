@@ -39,7 +39,7 @@ const HomeCover = () => {
 
       <MaxWidthWrapper className="relative pb-8 pt-12 md:pb-10 md:pt-14">
         <div className="max-w-xl">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-brand-400 motion-safe:animate-fade-up motion-safe:[animation-delay:100ms]">
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-brand-200 motion-safe:animate-fade-up motion-safe:[animation-delay:100ms] md:text-brand-400">
             Property development finance
           </p>
 

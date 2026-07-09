@@ -79,7 +79,7 @@ export default function HomeFocusCarousel() {
 
   return (
     <div className="max-w-full overflow-hidden bg-cover bg-center">
-      <div className="relative mt-6">
+      <div className="relative mt-6 [&_.slick-prev]:!hidden [&_.slick-next]:!hidden md:[&_.slick-prev]:!block md:[&_.slick-next]:!block">
         <Slider {...settings}>
           {focusCarouselData.map((item, index) => {
             const variant = VARIANTS[index % VARIANTS.length];
