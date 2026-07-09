@@ -17,7 +17,7 @@ export default function InvestorsGovernance() {
             sizes="100vw"
             style={{ width: "100%", height: "auto" }}
             className="rounded-xl border border-border"
-            alt=""
+            alt="Team reviewing development plans around a table"
           />
         </div>
 

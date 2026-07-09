@@ -40,7 +40,7 @@ export default function InvestorsCommitment() {
             sizes="100vw"
             style={{ width: "100%", height: "auto" }}
             className="rounded-xl border border-border"
-            alt=""
+            alt="Street signage in a regional UK town centre"
           />
         </div>
       </RevealOnScroll>

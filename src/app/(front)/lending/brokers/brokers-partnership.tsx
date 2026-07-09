@@ -17,7 +17,7 @@ export default function BrokersPartnership() {
             sizes="100vw"
             style={{ width: "100%", height: "auto" }}
             className="rounded-xl border border-border"
-            alt=""
+            alt="Property development site"
           />
         </div>
 
@@ -59,7 +59,7 @@ export default function BrokersPartnership() {
             sizes="100vw"
             style={{ width: "100%", height: "auto" }}
             className="rounded-xl border border-border"
-            alt=""
+            alt="Street signage in a regional UK town"
           />
         </div>
       </RevealOnScroll>
@@ -73,7 +73,7 @@ export default function BrokersPartnership() {
             sizes="100vw"
             style={{ width: "100%", height: "auto" }}
             className="rounded-xl border border-border"
-            alt=""
+            alt="Team collaborating around a table"
           />
         </div>
 

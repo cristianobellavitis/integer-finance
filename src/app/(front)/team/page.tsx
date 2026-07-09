@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 
 import TeamCover from "./team-cover";
 import TeamFuture from "./team-future";
@@ -6,6 +7,13 @@ import TeamFuture from "./team-future";
 import BetterFutures from "@/components/pages/better-futures";
 import TeamCommunity from "./team-community";
 import TeamFounder from "./team-founder";
+
+export const metadata: Metadata = {
+  title: "Our Team",
+  description:
+    "Meet the team of dedicated professionals behind Integer Finance, bringing regional knowledge and property finance expertise to every deal.",
+  alternates: { canonical: "/team" },
+};
 
 function Page() {
   return (

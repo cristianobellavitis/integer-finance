@@ -24,7 +24,7 @@ export default function MissionCarousel() {
                 <div className="overflow-hidden rounded-xl border border-border">
                   <Image
                     src={item.image}
-                    alt=""
+                    alt={item.title}
                     width={500}
                     height={300}
                     className="aspect-[5/3] object-cover"

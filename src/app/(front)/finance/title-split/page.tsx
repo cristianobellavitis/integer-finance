@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { Construction, BrickWall } from "lucide-react";
 
 import {
@@ -15,6 +16,16 @@ import RevealOnScroll from "@/components/common/RevealOnScroll";
 import LendingForm from "@/components/forms/LendingForm";
 import FinanceHero from "../_components/FinanceHero";
 import FinanceSolutionsGrid from "../_components/FinanceSolutionsGrid";
+import FinanceServiceJsonLd from "../_components/FinanceServiceJsonLd";
+
+const PAGE_DESCRIPTION =
+  "Property development and title-splitting loans from £50,000 to £250,000. Rates between 0.75% and 1.1% per month, terms of 4 to 12 months.";
+
+export const metadata: Metadata = {
+  title: "Property Development & Title-Split Loans",
+  description: PAGE_DESCRIPTION,
+  alternates: { canonical: "/finance/title-split" },
+};
 
 const financeData = [
   {
@@ -77,6 +88,12 @@ const bridgingData = [
 const Page = () => {
   return (
     <>
+      <FinanceServiceJsonLd
+        name="Property Development Loans"
+        description={PAGE_DESCRIPTION}
+        path="/finance/title-split"
+      />
+
       <FinanceHero
         title="Property Development Loans"
         description="Targeted at real estate investors, our property development loans offer the financial backing needed to undertake new developments or refurbish existing properties. We provide flexible funding options to help you bring your property visions to life."
@@ -92,7 +109,7 @@ const Page = () => {
               sizes="100vw"
               style={{ width: "100%", height: "auto" }}
               className="rounded-xl border border-border"
-              alt=""
+              alt="Property development site plan"
             />
           </div>
 

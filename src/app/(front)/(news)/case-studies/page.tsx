@@ -1,10 +1,18 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 
 import SectionHeading from "@/components/common/SectionHeading";
 import SectionWrapper from "@/components/common/SectionWrapper";
 import RevealOnScroll from "@/components/common/RevealOnScroll";
+
+// Placeholder content only (fake titles/dates, no real links yet) - keep out
+// of search results until this is populated with real case studies.
+export const metadata: Metadata = {
+  title: "Case Studies",
+  robots: { index: false, follow: false },
+};
 
 const caseStudiesData = [
   {
@@ -74,7 +82,7 @@ const Page = () => {
                     sizes="100vw"
                     style={{ width: "100%", height: "auto" }}
                     className="transition-transform duration-500 group-hover:scale-110"
-                    alt=""
+                    alt={item.title}
                   />
                 </div>
 

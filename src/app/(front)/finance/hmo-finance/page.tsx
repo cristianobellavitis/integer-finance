@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { Construction, FileText } from "lucide-react";
 
 import {
@@ -16,6 +17,16 @@ import RevealOnScroll from "@/components/common/RevealOnScroll";
 import LendingForm from "@/components/forms/LendingForm";
 import FinanceHero from "../_components/FinanceHero";
 import FinanceSolutionsGrid from "../_components/FinanceSolutionsGrid";
+import FinanceServiceJsonLd from "../_components/FinanceServiceJsonLd";
+
+const PAGE_DESCRIPTION =
+  "HMO conversion finance from £50,000 to £250,000. Rates between 0.75% and 1.1% per month, up to 85% LTV, terms of 4 to 12 months.";
+
+export const metadata: Metadata = {
+  title: "HMO Conversion Finance",
+  description: PAGE_DESCRIPTION,
+  alternates: { canonical: "/finance/hmo-finance" },
+};
 
 const financeData = [
   {
@@ -78,6 +89,12 @@ const bridgingData = [
 const Page = () => {
   return (
     <>
+      <FinanceServiceJsonLd
+        name="HMO Conversion Finance"
+        description={PAGE_DESCRIPTION}
+        path="/finance/hmo-finance"
+      />
+
       <FinanceHero
         title="HMO Conversion Finance"
         description="Our HMO conversion loans are designed specifically for real estate investors looking to convert properties into Houses in Multiple Occupation. These tailored finance solutions provide the necessary funds to succeed."
@@ -107,7 +124,7 @@ const Page = () => {
               sizes="100vw"
               style={{ width: "100%", height: "auto" }}
               className="rounded-xl border border-border"
-              alt=""
+              alt="HMO conversion property"
             />
           </div>
 

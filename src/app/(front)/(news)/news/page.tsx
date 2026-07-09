@@ -1,9 +1,17 @@
 import React from "react";
+import type { Metadata } from "next";
 import { Posts } from "../posts";
 import { ReFetch } from "@/components/re-fetch";
 import SectionHeading from "@/components/common/SectionHeading";
 import SectionWrapper from "@/components/common/SectionWrapper";
 import RevealOnScroll from "@/components/common/RevealOnScroll";
+
+export const metadata: Metadata = {
+  title: "News",
+  description:
+    "The latest updates from Integer Finance - initiatives, success stories, and insights into property development and finance.",
+  alternates: { canonical: "/news" },
+};
 
 const Page = async () => {
   return (

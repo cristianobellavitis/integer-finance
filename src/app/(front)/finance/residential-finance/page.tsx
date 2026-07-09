@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { Hammer, Link as LinkIcon, Shovel } from "lucide-react";
 
 import {
@@ -16,6 +17,16 @@ import RevealOnScroll from "@/components/common/RevealOnScroll";
 import LendingForm from "@/components/forms/LendingForm";
 import FinanceHero from "../_components/FinanceHero";
 import FinanceSolutionsGrid from "../_components/FinanceSolutionsGrid";
+import FinanceServiceJsonLd from "../_components/FinanceServiceJsonLd";
+
+const PAGE_DESCRIPTION =
+  "Residential bridging finance from £50,000 to £250,000. Rates from 0.75% per month, up to 85% LTV, terms of 4 to 18 months.";
+
+export const metadata: Metadata = {
+  title: "Residential Bridging Finance",
+  description: PAGE_DESCRIPTION,
+  alternates: { canonical: "/finance/residential-finance" },
+};
 
 const financeData = [
   {
@@ -83,6 +94,12 @@ const bridgingData = [
 const Page = () => {
   return (
     <>
+      <FinanceServiceJsonLd
+        name="Residential Bridging Finance"
+        description={PAGE_DESCRIPTION}
+        path="/finance/residential-finance"
+      />
+
       <FinanceHero
         title="Residential Bridging Finance"
         description="For real estate investors looking to bridge the gap for a new property or development, our residential bridging finance solutions offer the flexibility and support needed to purchase, refinance, improve properties, or make further investments."
@@ -112,7 +129,7 @@ const Page = () => {
               sizes="100vw"
               style={{ width: "100%", height: "auto" }}
               className="rounded-xl border border-border"
-              alt=""
+              alt="Residential property street in the UK"
             />
           </div>
 

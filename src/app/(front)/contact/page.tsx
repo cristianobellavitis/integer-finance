@@ -1,11 +1,19 @@
 import Link from "next/link";
 import React from "react";
+import type { Metadata } from "next";
 
 import SectionHeading from "@/components/common/SectionHeading";
 import SectionWrapper from "@/components/common/SectionWrapper";
 import RevealOnScroll from "@/components/common/RevealOnScroll";
 import { SITE } from "@/constants/site";
 import ContactForm from "./_component/ContactFormLoader";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Get in touch with Integer Finance for inquiries or support. Reach us by email, phone, WhatsApp, or our contact form.",
+  alternates: { canonical: "/contact" },
+};
 
 export default function Page() {
   return (

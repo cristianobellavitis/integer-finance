@@ -17,7 +17,7 @@ export default function SolicitorsFinance() {
             sizes="100vw"
             style={{ width: "100%", height: "auto" }}
             className="rounded-xl border border-border"
-            alt=""
+            alt="Professional reviewing bridging finance paperwork"
           />
         </div>
 

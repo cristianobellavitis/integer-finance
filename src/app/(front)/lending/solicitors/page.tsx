@@ -1,9 +1,17 @@
 import React from "react";
+import type { Metadata } from "next";
 
 import SolicitorsCover from "./solicitors-cover";
 import SolicitorsFinance from "./solicitors-finance";
 import SolicitorsSolutions from "./solicitors-solutions";
 import SolicitorsForm from "./solicitors-form";
+
+export const metadata: Metadata = {
+  title: "For Solicitors",
+  description:
+    "Join our panel of approved solicitors and collaborate with Integer Finance on fast, fully digital bridging finance conveyancing.",
+  alternates: { canonical: "/lending/solicitors" },
+};
 
 const page = () => {
   return (

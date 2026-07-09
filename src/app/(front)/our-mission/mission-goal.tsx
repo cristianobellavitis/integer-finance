@@ -17,7 +17,7 @@ export default function MissionGoal() {
             sizes="100vw"
             style={{ width: "100%", height: "auto" }}
             className="rounded-xl border border-border"
-            alt=""
+            alt="Architect reviewing a property development plan"
           />
         </div>
 

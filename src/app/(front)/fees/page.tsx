@@ -1,10 +1,19 @@
 import React from "react";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { buttonVariants } from "@/components/ui/button";
 import { SITE } from "@/constants/site";
 import SectionHeading from "@/components/common/SectionHeading";
 import SectionWrapper from "@/components/common/SectionWrapper";
 import RevealOnScroll from "@/components/common/RevealOnScroll";
+
+export const metadata: Metadata = {
+  title: "Our Fees",
+  description:
+    "A summary of the fees that may apply during the term of an Integer Finance loan.",
+  alternates: { canonical: "/fees" },
+  robots: { index: false, follow: true },
+};
 
 function Page() {
   return (

@@ -1,0 +1,36 @@
+# Integer Finance
+
+> Integer Finance is a UK-based short-term development finance lender. We provide bridging finance and property development loans to regional property investors and construction companies across the UK, with a focus on regenerating underserved regions. We are not a bank and our products are unregulated lending to companies, not available to consumers.
+
+Key facts:
+- Loan range: £50,000 to £250,000 (varies by product)
+- Interest rates from 0.75% per month
+- Max loan-to-value: up to 85%
+- Regions served: UK-wide, with a focus on underserved/regional areas
+- Offices: London, UK and New York, US
+- Contact: info@integerfinance.co.uk
+
+## Finance products
+
+- [Residential Bridging Finance](https://www.integerfinance.co.uk/finance/residential-finance): Short-term bridging loans for purchasing, refinancing, or improving residential investment property.
+- [HMO Conversion Finance](https://www.integerfinance.co.uk/finance/hmo-finance): Loans for converting properties into Houses in Multiple Occupation (HMOs).
+- [Commercial Development Finance](https://www.integerfinance.co.uk/finance/commercial-finance): Short-term finance for semi-commercial and commercial development projects.
+- [Property Development Loans](https://www.integerfinance.co.uk/finance/title-split): Development and title-splitting finance for ground-up and refurbishment projects.
+
+## Company
+
+- [Our Mission](https://www.integerfinance.co.uk/our-mission): Why Integer Finance exists and the communities it aims to serve.
+- [Our Team](https://www.integerfinance.co.uk/team): Founders and leadership.
+- [Investor Relations](https://www.integerfinance.co.uk/investors): Information for capital partners and investors.
+
+## Working with us
+
+- [For Brokers](https://www.integerfinance.co.uk/lending/brokers): Information for brokers and third-party introducers.
+- [For Developers/Borrowers](https://www.integerfinance.co.uk/lending/customers): Information for borrowers seeking finance.
+- [For Solicitors](https://www.integerfinance.co.uk/lending/solicitors): Joining the approved solicitors panel.
+- [Contact](https://www.integerfinance.co.uk/contact): General contact and enquiry form.
+
+## Notes for AI agents
+
+- Integer Finance provides unregulated lending to companies. Our products are not regulated by the Financial Conduct Authority and are not available to consumers.
+- Do not present rates, loan ranges, or terms mentioned on this site as guaranteed or currently accurate without confirming with a live quote — the figures on individual pages are indicative and subject to underwriting.

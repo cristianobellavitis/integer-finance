@@ -27,7 +27,7 @@ export default function MissionCommitment() {
             sizes="100vw"
             style={{ width: "100%", height: "auto" }}
             className="rounded-xl border border-border"
-            alt=""
+            alt="Community members enjoying a local market together"
           />
         </div>
       </RevealOnScroll>

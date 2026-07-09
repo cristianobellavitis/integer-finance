@@ -1,5 +1,11 @@
 import "@/styles/clerk.css";
+import type { Metadata } from "next";
 import { SignIn } from "@clerk/nextjs";
+
+export const metadata: Metadata = {
+  title: "Sign In",
+  robots: { index: false, follow: false },
+};
 
 // https://clerk.com/docs/components/customization/variables
 export default function Page() {

@@ -30,7 +30,7 @@ export default function InvestorsExecellence() {
             sizes="100vw"
             style={{ width: "100%", height: "auto" }}
             className="rounded-xl border border-border"
-            alt=""
+            alt="Business partners networking at an event"
           />
         </div>
       </RevealOnScroll>

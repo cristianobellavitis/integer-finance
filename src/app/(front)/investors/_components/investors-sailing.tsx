@@ -20,7 +20,7 @@ export default function InvestorsSailing() {
             sizes="100vw"
             style={{ width: "100%", height: "80%" }}
             className="rounded-xl border border-border"
-            alt=""
+            alt="Luxury catamaran sailing in the Mediterranean"
           />
         </div>
 

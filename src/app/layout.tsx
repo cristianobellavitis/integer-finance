@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { Fragment } from "react";
+import type { Metadata } from "next";
 import { Inter as FontSans, Archivo } from "next/font/google";
 
 import Script from "next/script";
@@ -7,6 +8,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
 import { TRPCReactProvider } from "@/trpc/react";
 import TailwindIndicator from "@/components/TailwindIndicator";
+import { SITE } from "@/constants/site";
 
 // TEMP: local preview without real Clerk keys — skips ClerkProvider (and thus
 // ClerkJS loading in the browser) when only the placeholder key from
@@ -27,10 +29,51 @@ const fontArchivo = Archivo({
   variable: "--font-archivo",
 });
 
-export const metadata = {
-  title: "Integer Finance",
-  description: "Bridging finance",
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: `${SITE.name} | Bridging Finance for Property Developers`,
+    template: `%s | ${SITE.name}`,
+  },
+  description: SITE.description,
   icons: [{ rel: "icon", url: "/favicon.ico" }],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    siteName: SITE.name,
+    title: `${SITE.name} | Bridging Finance for Property Developers`,
+    description: SITE.description,
+    url: SITE.url,
+    images: [{ url: "/logo.png" }],
+  },
+  twitter: {
+    card: "summary",
+    title: `${SITE.name} | Bridging Finance for Property Developers`,
+    description: SITE.description,
+    images: ["/logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  name: SITE.name,
+  url: SITE.url,
+  logo: `${SITE.url}/logo.png`,
+  description: SITE.description,
+  email: SITE.contact.email,
+  telephone: SITE.contact.phone,
+  areaServed: "GB",
+  address: [
+    { "@type": "PostalAddress", addressLocality: "London", addressCountry: "GB" },
+    { "@type": "PostalAddress", addressLocality: "New York", addressCountry: "US" },
+  ],
 };
 
 export default function RootLayout({
@@ -50,6 +93,13 @@ export default function RootLayout({
             )}
           >
             <main>{children}</main>
+            <script
+              type="application/ld+json"
+              // eslint-disable-next-line react/no-danger
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(organizationJsonLd),
+              }}
+            />
             <Script
               src="https://www.googletagmanager.com/gtag/js?id=G-N14E35Y12M"
               strategy="afterInteractive"

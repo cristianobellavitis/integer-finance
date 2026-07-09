@@ -1,5 +1,10 @@
 import React from "react";
+import type { Metadata } from "next";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 const Page = () => {
   return (

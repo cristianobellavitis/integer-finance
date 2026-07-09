@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { Construction, BrickWall } from "lucide-react";
 
 import SectionHeading from "@/components/common/SectionHeading";
@@ -8,6 +9,16 @@ import RevealOnScroll from "@/components/common/RevealOnScroll";
 import LendingForm from "@/components/forms/LendingForm";
 import FinanceHero from "../_components/FinanceHero";
 import FinanceSolutionsGrid from "../_components/FinanceSolutionsGrid";
+import FinanceServiceJsonLd from "../_components/FinanceServiceJsonLd";
+
+const PAGE_DESCRIPTION =
+  "Commercial development finance from £150,000 to £250,000. Rates from 11% above BoE base rate, terms up to 24 months.";
+
+export const metadata: Metadata = {
+  title: "Commercial Development Finance",
+  description: PAGE_DESCRIPTION,
+  alternates: { canonical: "/finance/commercial-finance" },
+};
 
 const bullets = [
   "Available for semi-commercial investment properties, our finance solutions cover a range of projects and developments",
@@ -33,6 +44,12 @@ const bridgingData = [
 const Page = () => {
   return (
     <>
+      <FinanceServiceJsonLd
+        name="Commercial Development Finance"
+        description={PAGE_DESCRIPTION}
+        path="/finance/commercial-finance"
+      />
+
       <FinanceHero
         title="Commercial Development Finance"
         description="Integer Finance offers short-term commercial development finance solutions tailored for real estate investors and developers. Our lending products support the redevelopment, or renovation of commercial properties, addressing the demand for high-quality commercial spaces in key communities."
@@ -48,7 +65,7 @@ const Page = () => {
               sizes="100vw"
               style={{ width: "100%", height: "auto" }}
               className="rounded-xl border border-border"
-              alt=""
+              alt="Commercial development property"
             />
           </div>
 
