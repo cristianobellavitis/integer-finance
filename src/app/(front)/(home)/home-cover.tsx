@@ -34,7 +34,7 @@ const STATS: HeroStat[] = [
 
 const HomeCover = () => {
   return (
-    <div className="relative overflow-hidden bg-brand-900 [clip-path:polygon(0_0,100%_0,100%_88%,0_100%)]">
+    <div className="relative overflow-hidden bg-brand-900 md:[clip-path:polygon(0_0,100%_0,100%_88%,0_100%)]">
       <HomeCoverBars />
 
       <MaxWidthWrapper className="relative pb-8 pt-12 md:pb-10 md:pt-14">
@@ -74,7 +74,7 @@ const HomeCover = () => {
             </Link>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-8 motion-safe:animate-fade-up motion-safe:[animation-delay:700ms]">
+          <div className="mt-10 flex flex-wrap gap-x-4 gap-y-4 motion-safe:animate-fade-up motion-safe:[animation-delay:700ms] md:gap-x-8">
             {STATS.map((stat) => (
               <div key={stat.label}>
                 <p className="text-2xl font-medium text-white">
@@ -90,7 +90,7 @@ const HomeCover = () => {
                     </span>
                   )}
                 </p>
-                <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-brand-400">
+                <p className="mt-1 text-xs font-medium uppercase tracking-wide text-brand-200 md:text-[11px] md:tracking-wider md:text-brand-400">
                   {stat.label}
                 </p>
               </div>
