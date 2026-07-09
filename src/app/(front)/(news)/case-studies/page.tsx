@@ -6,13 +6,14 @@ import type { Metadata } from "next";
 import SectionHeading from "@/components/common/SectionHeading";
 import SectionWrapper from "@/components/common/SectionWrapper";
 import RevealOnScroll from "@/components/common/RevealOnScroll";
+import { buildMetadata } from "@/lib/seo";
 
-// Placeholder content only (fake titles/dates, no real links yet) - keep out
-// of search results until this is populated with real case studies.
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Case Studies",
-  robots: { index: false, follow: false },
-};
+  description:
+    "Case studies from Integer Finance - real examples of how we support regional property development and community regeneration across the UK.",
+  path: "/case-studies",
+});
 
 const caseStudiesData = [
   {

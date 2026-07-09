@@ -7,13 +7,14 @@ import SectionWrapper from "@/components/common/SectionWrapper";
 import RevealOnScroll from "@/components/common/RevealOnScroll";
 import { SITE } from "@/constants/site";
 import ContactForm from "./_component/ContactFormLoader";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Contact Us",
   description:
     "Get in touch with Integer Finance for inquiries or support. Reach us by email, phone, WhatsApp, or our contact form.",
-  alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+});
 
 export default function Page() {
   return (

@@ -17,15 +17,16 @@ import LendingForm from "@/components/forms/LendingForm";
 import FinanceHero from "../_components/FinanceHero";
 import FinanceSolutionsGrid from "../_components/FinanceSolutionsGrid";
 import FinanceServiceJsonLd from "../_components/FinanceServiceJsonLd";
+import { buildMetadata } from "@/lib/seo";
 
 const PAGE_DESCRIPTION =
   "Property development and title-splitting loans from £50,000 to £250,000. Rates between 0.75% and 1.1% per month, terms of 4 to 12 months.";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Property Development & Title-Split Loans",
   description: PAGE_DESCRIPTION,
-  alternates: { canonical: "/finance/title-split" },
-};
+  path: "/finance/title-split",
+});
 
 const financeData = [
   {

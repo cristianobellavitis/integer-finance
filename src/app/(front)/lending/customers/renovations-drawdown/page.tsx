@@ -2,13 +2,14 @@ import React from "react";
 import type { Metadata } from "next";
 import CustomerForm from "@/components/common/CustomerForm";
 import { FORM_URLS } from "@/constants/form";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Renovations Drawdown Request",
   description:
     "Existing Integer Finance borrowers: request a renovations drawdown on your loan.",
-  alternates: { canonical: "/lending/customers/renovations-drawdown" },
-};
+  path: "/lending/customers/renovations-drawdown",
+});
 
 function page() {
   return (

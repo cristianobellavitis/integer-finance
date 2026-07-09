@@ -18,6 +18,7 @@ import { urlForImage } from "@/../sanity/lib/image";
 import { getPostConetent, portableComponent } from "../../news-utils";
 import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import { SITE } from "@/constants/site";
+import { buildMetadata } from "@/lib/seo";
 
 import { unstable_cache } from "next/cache";
 
@@ -49,16 +50,16 @@ export async function generateMetadata({
   // @ts-expect-error bypass sanity types
   const imageUrl = post?.mainImage ? urlForImage(post.mainImage) : undefined;
 
-  return {
-    title: post?.title,
+  const base = buildMetadata({
+    title: post?.title ?? "News",
     description,
-    alternates: { canonical: `/news/${params.slug}` },
-    openGraph: {
-      type: "article",
-      title: post?.title,
-      description,
-      images: imageUrl ? [{ url: imageUrl }] : undefined,
-    },
+    path: `/news/${params.slug}`,
+    image: imageUrl,
+  });
+
+  return {
+    ...base,
+    openGraph: { ...base.openGraph, type: "article" },
   };
 }
 

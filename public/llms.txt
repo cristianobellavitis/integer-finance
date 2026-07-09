@@ -22,12 +22,17 @@ Key facts:
 - [Our Mission](https://www.integerfinance.co.uk/our-mission): Why Integer Finance exists and the communities it aims to serve.
 - [Our Team](https://www.integerfinance.co.uk/team): Founders and leadership.
 - [Investor Relations](https://www.integerfinance.co.uk/investors): Information for capital partners and investors.
+- [Sailing with Integer Finance](https://www.integerfinance.co.uk/investors/sailing): An exclusive sailing experience for investors and partners.
+- [News](https://www.integerfinance.co.uk/news): Company news and updates.
+- [Case Studies](https://www.integerfinance.co.uk/case-studies): Examples of projects Integer Finance has supported.
+- [Our Fees](https://www.integerfinance.co.uk/fees): Summary of fees that may apply during a loan term.
 
 ## Working with us
 
 - [For Brokers](https://www.integerfinance.co.uk/lending/brokers): Information for brokers and third-party introducers.
 - [For Developers/Borrowers](https://www.integerfinance.co.uk/lending/customers): Information for borrowers seeking finance.
 - [For Solicitors](https://www.integerfinance.co.uk/lending/solicitors): Joining the approved solicitors panel.
+- [Apply for a Loan](https://www.integerfinance.co.uk/lending/customers/loan-application): Application form for property development finance.
 - [Contact](https://www.integerfinance.co.uk/contact): General contact and enquiry form.
 
 ## Notes for AI agents

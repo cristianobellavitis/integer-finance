@@ -5,13 +5,14 @@ import SailingDestinations from "./_components/SailingDestinations";
 import SailingForm from "./_components/SailingForm";
 import SailingPartners from "./_components/SailingPartners";
 import SailingWhere from "./_components/SailingWhere";
+import { buildMetadata } from "@/lib/seo";
 
-// Private, invite-only investor perk, not a lead-gen/informational page -
-// no reason for this to surface in search results.
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Sailing with Integer Finance",
-  robots: { index: false, follow: false },
-};
+  description:
+    "An exclusive sailing experience for Integer Finance's investors and partners, cruising the Amalfi Coast, Sardinia, and the Sicilian Islands.",
+  path: "/investors/sailing",
+});
 
 const Page = () => {
   return (

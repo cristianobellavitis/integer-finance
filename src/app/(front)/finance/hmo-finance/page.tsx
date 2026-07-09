@@ -18,15 +18,16 @@ import LendingForm from "@/components/forms/LendingForm";
 import FinanceHero from "../_components/FinanceHero";
 import FinanceSolutionsGrid from "../_components/FinanceSolutionsGrid";
 import FinanceServiceJsonLd from "../_components/FinanceServiceJsonLd";
+import { buildMetadata } from "@/lib/seo";
 
 const PAGE_DESCRIPTION =
   "HMO conversion finance from £50,000 to £250,000. Rates between 0.75% and 1.1% per month, up to 85% LTV, terms of 4 to 12 months.";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "HMO Conversion Finance",
   description: PAGE_DESCRIPTION,
-  alternates: { canonical: "/finance/hmo-finance" },
-};
+  path: "/finance/hmo-finance",
+});
 
 const financeData = [
   {

@@ -5,13 +5,14 @@ import { ReFetch } from "@/components/re-fetch";
 import SectionHeading from "@/components/common/SectionHeading";
 import SectionWrapper from "@/components/common/SectionWrapper";
 import RevealOnScroll from "@/components/common/RevealOnScroll";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "News",
   description:
     "The latest updates from Integer Finance - initiatives, success stories, and insights into property development and finance.",
-  alternates: { canonical: "/news" },
-};
+  path: "/news",
+});
 
 const Page = async () => {
   return (

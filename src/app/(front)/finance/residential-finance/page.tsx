@@ -18,15 +18,16 @@ import LendingForm from "@/components/forms/LendingForm";
 import FinanceHero from "../_components/FinanceHero";
 import FinanceSolutionsGrid from "../_components/FinanceSolutionsGrid";
 import FinanceServiceJsonLd from "../_components/FinanceServiceJsonLd";
+import { buildMetadata } from "@/lib/seo";
 
 const PAGE_DESCRIPTION =
   "Residential bridging finance from £50,000 to £250,000. Rates from 0.75% per month, up to 85% LTV, terms of 4 to 18 months.";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Residential Bridging Finance",
   description: PAGE_DESCRIPTION,
-  alternates: { canonical: "/finance/residential-finance" },
-};
+  path: "/finance/residential-finance",
+});
 
 const financeData = [
   {

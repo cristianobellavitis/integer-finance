@@ -5,13 +5,14 @@ import SolicitorsCover from "./solicitors-cover";
 import SolicitorsFinance from "./solicitors-finance";
 import SolicitorsSolutions from "./solicitors-solutions";
 import SolicitorsForm from "./solicitors-form";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "For Solicitors",
   description:
     "Join our panel of approved solicitors and collaborate with Integer Finance on fast, fully digital bridging finance conveyancing.",
-  alternates: { canonical: "/lending/solicitors" },
-};
+  path: "/lending/solicitors",
+});
 
 const page = () => {
   return (

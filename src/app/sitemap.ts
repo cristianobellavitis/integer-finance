@@ -13,15 +13,21 @@ const STATIC_ROUTES: Array<{
   { path: "/our-mission", changeFrequency: "monthly", priority: 0.8 },
   { path: "/team", changeFrequency: "monthly", priority: 0.6 },
   { path: "/investors", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/investors/sailing", changeFrequency: "monthly", priority: 0.4 },
   { path: "/lending/brokers", changeFrequency: "monthly", priority: 0.8 },
   { path: "/lending/customers", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/lending/customers/loan-application", changeFrequency: "yearly", priority: 0.6 },
+  { path: "/lending/customers/loan-repayment", changeFrequency: "yearly", priority: 0.4 },
+  { path: "/lending/customers/renovations-drawdown", changeFrequency: "yearly", priority: 0.4 },
   { path: "/lending/solicitors", changeFrequency: "monthly", priority: 0.6 },
   { path: "/finance/residential-finance", changeFrequency: "monthly", priority: 0.9 },
   { path: "/finance/hmo-finance", changeFrequency: "monthly", priority: 0.9 },
   { path: "/finance/commercial-finance", changeFrequency: "monthly", priority: 0.9 },
   { path: "/finance/title-split", changeFrequency: "monthly", priority: 0.9 },
   { path: "/contact", changeFrequency: "yearly", priority: 0.5 },
+  { path: "/fees", changeFrequency: "yearly", priority: 0.3 },
   { path: "/news", changeFrequency: "weekly", priority: 0.6 },
+  { path: "/case-studies", changeFrequency: "weekly", priority: 0.5 },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

@@ -10,15 +10,16 @@ import LendingForm from "@/components/forms/LendingForm";
 import FinanceHero from "../_components/FinanceHero";
 import FinanceSolutionsGrid from "../_components/FinanceSolutionsGrid";
 import FinanceServiceJsonLd from "../_components/FinanceServiceJsonLd";
+import { buildMetadata } from "@/lib/seo";
 
 const PAGE_DESCRIPTION =
   "Commercial development finance from £150,000 to £250,000. Rates from 11% above BoE base rate, terms up to 24 months.";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Commercial Development Finance",
   description: PAGE_DESCRIPTION,
-  alternates: { canonical: "/finance/commercial-finance" },
-};
+  path: "/finance/commercial-finance",
+});
 
 const bullets = [
   "Available for semi-commercial investment properties, our finance solutions cover a range of projects and developments",

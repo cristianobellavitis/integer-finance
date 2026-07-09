@@ -6,14 +6,14 @@ import { SITE } from "@/constants/site";
 import SectionHeading from "@/components/common/SectionHeading";
 import SectionWrapper from "@/components/common/SectionWrapper";
 import RevealOnScroll from "@/components/common/RevealOnScroll";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Our Fees",
   description:
     "A summary of the fees that may apply during the term of an Integer Finance loan.",
-  alternates: { canonical: "/fees" },
-  robots: { index: false, follow: true },
-};
+  path: "/fees",
+});
 
 function Page() {
   return (
