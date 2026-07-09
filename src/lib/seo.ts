@@ -12,6 +12,8 @@ interface PageMetadataOptions {
   noIndex?: boolean;
 }
 
+const DEFAULT_OG_IMAGE = `${SITE.url}/og-image.png`;
+
 // Next.js merges page-level `metadata` with the parent layout's shallowly -
 // a page that sets `title`/`description` but not `openGraph`/`twitter`
 // silently inherits the ROOT layout's generic OG/Twitter object as-is,
@@ -26,7 +28,11 @@ export function buildMetadata({
   noIndex,
 }: PageMetadataOptions): Metadata {
   const url = `${SITE.url}${path}`;
-  const ogImage = image ?? "/logo.png";
+  // Callers (e.g. news/[slug]) can pass their own image (a Sanity asset URL
+  // of unknown dimensions) - only attach width/height for the known-size
+  // default banner, not for those.
+  const usingDefaultImage = !image;
+  const ogImage = image ?? DEFAULT_OG_IMAGE;
 
   return {
     title,
@@ -38,10 +44,14 @@ export function buildMetadata({
       title,
       description,
       url,
-      images: [{ url: ogImage }],
+      images: [
+        usingDefaultImage
+          ? { url: ogImage, width: 1200, height: 630 }
+          : { url: ogImage },
+      ],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title,
       description,
       images: [ogImage],

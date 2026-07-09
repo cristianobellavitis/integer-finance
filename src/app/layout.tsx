@@ -46,13 +46,13 @@ export const metadata: Metadata = {
     title: `${SITE.name} | Bridging Finance for Property Developers`,
     description: SITE.description,
     url: SITE.url,
-    images: [{ url: "/logo.png" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: `${SITE.name} | Bridging Finance for Property Developers`,
     description: SITE.description,
-    images: ["/logo.png"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
