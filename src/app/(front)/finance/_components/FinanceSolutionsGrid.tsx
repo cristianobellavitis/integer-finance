@@ -1,7 +1,9 @@
 import React from "react";
 import type { LucideIcon } from "lucide-react";
 
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
+import RevealOnScroll from "@/components/common/RevealOnScroll";
 
 export interface FinanceSolutionItem {
   icon: LucideIcon;
@@ -21,40 +23,32 @@ export default function FinanceSolutionsGrid({
   columns,
 }: FinanceSolutionsGridProps) {
   return (
-    <MaxWidthWrapper className="my-12">
-      <div className="grid grid-cols-1 pb-6 text-center">
-        <div className="text-center">
-          <h3 className="mb-4 text-5xl font-semibold leading-normal text-primary">
-            {heading}
-          </h3>
-        </div>
-      </div>
+    <SectionWrapper className="pt-0">
+      <RevealOnScroll>
+        <SectionHeading align="center" title={heading} />
+      </RevealOnScroll>
 
       <div
         className={
           columns === 3
-            ? "mx-2 mt-6 grid grid-cols-1 gap-6 md:grid-cols-3 xl:mx-40"
-            : "mx-2 mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:mx-40"
+            ? "mt-8 grid grid-cols-1 gap-6 md:grid-cols-3"
+            : "mt-8 grid grid-cols-1 gap-6 md:grid-cols-2"
         }
       >
         {items.map((item, index) => (
-          <div
-            key={index}
-            className="relative flex h-full flex-col overflow-hidden rounded-md bg-white p-6 shadow dark:bg-gray-900 dark:shadow-gray-700"
-          >
-            <item.icon className="mb-1 text-primary" />
-
-            <div className="content z-1 relative mt-2 flex-grow">
-              <h6 className="title text-2xl font-semibold text-primary">
+          <RevealOnScroll key={index} delayMs={index * 100}>
+            <div className="group flex h-full flex-col rounded-xl border border-border bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary hover:shadow-md">
+              <item.icon className="h-6 w-6 text-primary" />
+              <h6 className="mt-3 font-heading text-lg font-semibold text-brand-900">
                 {item.title}
               </h6>
-              <p className="mt-3 text-lg font-semibold tracking-tight text-gray-400">
+              <p className="mt-2 text-base leading-relaxed text-muted-foreground">
                 {item.desc}
               </p>
             </div>
-          </div>
+          </RevealOnScroll>
         ))}
       </div>
-    </MaxWidthWrapper>
+    </SectionWrapper>
   );
 }

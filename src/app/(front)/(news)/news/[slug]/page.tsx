@@ -44,7 +44,7 @@ async function Page({ params }: { params: { slug: string } }) {
       <ReFetch ms={900000} />
       <article className="prose prose-gray dark:prose-invert mx-auto max-w-3xl">
         <div className="not-prose mb-6 space-y-4">
-          <h1 className="text-4xl font-extrabold tracking-tight text-primary lg:text-5xl">
+          <h1 className="font-heading text-4xl font-extrabold tracking-tight text-brand-900 lg:text-5xl">
             {post?.title}
           </h1>
           <div className="flex items-center space-x-4 text-sm text-muted-foreground">

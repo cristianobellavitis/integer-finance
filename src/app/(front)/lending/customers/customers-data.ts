@@ -29,6 +29,6 @@ export const customersFinanceSolutionData = [
   {
     icon: Clock,
     title: "Timely Approvals",
-    desc: "At Integer Investments, we understand the urgency of your projects. Our streamlined processes ensure rapid approvals and access to funds, empowering you to seize time-sensitive opportunities and keep your projects on track.",
+    desc: "At Integer Finance, we understand the urgency of your projects. Our streamlined processes ensure rapid approvals and access to funds, empowering you to seize time-sensitive opportunities and keep your projects on track.",
   },
 ];

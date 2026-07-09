@@ -1,9 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-
-// import { buttonVariants } from "@/components/ui/button";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import { Hammer, Link as LinkIcon, Shovel } from "lucide-react";
 
 import {
   Accordion,
@@ -12,6 +10,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
+import RevealOnScroll from "@/components/common/RevealOnScroll";
 import LendingForm from "@/components/forms/LendingForm";
 import FinanceHero from "../_components/FinanceHero";
 import FinanceSolutionsGrid from "../_components/FinanceSolutionsGrid";
@@ -52,7 +53,7 @@ const financeData = [
     content: (
       <>
         Contact us{" "}
-        <Link href="/contact" className="text-blue-400 underline">
+        <Link href="/contact" className="text-primary underline">
           here
         </Link>
         .
@@ -60,8 +61,6 @@ const financeData = [
     ),
   },
 ];
-
-import { Hammer, Link as LinkIcon, Shovel } from "lucide-react";
 
 const bridgingData = [
   {
@@ -84,72 +83,61 @@ const bridgingData = [
 const Page = () => {
   return (
     <>
-      {/* 1 start */}
       <FinanceHero
-        coverImage="/images/residential-finance/cover.png"
         title="Residential Bridging Finance"
         description="For real estate investors looking to bridge the gap for a new property or development, our residential bridging finance solutions offer the flexibility and support needed to purchase, refinance, improve properties, or make further investments."
       />
-      {/* 1 end */}
 
-      {/* 2 start */}
-      <MaxWidthWrapper className="mt-4">
-        <div className="text-center">
-          <h3 className="text-5xl font-semibold leading-normal text-primary">
-            The Right Solution for Short-Term Secured Finance
-          </h3>
-          {/* <h3 className="mb-2 text-2xl font-semibold leading-normal text-gray-400">
-        Building Better Futures
-      </h3> */}
-          <p className="mt-4 px-0 text-center text-lg font-semibold text-gray-400 xl:px-36">
+      <SectionWrapper className="pt-0">
+        <RevealOnScroll>
+          <SectionHeading
+            align="center"
+            title="The Right Solution for Short-Term Secured Finance"
+          />
+          <p className="mx-auto mt-4 max-w-2xl text-center text-lg leading-relaxed text-muted-foreground">
             Our residential bridging products cater to a range of investment
-            properties, offering flexible funding solutions for various needs.
-            Whether you require financing for a purchase, refinancing, property
-            improvements, or unlocking working capital for further investments,
-            we are here to help.
+            properties, offering flexible funding solutions for various
+            needs. Whether you require financing for a purchase,
+            refinancing, property improvements, or unlocking working capital
+            for further investments, we are here to help.
           </p>
-        </div>
+        </RevealOnScroll>
 
-        <div className="mb-2 mt-8 grid grid-cols-1 items-center gap-6 md:grid-cols-12">
-          <div className="relative col-span-6 flex flex-col gap-6">
-            <div className="mx-auto w-full max-w-lg">
-              <Image
-                src="/images/residential-finance/overview.png"
-                width={0}
-                height={0}
-                sizes="100vw"
-                style={{ width: "100%", height: "auto" }}
-                className="rounded-lg"
-                alt=""
-              />
-            </div>
+        <RevealOnScroll className="mt-10 grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
+          <div className="md:col-span-5">
+            <Image
+              src="/images/residential-finance/overview.png"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "100%", height: "auto" }}
+              className="rounded-xl border border-border"
+              alt=""
+            />
           </div>
 
-          <div className="col-span-6 m-6">
+          <div className="md:col-span-7">
             <Accordion type="single" collapsible>
               {financeData.map((item, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="font-bold text-primary">
+                  <AccordionTrigger className="font-heading text-lg font-semibold text-brand-900 hover:no-underline">
                     {item.title}
                   </AccordionTrigger>
-                  <AccordionContent className="text-lg font-semibold text-gray-500">
+                  <AccordionContent className="text-base leading-relaxed text-muted-foreground">
                     {item.content}
                   </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
           </div>
-        </div>
-      </MaxWidthWrapper>
-      {/* 2 end */}
+        </RevealOnScroll>
+      </SectionWrapper>
 
-      {/* 3 start */}
       <FinanceSolutionsGrid
-        heading="FINANCE SOLUTIONS"
+        heading="Finance Solutions"
         items={bridgingData}
         columns={3}
       />
-      {/* 3 end */}
 
       <LendingForm />
     </>

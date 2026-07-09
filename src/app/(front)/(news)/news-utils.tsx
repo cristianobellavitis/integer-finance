@@ -130,7 +130,7 @@ export const portableComponent = {
   },
   marks: {
     em: ({ children }: { children: ReactNode }) => (
-      <em className="font-semibold text-gray-600">{children}</em>
+      <em className="font-semibold text-brand-900">{children}</em>
     ),
     link: ({ value, children }: { value: markDefs; children: ReactNode }) => {
       const target = (value?.href ?? "").startsWith("http")
@@ -143,7 +143,7 @@ export const portableComponent = {
           href={value?.href ?? "#"}
           target={target}
           rel={rel}
-          className="text-blue-500 underline"
+          className="text-primary underline"
         >
           {children}
         </Link>

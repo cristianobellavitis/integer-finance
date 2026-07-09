@@ -15,29 +15,29 @@ export const Post = ({ post }: { post: PostPreview }) => {
   return (
     <Link
       href={`/news/${post.slug.current}`}
-      className="w-full max-w-lg overflow-hidden rounded-lg shadow-md transition-transform duration-500 hover:scale-105"
+      className="group flex h-full w-full max-w-lg flex-col overflow-hidden rounded-xl border border-border bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-primary hover:shadow-md"
     >
       <div className="overflow-hidden">
         <Image
           src={imageUrl}
           width={500}
           height={250}
-          className="h-64 w-full rounded-t-lg object-cover"
+          className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110"
           alt={post.mainImage?.alt ?? "post cover image"}
         />
       </div>
 
-      <div className="flex flex-col rounded-b-lg bg-gray-100 p-8">
-        <div className="title text-xl font-semibold text-primary">
-          {post.title}
-        </div>
-        <div className="title text-sm text-gray-500">
+      <div className="flex flex-grow flex-col p-6">
+        <p className="text-sm text-muted-foreground">
           {formatPostDate(post._updatedAt)}
-        </div>
+        </p>
+        <h3 className="mt-1 font-heading text-xl font-semibold text-brand-900">
+          {post.title}
+        </h3>
         {post.previewText && (
-          <div className="title text-base font-semibold text-gray-500">
+          <p className="mt-2 text-base leading-relaxed text-muted-foreground">
             {truncateString(post.previewText, 150)}
-          </div>
+          </p>
         )}
       </div>
     </Link>

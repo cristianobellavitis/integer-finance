@@ -14,10 +14,12 @@ export default function Page() {
             logoImageUrl: "/logo.png",
           },
           variables: {
-            colorPrimary: "#47759E",
-            colorText: "#47759E",
-            colorTextSecondary: "#696969",
-            // colorBackground: "#D6D6D6",
+            // References the same CSS custom properties as the rest of the
+            // design system (see globals.css) rather than duplicating hex
+            // values here.
+            colorPrimary: "hsl(var(--primary))",
+            colorText: "hsl(var(--primary))",
+            colorTextSecondary: "hsl(var(--muted-foreground))",
             fontSize: "0.9rem",
             fontWeight: { normal: 600, medium: 700, bold: 800 },
           },

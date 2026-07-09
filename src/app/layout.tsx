@@ -28,7 +28,7 @@ const fontArchivo = Archivo({
 });
 
 export const metadata = {
-  title: "Integer Investments",
+  title: "Integer Finance",
   description: "Bridging finance",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };

@@ -24,8 +24,15 @@ const ICON_HEIGHT = 24;
 
 const Logo = ({ className, variant = "default", scale = 1 }: LogoProps) => {
   const isInverted = variant === "inverted";
-  const wordmarkFill = isInverted ? "#FFFFFF" : "#7B7D80";
-  const taglineFill = isInverted ? "rgba(255,255,255,0.7)" : "#BEC0C2";
+  // Referencing the same CSS custom properties the rest of the design
+  // system uses (muted-foreground/background) rather than duplicating
+  // their hex values here, so this stays in sync if those tokens change.
+  const wordmarkFill = isInverted
+    ? "hsl(var(--background))"
+    : "hsl(var(--muted-foreground))";
+  const taglineFill = isInverted
+    ? "hsl(var(--background) / 0.7)"
+    : "hsl(var(--muted-foreground) / 0.65)";
 
   return (
     <Link

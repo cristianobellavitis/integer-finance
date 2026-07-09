@@ -12,13 +12,10 @@ export default function HomeMission() {
     <SectionWrapper>
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
         <div className="md:col-span-7">
-          <SectionHeading
-            as="h1"
-            title="Our regional expertise and dedication will drive significant economic growth."
-          />
+          <SectionHeading title="Our regional expertise and dedication will drive significant economic growth." />
 
           <p className="mb-6 mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            At Integer Investments, we prioritize innovation, value creation,
+            At Integer Finance, we prioritize innovation, value creation,
             and growth in our interactions with customers and communities. We
             actively seek diverse perspectives, promoting a culture that
             encourages new ideas and solutions. Our aim is to create an

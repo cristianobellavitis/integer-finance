@@ -2,7 +2,9 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
+import RevealOnScroll from "@/components/common/RevealOnScroll";
 
 const caseStudiesData = [
   {
@@ -46,67 +48,56 @@ const caseStudiesData = [
 const Page = () => {
   return (
     <>
-      <MaxWidthWrapper className="my-12">
-        <div className="text-center">
-          <h3 className="text-5xl font-semibold leading-normal text-primary">
-            Case Studies
-          </h3>
-          <p className="mt-4 px-0 text-center text-lg font-semibold text-gray-400 xl:px-36">
-            Stay informed with the latest updates from Integer Investments. Read
-            about our latest initiatives, success stories, and insights into the
-            property development and finance sectors. Our case studies highlight
-            how we support regional growth and community regeneration.
+      <SectionWrapper>
+        <RevealOnScroll className="mx-auto max-w-2xl text-center">
+          <SectionHeading align="center" as="h1" title="Case Studies" />
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            Stay informed with the latest updates from Integer Finance. Read
+            about our latest initiatives, success stories, and insights into
+            the property development and finance sectors. Our case studies
+            highlight how we support regional growth and community
+            regeneration.
           </p>
-        </div>
-      </MaxWidthWrapper>
+        </RevealOnScroll>
+      </SectionWrapper>
 
-      <MaxWidthWrapper className="my-12">
-        <div className="grid grid-cols-1 place-items-center gap-x-3 gap-y-6 px-6 md:grid-cols-2 md:px-12 lg:grid-cols-3 lg:px-36">
+      <SectionWrapper className="pt-0">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {caseStudiesData.map((item, index) => (
-            <div
-              className="w-full max-w-lg overflow-hidden rounded-lg shadow-md"
-              key={index}
-            >
-              <div className="overflow-hidden">
-                <Image
-                  src={item.image}
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                  style={{ width: "100%", height: "auto" }}
-                  className="rounded-t-lg duration-500 group-hover:scale-110"
-                  alt=""
-                />
-              </div>
+            <RevealOnScroll key={index} delayMs={index * 60}>
+              <div className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-primary hover:shadow-md">
+                <div className="overflow-hidden">
+                  <Image
+                    src={item.image}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    style={{ width: "100%", height: "auto" }}
+                    className="transition-transform duration-500 group-hover:scale-110"
+                    alt=""
+                  />
+                </div>
 
-              <div className="flex flex-col rounded-b-lg bg-gray-100 p-8">
-                <Link href="" className="title text-sm text-gray-500">
-                  {item.date}
-                </Link>
-                <Link
-                  href=""
-                  className="title text-xl font-semibold text-gray-500"
-                >
-                  {item.title}
-                </Link>
-                <Link
-                  href=""
-                  className="title text-lg font-semibold text-gray-500"
-                >
-                  {item.desc}
-                </Link>
-
-                <div className="mt-4">
-                  <Link href="" className="text-lg text-primary underline">
-                    Read more{" "}
-                    <i className="mdi mdi-chevron-right align-middle"></i>
+                <div className="flex flex-grow flex-col p-6">
+                  <p className="text-sm text-muted-foreground">{item.date}</p>
+                  <h3 className="mt-1 font-heading text-xl font-semibold text-brand-900">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 flex-grow text-base leading-relaxed text-muted-foreground">
+                    {item.desc}
+                  </p>
+                  <Link
+                    href=""
+                    className="mt-4 self-start text-sm font-semibold text-primary hover:underline"
+                  >
+                    Read more &rarr;
                   </Link>
                 </div>
               </div>
-            </div>
+            </RevealOnScroll>
           ))}
         </div>
-      </MaxWidthWrapper>
+      </SectionWrapper>
     </>
   );
 };

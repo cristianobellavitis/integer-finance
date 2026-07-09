@@ -8,7 +8,6 @@ export const founderData = {
   luke: [
     "Started investing in real estate in 2018, built a portfolio worth £2M.",
     "Investments in United Kingdom, including HMOs, Short Term Rentals and BTLs.",
-    // "Head of Business Development at Integer Investments.",
     "1st Class Honours Degree in Business Computing from University of Sunderland.",
   ],
 };

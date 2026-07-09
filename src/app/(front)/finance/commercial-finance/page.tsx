@@ -1,64 +1,13 @@
 import React from "react";
 import Image from "next/image";
+import { Construction, BrickWall } from "lucide-react";
 
-// import { buttonVariants } from "@/components/ui/button";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-
-// import {
-//   Accordion,
-//   AccordionContent,
-//   AccordionItem,
-//   AccordionTrigger,
-// } from "@/components/ui/accordion";
-
+import SectionHeading from "@/components/common/SectionHeading";
+import SectionWrapper from "@/components/common/SectionWrapper";
+import RevealOnScroll from "@/components/common/RevealOnScroll";
 import LendingForm from "@/components/forms/LendingForm";
 import FinanceHero from "../_components/FinanceHero";
 import FinanceSolutionsGrid from "../_components/FinanceSolutionsGrid";
-
-// const financeData = [
-//   {
-//     title: "Loan Range",
-//     content:
-//       "Our property development finance spans from £50,000 to £250,000, suitable for various development projects.",
-//   },
-//   {
-//     title: "Terms",
-//     content: "Available with terms ranging from 4 to 12 months.",
-//   },
-//   {
-//     title: "Interest Rate",
-//     content: "Competitive rates between 0.9% and 1.1% per month.",
-//   },
-//   {
-//     title: "Financing Options",
-//     content:
-//       "Up to 90% LTV (Loan to Value) of the purchase price and renovations, or up to 80% of the market value or GDV (Gross Development Value).",
-//   },
-//   {
-//     title: "Loan Fees",
-//     content: "A fee of 2% to 2.5% of the loan amount. No Other Hidden Fees.",
-//   },
-//   {
-//     title: "Additional Costs",
-//     content: "Legal and inspection fees are charged at cost.",
-//   },
-//   {
-//     title: "Security",
-//     content: "First charge on the property and a personal guarantee.",
-//   },
-//   {
-//     title: "We welcome both experienced and non-experienced borrowers",
-//     content: (
-//       <>
-//         Contact us{" "}
-//         <Link href="/contact" className="text-blue-400 underline">
-//           here
-//         </Link>
-//         .
-//       </>
-//     ),
-//   },
-// ];
 
 const bullets = [
   "Available for semi-commercial investment properties, our finance solutions cover a range of projects and developments",
@@ -67,8 +16,6 @@ const bullets = [
   "Both experienced and non-experienced borrowers welcome",
   "Ranging from £150,000 to £250,000, our commercial development solutions are available for a variety of properties",
 ];
-
-import { Construction, BrickWall } from "lucide-react";
 
 const bridgingData = [
   {
@@ -86,97 +33,46 @@ const bridgingData = [
 const Page = () => {
   return (
     <>
-      {/* 1 start */}
       <FinanceHero
-        coverImage="/images/commercial-finance/cover.png"
         title="Commercial Development Finance"
-        description="Integer Investments offers short-term commercial development finance solutions tailored for real estate investors and developers. Our lending products support the redevelopment, or renovation of commercial properties, addressing the demand for high-quality commercial spaces in key communities."
+        description="Integer Finance offers short-term commercial development finance solutions tailored for real estate investors and developers. Our lending products support the redevelopment, or renovation of commercial properties, addressing the demand for high-quality commercial spaces in key communities."
       />
-      {/* 1 end */}
 
-      {/* 2 start */}
-      {/* <MaxWidthWrapper className="mt-4"> */}
-      {/*   <div className="text-center"> */}
-      {/*   <div className="mb-2 mt-8 grid grid-cols-1 items-center gap-6 md:grid-cols-12"> */}
-      {/*     <div className="relative col-span-6 flex flex-col gap-6"> */}
-      {/*       <div className="mx-auto w-full max-w-lg"> */}
-      {/*         <Image */}
-      {/*           src="/images/commercial-finance/overview.png" */}
-      {/*           width={0} */}
-      {/*           height={0} */}
-      {/*           sizes="100vw" */}
-      {/*           style={{ width: "100%", height: "auto" }} */}
-      {/*           className="rounded-lg" */}
-      {/*           alt="" */}
-      {/*         /> */}
-      {/*       </div> */}
-      {/*     </div> */}
-      {/**/}
-      {/*     <div className="col-span-6 m-6"> */}
-      {/*       <Accordion type="single" collapsible> */}
-      {/*         {financeData.map((item, index) => ( */}
-      {/*           <AccordionItem key={index} value={`item-${index}`}> */}
-      {/*             <AccordionTrigger className="font-bold text-primary"> */}
-      {/*               {item.title} */}
-      {/*             </AccordionTrigger> */}
-      {/*             <AccordionContent className="text-lg font-semibold text-gray-500"> */}
-      {/*               {item.content} */}
-      {/*             </AccordionContent> */}
-      {/*           </AccordionItem> */}
-      {/*         ))} */}
-      {/*       </Accordion> */}
-      {/*     </div> */}
-      {/*   </div> */}
-      {/* </MaxWidthWrapper> */}
+      <SectionWrapper className="pt-0">
+        <RevealOnScroll className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
+          <div className="md:col-span-5">
+            <Image
+              src="/images/commercial-finance/overview.png"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "100%", height: "auto" }}
+              className="rounded-xl border border-border"
+              alt=""
+            />
+          </div>
 
-      <MaxWidthWrapper>
-        <div className="mb-2 mt-2 grid grid-cols-1 items-center gap-6 md:grid-cols-12">
-          <div className="relative col-span-6 flex flex-col gap-6">
-            <div className="mx-auto w-full max-w-lg">
-              <Image
-                src="/images/commercial-finance/overview.png"
-                width={0}
-                height={0}
-                sizes="100vw"
-                style={{ width: "100%", height: "auto" }}
-                className="rounded-lg"
-                alt=""
-              />
+          <div className="md:col-span-7">
+            <SectionHeading title="Find the Right Funding for Your Commercial Project" />
+            <div className="mt-6 space-y-4">
+              {bullets.map((bullet, index) => (
+                <div key={index} className="flex items-start">
+                  <div className="me-3 mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-primary" />
+                  <p className="text-lg leading-relaxed text-muted-foreground">
+                    {bullet}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
+        </RevealOnScroll>
+      </SectionWrapper>
 
-          <div className="col-span-6 m-6">
-            <h6 className="mb-8 text-3xl font-semibold uppercase tracking-tight text-primary">
-              Find the right funding for your commercial project
-            </h6>
-
-            {bullets.map((bullet, index) => (
-              <div key={index} className="mb-6">
-                <div className="mb-3 flex items-start">
-                  <div className="me-3 mt-1.5 flex-shrink-0">
-                    <div className="h-2.5 w-2.5 rounded-full bg-primary"></div>
-                  </div>
-                  <div className="max-w-xl text-gray-400">
-                    <p className="block text-lg font-semibold tracking-tight">
-                      {bullet}
-                    </p>
-                  </div>
-                </div>
-                {index < bullets.length - 1 && <hr className="my-6" />}
-              </div>
-            ))}
-          </div>
-        </div>
-      </MaxWidthWrapper>
-      {/* 2 end */}
-
-      {/* 3 start */}
       <FinanceSolutionsGrid
         heading="Comprehensive Development Finance Solutions"
         items={bridgingData}
         columns={2}
       />
-      {/* 3 end */}
 
       <LendingForm />
     </>
