@@ -29,7 +29,8 @@ const MobileNav = () => {
       <SheetTrigger asChild>
         <Button
           variant="ghost"
-          className="p-2 text-muted-foreground hover:bg-secondary hover:text-foreground"
+          aria-label="Open menu"
+          className="h-11 w-11 p-2 text-muted-foreground hover:bg-secondary hover:text-foreground"
         >
           <Menu className="h-6 w-6" />
         </Button>

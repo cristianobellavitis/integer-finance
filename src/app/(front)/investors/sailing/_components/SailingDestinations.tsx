@@ -115,7 +115,7 @@ function PrevArrow({ onClick }: { onClick?: () => void }) {
       type="button"
       onClick={onClick}
       aria-label="Previous destination"
-      className="absolute left-0 top-1/2 z-10 flex h-10 w-10 -translate-x-4 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-white text-brand-900 shadow-sm transition-colors hover:border-primary hover:bg-brand-900 hover:text-white md:-translate-x-5"
+      className="absolute left-0 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-white text-brand-900 shadow-sm transition-colors hover:border-primary hover:bg-brand-900 hover:text-white md:flex md:-translate-x-5"
     >
       <ChevronLeft className="h-5 w-5" />
     </button>
@@ -128,7 +128,7 @@ function NextArrow({ onClick }: { onClick?: () => void }) {
       type="button"
       onClick={onClick}
       aria-label="Next destination"
-      className="absolute right-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 translate-x-4 items-center justify-center rounded-full border border-border bg-white text-brand-900 shadow-sm transition-colors hover:border-primary hover:bg-brand-900 hover:text-white md:translate-x-5"
+      className="absolute right-0 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-white text-brand-900 shadow-sm transition-colors hover:border-primary hover:bg-brand-900 hover:text-white md:flex md:translate-x-5"
     >
       <ChevronRight className="h-5 w-5" />
     </button>
