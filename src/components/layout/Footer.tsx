@@ -49,17 +49,17 @@ const Footer = () => {
             </h3>
             <ul className="mt-4 space-y-2 text-sm text-brand-200">
               <li>
-                <Link href="#" className="-my-3 inline-block py-3 hover:text-white">
+                <Link href="/terms" className="-my-3 inline-block py-3 hover:text-white">
                   Terms
                 </Link>
               </li>
               <li>
-                <Link href="#" className="-my-3 inline-block py-3 hover:text-white">
+                <Link href="/privacy" className="-my-3 inline-block py-3 hover:text-white">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="-my-3 inline-block py-3 hover:text-white">
+                <Link href="/cookies" className="-my-3 inline-block py-3 hover:text-white">
                   Cookie Policy
                 </Link>
               </li>
