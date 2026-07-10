@@ -16,7 +16,7 @@ export default function HomeNewsletter() {
             className="text-white"
           />
 
-          <div className="mx-auto mt-8 max-w-xl">
+          <div className="mx-auto mt-[70px] max-w-xl">
             <form className="flex space-x-2">
               <Input
                 type="email"
