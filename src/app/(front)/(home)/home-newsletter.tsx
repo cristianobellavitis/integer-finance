@@ -7,7 +7,7 @@ import SectionWrapper from "@/components/common/SectionWrapper";
 
 export default function HomeNewsletter() {
   return (
-    <div className="bg-brand-900 pb-5 pt-0 md:pb-7">
+    <div className="bg-brand-900 pb-5 pt-[38px] md:pb-7">
       <SectionWrapper className="py-0 md:py-0">
         <div className="text-center">
           <SectionHeading
@@ -16,7 +16,7 @@ export default function HomeNewsletter() {
             className="text-white"
           />
 
-          <div className="mx-auto mt-[70px] max-w-xl">
+          <div className="mx-auto mt-8 max-w-xl">
             <form className="flex space-x-2">
               <Input
                 type="email"
