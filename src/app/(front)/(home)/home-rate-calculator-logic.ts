@@ -24,7 +24,7 @@ export const LOAN_MIN = 50_000;
 export const LOAN_MAX = 250_000;
 export const LOAN_STEP = 1_000;
 
-export const VALUE_MIN = 80_000;
+export const VALUE_MIN = 40_000;
 export const VALUE_MAX = 600_000;
 export const VALUE_STEP = 1_000;
 
