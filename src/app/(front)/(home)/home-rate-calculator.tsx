@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 
 import SectionHeading from "@/components/common/SectionHeading";
@@ -36,6 +36,90 @@ const currency = new Intl.NumberFormat("en-GB", {
   currency: "GBP",
   maximumFractionDigits: 0,
 });
+
+function clamp(value: number, min: number, max: number) {
+  return Math.min(max, Math.max(min, value));
+}
+
+interface SliderWithNumberInputProps {
+  id: string;
+  label: string;
+  min: number;
+  max: number;
+  step: number;
+  value: number;
+  onChange: (value: number) => void;
+}
+
+function SliderWithNumberInput({
+  id,
+  label,
+  min,
+  max,
+  step,
+  value,
+  onChange,
+}: SliderWithNumberInputProps) {
+  const [isFocused, setIsFocused] = useState(false);
+  const [rawText, setRawText] = useState(String(value));
+
+  useEffect(() => {
+    if (!isFocused) {
+      setRawText(String(value));
+    }
+  }, [value, isFocused]);
+
+  return (
+    <div>
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <Label htmlFor={id} className="text-sm font-medium text-brand-900">
+          {label}
+        </Label>
+        <input
+          id={id}
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]*"
+          aria-label={label}
+          className="h-9 w-32 rounded-md border border-input bg-white px-3 text-right font-heading text-base font-semibold text-brand-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          value={isFocused ? rawText : currency.format(value)}
+          onFocus={() => {
+            setIsFocused(true);
+            setRawText(String(value));
+          }}
+          onChange={(event) => {
+            const digits = event.target.value.replace(/[^\d]/g, "");
+            setRawText(digits);
+            if (digits !== "") {
+              onChange(clamp(Number(digits), min, max));
+            }
+          }}
+          onBlur={() => {
+            setIsFocused(false);
+            if (rawText === "") {
+              return;
+            }
+            const rounded = Math.round(Number(rawText) / step) * step;
+            onChange(clamp(rounded, min, max));
+          }}
+          onKeyDown={(event) => {
+            if (event.key === "Enter") {
+              event.currentTarget.blur();
+            }
+          }}
+        />
+      </div>
+      <Slider
+        min={min}
+        max={max}
+        step={step}
+        value={[value]}
+        onValueChange={(values) => onChange(values[0] ?? value)}
+        aria-label={label}
+      />
+    </div>
+  );
+}
 
 export default function HomeRateCalculator() {
   const [loanAmount, setLoanAmount] = useState(150_000);
@@ -82,47 +166,25 @@ export default function HomeRateCalculator() {
           </p>
 
           <div className="space-y-7">
-            <div>
-              <div className="mb-3 flex items-center justify-between">
-                <Label className="text-sm font-medium text-brand-900">
-                  Purchase loan amount
-                </Label>
-                <span className="font-heading text-lg font-semibold text-brand-900">
-                  {currency.format(loanAmount)}
-                </span>
-              </div>
-              <Slider
-                min={LOAN_MIN}
-                max={LOAN_MAX}
-                step={LOAN_STEP}
-                value={[loanAmount]}
-                onValueChange={(values) =>
-                  setLoanAmount(values[0] ?? loanAmount)
-                }
-                aria-label="Purchase loan amount"
-              />
-            </div>
+            <SliderWithNumberInput
+              id="loan-amount"
+              label="Purchase loan amount"
+              min={LOAN_MIN}
+              max={LOAN_MAX}
+              step={LOAN_STEP}
+              value={loanAmount}
+              onChange={setLoanAmount}
+            />
 
-            <div>
-              <div className="mb-3 flex items-center justify-between">
-                <Label className="text-sm font-medium text-brand-900">
-                  Purchase price
-                </Label>
-                <span className="font-heading text-lg font-semibold text-brand-900">
-                  {currency.format(propertyValue)}
-                </span>
-              </div>
-              <Slider
-                min={VALUE_MIN}
-                max={VALUE_MAX}
-                step={VALUE_STEP}
-                value={[propertyValue]}
-                onValueChange={(values) =>
-                  setPropertyValue(values[0] ?? propertyValue)
-                }
-                aria-label="Purchase price"
-              />
-            </div>
+            <SliderWithNumberInput
+              id="purchase-price"
+              label="Purchase price"
+              min={VALUE_MIN}
+              max={VALUE_MAX}
+              step={VALUE_STEP}
+              value={propertyValue}
+              onChange={setPropertyValue}
+            />
 
             <div className="rounded-[10px] border border-border p-4">
               <div className="flex items-center justify-between">

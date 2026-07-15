@@ -22,11 +22,11 @@ import { divideRoundHalfUp, formatHundredthsAsPercent } from "@/lib/rate-math";
 
 export const LOAN_MIN = 50_000;
 export const LOAN_MAX = 250_000;
-export const LOAN_STEP = 5_000;
+export const LOAN_STEP = 1_000;
 
 export const VALUE_MIN = 80_000;
 export const VALUE_MAX = 600_000;
-export const VALUE_STEP = 10_000;
+export const VALUE_STEP = 1_000;
 
 export const RENOVATION_MIN = 0;
 export const RENOVATION_MAX = 150_000;
