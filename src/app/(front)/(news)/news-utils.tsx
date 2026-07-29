@@ -11,9 +11,9 @@ import { getImageDimensions } from "@sanity/asset-utils";
 import type { SanityImageSource } from "@sanity/asset-utils";
 
 export const getPostPreviews = async () => {
-  // PREVIEW-SAFE FALLBACK: no real Sanity credentials configured, so skip
-  // the network call and render an empty list rather than failing the
-  // build. Remove this guard once real Sanity keys are set (see sanity/env.ts).
+  // Defensive guard only - sanity/env.ts now hardcodes real project/dataset
+  // fallback defaults, so isSanityConfigured is effectively always true.
+  // Kept in case those defaults are ever deliberately cleared.
   if (!isSanityConfigured) {
     console.warn(
       "Sanity not configured (NEXT_PUBLIC_SANITY_PROJECT_ID/DATASET missing at runtime) - News will render empty.",
@@ -43,9 +43,9 @@ export const getPostPreviews = async () => {
 };
 import { type Post } from "@/../sanity.types";
 export const getPostConetent = async (slug: string) => {
-  // PREVIEW-SAFE FALLBACK: no real Sanity credentials configured, so skip
-  // the network call rather than failing the build. Remove this guard once
-  // real Sanity keys are set (see sanity/env.ts).
+  // Defensive guard only - sanity/env.ts now hardcodes real project/dataset
+  // fallback defaults, so isSanityConfigured is effectively always true.
+  // Kept in case those defaults are ever deliberately cleared.
   if (!isSanityConfigured) {
     console.warn(
       "Sanity not configured (NEXT_PUBLIC_SANITY_PROJECT_ID/DATASET missing at runtime) - post content will render empty.",

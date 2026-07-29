@@ -24,15 +24,14 @@ const ICON_HEIGHT = 24;
 
 const Logo = ({ className, variant = "default", scale = 1 }: LogoProps) => {
   const isInverted = variant === "inverted";
-  // Referencing the same CSS custom properties the rest of the design
-  // system uses (muted-foreground/background) rather than duplicating
-  // their hex values here, so this stays in sync if those tokens change.
-  const wordmarkFill = isInverted
-    ? "hsl(var(--background))"
-    : "hsl(var(--muted-foreground))";
-  const taglineFill = isInverted
-    ? "hsl(var(--background) / 0.7)"
-    : "hsl(var(--muted-foreground) / 0.65)";
+  // Fixed brand greys matching the original Integer wordmark treatment,
+  // rather than the shared muted-foreground token - the logo keeps its own
+  // colors regardless of how that semantic token evolves elsewhere.
+  // INTEGER: medium grey/medium weight. LENDING: a shade lighter and a
+  // lighter weight, so it reads as a delicate secondary line, not a second
+  // heading.
+  const wordmarkFill = isInverted ? "#EAF1F8" : "#8A8C90";
+  const taglineFill = isInverted ? "#93AFD0" : "#B4B6B9";
 
   return (
     <Link
@@ -85,6 +84,7 @@ const Logo = ({ className, variant = "default", scale = 1 }: LogoProps) => {
           x="0"
           y="22"
           fontSize="9"
+          fontWeight="300"
           letterSpacing="4"
           textLength={WORDMARK_WIDTH}
           lengthAdjust="spacing"
