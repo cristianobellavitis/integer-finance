@@ -21,7 +21,7 @@ import FinanceServiceJsonLd from "../_components/FinanceServiceJsonLd";
 import { buildMetadata } from "@/lib/seo";
 
 const PAGE_DESCRIPTION =
-  "Residential bridging finance from £50,000 to £250,000. Rates from 0.75% per month, up to 85% LTV, terms of 4 to 18 months.";
+  "Residential bridging finance from £50,000 to £250,000. Rates from 0.89% per month, up to 85% LTV, terms of 4 to 18 months.";
 
 export const metadata: Metadata = buildMetadata({
   title: "Residential Bridging Finance",
@@ -41,7 +41,7 @@ const financeData = [
   },
   {
     title: "Interest Rate",
-    content: "Competitive rates starting at 0.75% per month.",
+    content: "Competitive rates starting at 0.89% per month.",
   },
   {
     title: "Financing Options",

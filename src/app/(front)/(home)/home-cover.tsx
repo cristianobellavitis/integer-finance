@@ -17,12 +17,9 @@ interface HeroStat {
   label: string;
 }
 
-// Note: the finance pages and the rate calculator both state rates starting
-// around 0.89-0.9% per month, not 0.75%. Using 0.75% as instructed, but
-// flagging the mismatch.
 const STATS: HeroStat[] = [
   {
-    target: 0.75,
+    target: 0.89,
     suffix: "%",
     smallSuffix: "/mo",
     decimals: 2,

@@ -21,7 +21,7 @@ import FinanceServiceJsonLd from "../_components/FinanceServiceJsonLd";
 import { buildMetadata } from "@/lib/seo";
 
 const PAGE_DESCRIPTION =
-  "HMO conversion finance from £50,000 to £250,000. Rates between 0.75% and 1.1% per month, up to 85% LTV, terms of 4 to 12 months.";
+  "HMO conversion finance from £50,000 to £250,000. Rates between 0.89% and 1.1% per month, up to 85% LTV, terms of 4 to 12 months.";
 
 export const metadata: Metadata = buildMetadata({
   title: "HMO Conversion Finance",
@@ -41,7 +41,7 @@ const financeData = [
   },
   {
     title: "Interest Rate",
-    content: "Competitive rates between 0.75% and 1.1% per month.",
+    content: "Competitive rates between 0.89% and 1.1% per month.",
   },
   {
     title: "Financing Options",
