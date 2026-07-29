@@ -7,11 +7,16 @@ import SectionWrapper from "@/components/common/SectionWrapper";
 
 import { unstable_cache } from "next/cache";
 
+// Cache key/tag bumped to "all-posts-v2": the "all-posts" key was cached with
+// an empty result during the first production build (before real Sanity env
+// vars existed), and Vercel's Data Cache persists across deployments — a
+// redeploy alone doesn't bust it, since the key itself never changed. Bumping
+// the key orphans that stale empty entry and forces a fresh fetch.
 const getCachedPosts = unstable_cache(
   async () => (await getPostPreviews()) as PostPreview[],
-  ["all-posts"],
+  ["all-posts-v2"],
   {
-    tags: ["all-posts"],
+    tags: ["all-posts-v2"],
     revalidate: 30,
   },
 );

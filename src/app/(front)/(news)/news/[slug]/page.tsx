@@ -22,12 +22,15 @@ import { buildMetadata } from "@/lib/seo";
 
 import { unstable_cache } from "next/cache";
 
+// Cache key/tag bumped to "post-v2": see posts.tsx for why - the old "post"
+// key may have cached an empty result from before Sanity env vars existed,
+// and Vercel's Data Cache persists across deployments regardless of redeploys.
 const getCachedPostContent = (slug: string) =>
   unstable_cache(
     async () => (await getPostConetent(slug)) as Post,
-    ["post", slug],
+    ["post-v2", slug],
     {
-      tags: ["post", slug],
+      tags: ["post-v2", slug],
       revalidate: 30,
     },
   )();

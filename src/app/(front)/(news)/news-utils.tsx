@@ -14,7 +14,12 @@ export const getPostPreviews = async () => {
   // PREVIEW-SAFE FALLBACK: no real Sanity credentials configured, so skip
   // the network call and render an empty list rather than failing the
   // build. Remove this guard once real Sanity keys are set (see sanity/env.ts).
-  if (!isSanityConfigured) return [];
+  if (!isSanityConfigured) {
+    console.warn(
+      "Sanity not configured (NEXT_PUBLIC_SANITY_PROJECT_ID/DATASET missing at runtime) - News will render empty.",
+    );
+    return [];
+  }
 
   const query = `*[_type == "post" && !(_id in path("drafts.**"))]{
     _id,
@@ -41,7 +46,12 @@ export const getPostConetent = async (slug: string) => {
   // PREVIEW-SAFE FALLBACK: no real Sanity credentials configured, so skip
   // the network call rather than failing the build. Remove this guard once
   // real Sanity keys are set (see sanity/env.ts).
-  if (!isSanityConfigured) return [];
+  if (!isSanityConfigured) {
+    console.warn(
+      "Sanity not configured (NEXT_PUBLIC_SANITY_PROJECT_ID/DATASET missing at runtime) - post content will render empty.",
+    );
+    return [];
+  }
 
   // const query = `*[_type == "post" && !(_id in path("drafts.**")) && slug.current == '${slug}'] {
   //   _id,
