@@ -12,7 +12,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Contact Us",
   description:
-    "Get in touch with Integer Finance for inquiries or support. Reach us by email, phone, WhatsApp, or our contact form.",
+    "Get in touch with Integer Lending for inquiries or support. Reach us by email, phone, WhatsApp, or our contact form.",
   path: "/contact",
 });
 
@@ -28,7 +28,7 @@ export default function Page() {
               className="text-white"
             />
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-brand-300">
-              Get in touch with Integer Finance for inquiries or support. Our
+              Get in touch with Integer Lending for inquiries or support. Our
               team is here to assist you with all your financial needs. Fill
               out our contact form or call us directly for immediate
               assistance.

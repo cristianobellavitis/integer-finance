@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Privacy Policy",
-  description: "How Integer Finance collects, uses, and protects your personal data.",
+  description: "How Integer Lending collects, uses, and protects your personal data.",
   path: "/privacy",
 });
 

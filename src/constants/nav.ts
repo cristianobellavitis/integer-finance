@@ -46,7 +46,7 @@ export const NAV_ITEMS: MainMenuItem[] = [
         href: "/investors",
       },
       {
-        title: "Sailing with Integer Finance",
+        title: "Sailing with Integer Lending",
         href: "/investors/sailing",
       },
     ],

@@ -15,7 +15,7 @@ interface LogoProps {
 
 // Measured rendered width (px) of "INTEGER" at 13px/500/3px letter-spacing in
 // the site's inherited font. Both words are pinned to this exact width via
-// textLength + lengthAdjust="spacing" so INTEGER and FINANCE start and end at
+// textLength + lengthAdjust="spacing" so INTEGER and LENDING start and end at
 // the same x-position, regardless of natural glyph-width differences.
 const WORDMARK_WIDTH = 76.44;
 const WORDMARK_HEIGHT = 24;
@@ -37,7 +37,7 @@ const Logo = ({ className, variant = "default", scale = 1 }: LogoProps) => {
   return (
     <Link
       href="/"
-      aria-label="Integer Finance"
+      aria-label="Integer Lending"
       className={cn("inline-flex items-center gap-2.5", className)}
     >
       <svg
@@ -90,7 +90,7 @@ const Logo = ({ className, variant = "default", scale = 1 }: LogoProps) => {
           lengthAdjust="spacing"
           fill={taglineFill}
         >
-          FINANCE
+          LENDING
         </text>
       </svg>
     </Link>

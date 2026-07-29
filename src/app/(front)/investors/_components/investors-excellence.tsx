@@ -16,7 +16,7 @@ export default function InvestorsExecellence() {
             dedicated to driving change within the property development
             ecosystem. We have secured essential capital through investments
             from high-net-worth individuals, small businesses, and banks.
-            With their support, Integer Finance is well on its way to
+            With their support, Integer Lending is well on its way to
             achieving our ambition of creating better futures and driving
             meaningful change in the communities we serve.
           </p>

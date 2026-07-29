@@ -17,7 +17,7 @@ const InvestorsCover = () => {
               className="text-white"
             />
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-brand-300">
-              Integer Finance is driven by a clear purpose: to build better
+              Integer Lending is driven by a clear purpose: to build better
               futures for communities across the UK that need it the most.
               Our mission is centred around creating meaningful change and
               fostering growth in underserved regions.

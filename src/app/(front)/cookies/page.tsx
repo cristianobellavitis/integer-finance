@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Cookie Policy",
-  description: "How Integer Finance uses cookies and similar technologies on this website.",
+  description: "How Integer Lending uses cookies and similar technologies on this website.",
   path: "/cookies",
 });
 

@@ -8,9 +8,9 @@ import SailingWhere from "./_components/SailingWhere";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Sailing with Integer Finance",
+  title: "Sailing with Integer Lending",
   description:
-    "An exclusive sailing experience for Integer Finance's investors and partners, cruising the Amalfi Coast, Sardinia, and the Sicilian Islands.",
+    "An exclusive sailing experience for Integer Lending's investors and partners, cruising the Amalfi Coast, Sardinia, and the Sicilian Islands.",
   path: "/investors/sailing",
 });
 

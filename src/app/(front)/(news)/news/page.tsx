@@ -10,7 +10,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "News",
   description:
-    "The latest updates from Integer Finance - initiatives, success stories, and insights into property development and finance.",
+    "The latest updates from Integer Lending - initiatives, success stories, and insights into property development and finance.",
   path: "/news",
 });
 
@@ -23,7 +23,7 @@ const Page = async () => {
         <RevealOnScroll className="mx-auto max-w-2xl text-center">
           <SectionHeading align="center" as="h1" title="News" />
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            Stay informed with the latest updates from Integer Finance. Read
+            Stay informed with the latest updates from Integer Lending. Read
             about our latest initiatives, success stories, and insights into
             the property development and finance sectors. Our case studies
             highlight how we support regional growth and community

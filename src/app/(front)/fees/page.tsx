@@ -11,7 +11,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Our Fees",
   description:
-    "A summary of the fees that may apply during the term of an Integer Finance loan.",
+    "A summary of the fees that may apply during the term of an Integer Lending loan.",
   path: "/fees",
 });
 

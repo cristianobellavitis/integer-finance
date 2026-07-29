@@ -7,7 +7,7 @@ import RevealOnScroll from "@/components/common/RevealOnScroll";
 const PERKS = [
   "Luxurious surroundings aboard our modern catamaran.",
   "Unique itineraries tailored to the spirit of adventure.",
-  "The opportunity to relax, network, and share in the growth of Integer Finance in a one-of-a-kind setting.",
+  "The opportunity to relax, network, and share in the growth of Integer Lending in a one-of-a-kind setting.",
 ];
 
 export default function SailingPartners() {

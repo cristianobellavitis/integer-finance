@@ -12,7 +12,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Investor Relations",
   description:
-    "Information for Integer Finance's capital partners and investors, including our governance, regional strategy, and how we're funded.",
+    "Information for Integer Lending's capital partners and investors, including our governance, regional strategy, and how we're funded.",
   path: "/investors",
 });
 

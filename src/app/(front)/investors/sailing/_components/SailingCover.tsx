@@ -15,11 +15,11 @@ const SailingCover = () => {
         <RevealOnScroll className="max-w-2xl">
           <SectionHeading
             as="h1"
-            title="Exclusive Sailing Experience with Integer Finance"
+            title="Exclusive Sailing Experience with Integer Lending"
             className="text-white"
           />
           <p className="mt-6 text-lg leading-relaxed text-brand-300">
-            At Integer Finance, we value the trust and partnership of our
+            At Integer Lending, we value the trust and partnership of our
             investors and clients. To celebrate this journey together, we are
             delighted to invite our most dedicated partners aboard our newly
             acquired luxury catamaran for an unforgettable sailing experience

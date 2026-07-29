@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Apply for a Loan",
   description:
-    "Apply for property development finance from Integer Finance. Fill in the form to get started.",
+    "Apply for property development finance from Integer Lending. Fill in the form to get started.",
   path: "/lending/customers/loan-application",
 });
 

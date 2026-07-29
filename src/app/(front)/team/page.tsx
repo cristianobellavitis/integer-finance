@@ -12,7 +12,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Our Team",
   description:
-    "Meet the team of dedicated professionals behind Integer Finance, bringing regional knowledge and property finance expertise to every deal.",
+    "Meet the team of dedicated professionals behind Integer Lending, bringing regional knowledge and property finance expertise to every deal.",
   path: "/team",
 });
 

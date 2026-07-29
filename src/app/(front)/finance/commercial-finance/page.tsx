@@ -53,7 +53,7 @@ const Page = () => {
 
       <FinanceHero
         title="Commercial Development Finance"
-        description="Integer Finance offers short-term commercial development finance solutions tailored for real estate investors and developers. Our lending products support the redevelopment, or renovation of commercial properties, addressing the demand for high-quality commercial spaces in key communities."
+        description="Integer Lending offers short-term commercial development finance solutions tailored for real estate investors and developers. Our lending products support the redevelopment, or renovation of commercial properties, addressing the demand for high-quality commercial spaces in key communities."
       />
 
       <SectionWrapper className="pt-0">

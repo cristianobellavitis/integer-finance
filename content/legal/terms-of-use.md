@@ -2,17 +2,17 @@
 
 **Last updated: [DATE]**
 
-> **DRAFT FOR REVIEW — NOT LEGAL ADVICE.** These are *website* terms of use, governing use of the site itself. They are NOT the loan/facility terms and conditions that govern an actual lending agreement — those are separate contractual documents that must be drafted and reviewed by a qualified solicitor. The regulatory statements below (unregulated lending, no financial advice, FCA position) are especially important for a property lender and MUST be verified against Integer Finance's actual regulatory status before publication.
+> **DRAFT FOR REVIEW — NOT LEGAL ADVICE.** These are *website* terms of use, governing use of the site itself. They are NOT the loan/facility terms and conditions that govern an actual lending agreement — those are separate contractual documents that must be drafted and reviewed by a qualified solicitor. The regulatory statements below (unregulated lending, no financial advice, FCA position) are especially important for a property lender and MUST be verified against Integer Lending's actual regulatory status before publication.
 
 ## 1. About these terms
 
-These Terms of Use govern your access to and use of the website at [WEBSITE URL] (the "Site"), operated by Integer Finance, a trading name of [FULL LEGAL ENTITY NAME], company number [COMPANY NUMBER], registered office [REGISTERED ADDRESS] ("we", "us", "our").
+These Terms of Use govern your access to and use of the website at [WEBSITE URL] (the "Site"), operated by Integer Lending, a trading name of [FULL LEGAL ENTITY NAME], company number [COMPANY NUMBER], registered office [REGISTERED ADDRESS] ("we", "us", "our").
 
 By using the Site, you agree to these terms. If you do not agree, please do not use the Site.
 
 ## 2. Nature of our services and important notices
 
-- Integer Finance provides short-term property development and bridging finance to [companies / property professionals / businesses] for business purposes. [CONFIRM EXACT LENDING SCOPE.]
+- Integer Lending provides short-term property development and bridging finance to [companies / property professionals / businesses] for business purposes. [CONFIRM EXACT LENDING SCOPE.]
 - **Unregulated lending:** Our loans are provided on an unregulated basis to limited companies and property professionals for business purposes, and are secured against property. Your property may be at risk if a loan is not repaid. [VERIFY THIS STATEMENT AGAINST YOUR ACTUAL REGULATORY POSITION — whether any activities are FCA-regulated, and whether any consumer/individual lending occurs, materially changes what must be said here.]
 - **No financial advice:** Information on the Site is provided for general information only and does not constitute financial, legal, tax, or investment advice, nor a personal recommendation. You should obtain independent professional advice before making any financial decision.
 - **Indicative figures only:** Any rates, loan amounts, LTV bands, fees, or calculator outputs shown on the Site are indicative examples only. They do not constitute an offer of finance, and all facilities are subject to underwriting, valuation, and our full terms. Actual terms may differ.
@@ -28,7 +28,7 @@ You agree to use the Site only for lawful purposes. You must not:
 
 ## 4. Intellectual property
 
-All content on the Site — including text, graphics, logos, the Integer Finance name and branding, and design — is owned by or licensed to us and protected by intellectual property laws. You may view and print content for your own personal, non-commercial use. You may not otherwise copy, reproduce, or exploit it without our prior written permission.
+All content on the Site — including text, graphics, logos, the Integer Lending name and branding, and design — is owned by or licensed to us and protected by intellectual property laws. You may view and print content for your own personal, non-commercial use. You may not otherwise copy, reproduce, or exploit it without our prior written permission.
 
 ## 5. Third-party links and embeds
 
@@ -52,4 +52,4 @@ We may update these terms from time to time. The current version will always be 
 
 ## 10. Contact
 
-Questions about these terms? Email info@integerfinance.co.uk.
+Questions about these terms? Email info@integerlending.co.uk.

@@ -25,9 +25,9 @@ export default function InvestorsSailing() {
         </div>
 
         <div className="md:col-span-7">
-          <SectionHeading title="Sailing with Integer Finance" />
+          <SectionHeading title="Sailing with Integer Lending" />
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            At Integer Finance, we value the trust and partnership of our
+            At Integer Lending, we value the trust and partnership of our
             investors and clients. To celebrate this journey together, we
             are delighted to invite our most dedicated partners aboard our
             newly acquired luxury catamaran for an unforgettable sailing

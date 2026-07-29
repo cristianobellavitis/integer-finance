@@ -10,7 +10,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "For Solicitors",
   description:
-    "Join our panel of approved solicitors and collaborate with Integer Finance on fast, fully digital bridging finance conveyancing.",
+    "Join our panel of approved solicitors and collaborate with Integer Lending on fast, fully digital bridging finance conveyancing.",
   path: "/lending/solicitors",
 });
 

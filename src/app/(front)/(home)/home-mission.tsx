@@ -15,7 +15,7 @@ export default function HomeMission() {
           <SectionHeading title="Our regional expertise and dedication will drive significant economic growth." />
 
           <p className="mb-6 mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            At Integer Finance, we prioritize innovation, value creation,
+            At Integer Lending, we prioritize innovation, value creation,
             and growth in our interactions with customers and communities. We
             actively seek diverse perspectives, promoting a culture that
             encourages new ideas and solutions. Our aim is to create an

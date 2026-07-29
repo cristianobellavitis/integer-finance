@@ -72,7 +72,7 @@ async function Page({ params }: { params: { slug: string } }) {
     return;
   }
 
-  const postUrl = `https://integerinvestments.com/news/${params.slug}`;
+  const postUrl = `${SITE.url}/news/${params.slug}`;
   // @ts-expect-error bypass sanity types
   const imageUrl = post?.mainImage ? urlForImage(post?.mainImage) : "/logo.png";
 

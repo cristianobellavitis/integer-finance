@@ -1,41 +1,41 @@
-# Integer Finance
+# Integer Lending
 
-> Integer Finance is a UK-based short-term development finance lender. We provide bridging finance and property development loans to regional property investors and construction companies across the UK, with a focus on regenerating underserved regions. We are not a bank and our products are unregulated lending to companies, not available to consumers.
+> Integer Lending is a UK-based short-term development finance lender. We provide bridging finance and property development loans to regional property investors and construction companies across the UK, with a focus on regenerating underserved regions. We are not a bank and our products are unregulated lending to companies, not available to consumers.
 
 Key facts:
 - Loan range: £50,000 to £250,000 (varies by product)
-- Interest rates from 0.75% per month
+- Interest rates from 0.89% per month
 - Max loan-to-value: up to 85%
 - Regions served: UK-wide, with a focus on underserved/regional areas
 - Offices: London, UK and New York, US
-- Contact: info@integerfinance.co.uk
+- Contact: info@integerlending.co.uk
 
 ## Finance products
 
-- [Residential Bridging Finance](https://www.integerfinance.co.uk/finance/residential-finance): Short-term bridging loans for purchasing, refinancing, or improving residential investment property.
-- [HMO Conversion Finance](https://www.integerfinance.co.uk/finance/hmo-finance): Loans for converting properties into Houses in Multiple Occupation (HMOs).
-- [Commercial Development Finance](https://www.integerfinance.co.uk/finance/commercial-finance): Short-term finance for semi-commercial and commercial development projects.
-- [Property Development Loans](https://www.integerfinance.co.uk/finance/title-split): Development and title-splitting finance for ground-up and refurbishment projects.
+- [Residential Bridging Finance](https://www.integerlending.co.uk/finance/residential-finance): Short-term bridging loans for purchasing, refinancing, or improving residential investment property.
+- [HMO Conversion Finance](https://www.integerlending.co.uk/finance/hmo-finance): Loans for converting properties into Houses in Multiple Occupation (HMOs).
+- [Commercial Development Finance](https://www.integerlending.co.uk/finance/commercial-finance): Short-term finance for semi-commercial and commercial development projects.
+- [Property Development Loans](https://www.integerlending.co.uk/finance/title-split): Development and title-splitting finance for ground-up and refurbishment projects.
 
 ## Company
 
-- [Our Mission](https://www.integerfinance.co.uk/our-mission): Why Integer Finance exists and the communities it aims to serve.
-- [Our Team](https://www.integerfinance.co.uk/team): Founders and leadership.
-- [Investor Relations](https://www.integerfinance.co.uk/investors): Information for capital partners and investors.
-- [Sailing with Integer Finance](https://www.integerfinance.co.uk/investors/sailing): An exclusive sailing experience for investors and partners.
-- [News](https://www.integerfinance.co.uk/news): Company news and updates.
-- [Case Studies](https://www.integerfinance.co.uk/case-studies): Examples of projects Integer Finance has supported.
-- [Our Fees](https://www.integerfinance.co.uk/fees): Summary of fees that may apply during a loan term.
+- [Our Mission](https://www.integerlending.co.uk/our-mission): Why Integer Lending exists and the communities it aims to serve.
+- [Our Team](https://www.integerlending.co.uk/team): Founders and leadership.
+- [Investor Relations](https://www.integerlending.co.uk/investors): Information for capital partners and investors.
+- [Sailing with Integer Lending](https://www.integerlending.co.uk/investors/sailing): An exclusive sailing experience for investors and partners.
+- [News](https://www.integerlending.co.uk/news): Company news and updates.
+- [Case Studies](https://www.integerlending.co.uk/case-studies): Examples of projects Integer Lending has supported.
+- [Our Fees](https://www.integerlending.co.uk/fees): Summary of fees that may apply during a loan term.
 
 ## Working with us
 
-- [For Brokers](https://www.integerfinance.co.uk/lending/brokers): Information for brokers and third-party introducers.
-- [For Developers/Borrowers](https://www.integerfinance.co.uk/lending/customers): Information for borrowers seeking finance.
-- [For Solicitors](https://www.integerfinance.co.uk/lending/solicitors): Joining the approved solicitors panel.
-- [Apply for a Loan](https://www.integerfinance.co.uk/lending/customers/loan-application): Application form for property development finance.
-- [Contact](https://www.integerfinance.co.uk/contact): General contact and enquiry form.
+- [For Brokers](https://www.integerlending.co.uk/lending/brokers): Information for brokers and third-party introducers.
+- [For Developers/Borrowers](https://www.integerlending.co.uk/lending/customers): Information for borrowers seeking finance.
+- [For Solicitors](https://www.integerlending.co.uk/lending/solicitors): Joining the approved solicitors panel.
+- [Apply for a Loan](https://www.integerlending.co.uk/lending/customers/loan-application): Application form for property development finance.
+- [Contact](https://www.integerlending.co.uk/contact): General contact and enquiry form.
 
 ## Notes for AI agents
 
-- Integer Finance provides unregulated lending to companies. Our products are not regulated by the Financial Conduct Authority and are not available to consumers.
+- Integer Lending provides unregulated lending to companies. Our products are not regulated by the Financial Conduct Authority and are not available to consumers.
 - Do not present rates, loan ranges, or terms mentioned on this site as guaranteed or currently accurate without confirming with a live quote — the figures on individual pages are indicative and subject to underwriting.

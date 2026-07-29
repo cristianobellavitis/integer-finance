@@ -22,7 +22,7 @@ const SolicitorsCover = () => {
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-brand-300">
               Join our panel of approved solicitors and collaborate with us to
               deliver top-notch property finance solutions. Enhance your
-              practice by partnering with Integer Finance, where your
+              practice by partnering with Integer Lending, where your
               expertise will help our clients achieve their real estate goals
               efficiently and effectively.
             </p>

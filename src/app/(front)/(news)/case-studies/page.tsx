@@ -11,7 +11,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Case Studies",
   description:
-    "Case studies from Integer Finance - real examples of how we support regional property development and community regeneration across the UK.",
+    "Case studies from Integer Lending - real examples of how we support regional property development and community regeneration across the UK.",
   path: "/case-studies",
 });
 
@@ -61,7 +61,7 @@ const Page = () => {
         <RevealOnScroll className="mx-auto max-w-2xl text-center">
           <SectionHeading align="center" as="h1" title="Case Studies" />
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            Stay informed with the latest updates from Integer Finance. Read
+            Stay informed with the latest updates from Integer Lending. Read
             about our latest initiatives, success stories, and insights into
             the property development and finance sectors. Our case studies
             highlight how we support regional growth and community

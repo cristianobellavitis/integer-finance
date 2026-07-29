@@ -12,7 +12,7 @@ export default function SolicitorsForm() {
         <SectionHeading
           align="center"
           size="lg"
-          title="Integer Finance has a panel of solicitors who are approved to act
+          title="Integer Lending has a panel of solicitors who are approved to act
           in the provision of bridge lending. If you're not already an active
           member of the panel and you are looking to apply, please fill in
           the application below."

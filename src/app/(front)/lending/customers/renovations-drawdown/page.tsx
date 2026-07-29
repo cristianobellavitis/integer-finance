@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Renovations Drawdown Request",
   description:
-    "Existing Integer Finance borrowers: request a renovations drawdown on your loan.",
+    "Existing Integer Lending borrowers: request a renovations drawdown on your loan.",
   path: "/lending/customers/renovations-drawdown",
 });
 

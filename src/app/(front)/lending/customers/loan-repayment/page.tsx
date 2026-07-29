@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Loan Repayment",
   description:
-    "Existing Integer Finance borrowers: fill in this form to arrange repayment of your loan.",
+    "Existing Integer Lending borrowers: fill in this form to arrange repayment of your loan.",
   path: "/lending/customers/loan-repayment",
 });
 

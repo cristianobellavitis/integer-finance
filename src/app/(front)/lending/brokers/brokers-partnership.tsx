@@ -80,7 +80,7 @@ export default function BrokersPartnership() {
         <div className="md:col-span-7">
           <SectionHeading title="Rewarding Collaboration" />
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            At Integer Finance, we value our partnerships with brokers and
+            At Integer Lending, we value our partnerships with brokers and
             third-party introducers. We offer generous commissions to reward
             your efforts and commitment. By working closely together, we
             ensure the best lending solutions for clients and build strong,

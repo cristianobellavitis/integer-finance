@@ -18,7 +18,7 @@ const BetterFutures = () => {
             className="text-white"
           />
           <p className="mt-6 text-lg leading-relaxed text-brand-300">
-            Integer Finance is dedicated to creating better futures for
+            Integer Lending is dedicated to creating better futures for
             communities across the UK, particularly those in greatest need,
             supporting real estate developers with the power to dream.
           </p>

@@ -18,7 +18,7 @@ export default function InvestorsCommitment() {
             We take pride in our deep roots in the United Kingdom and
             leverage our regional knowledge and passion to support,
             regenerate, and build the future of our local communities.
-            Integer Finance prioritizes the renewal and growth of
+            Integer Lending prioritizes the renewal and growth of
             communities in need through its lending policy. We offer
             accessible, tailored property development loan products with
             incentives for sustainable, zero-carbon developments and

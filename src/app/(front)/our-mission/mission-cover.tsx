@@ -10,7 +10,7 @@ const MissionCover = () => {
       <RevealOnScroll>
         <SectionHeading as="h1" title="Building Better Futures" />
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          Integer Finance is dedicated to creating better futures for
+          Integer Lending is dedicated to creating better futures for
           communities across the UK, particularly those in greatest need,
           supporting real estate developers with the power to dream.
         </p>

@@ -2,13 +2,13 @@
 
 **Last updated: [DATE]**
 
-> **DRAFT FOR REVIEW — NOT LEGAL ADVICE.** This document is a starting draft prepared to save time. It must be reviewed and approved by a qualified UK solicitor before publication, and tailored to Integer Finance's actual data-processing activities. Placeholders in [SQUARE BRACKETS] must be completed. Particular attention is needed on: cookies/analytics used, third-party processors, data-retention periods, and any automated decision-making (e.g. the online rate calculator / eligibility tools) under Article 22A UK GDPR.
+> **DRAFT FOR REVIEW — NOT LEGAL ADVICE.** This document is a starting draft prepared to save time. It must be reviewed and approved by a qualified UK solicitor before publication, and tailored to Integer Lending's actual data-processing activities. Placeholders in [SQUARE BRACKETS] must be completed. Particular attention is needed on: cookies/analytics used, third-party processors, data-retention periods, and any automated decision-making (e.g. the online rate calculator / eligibility tools) under Article 22A UK GDPR.
 
 ## 1. Who we are
 
-This Privacy Policy explains how Integer Finance ("we", "us", "our") collects, uses, stores and protects your personal data when you use our website [WEBSITE URL] or engage with our services.
+This Privacy Policy explains how Integer Lending ("we", "us", "our") collects, uses, stores and protects your personal data when you use our website [WEBSITE URL] or engage with our services.
 
-Integer Finance is a trading name of [FULL LEGAL ENTITY NAME], a company registered in [England and Wales / jurisdiction] with company number [COMPANY NUMBER], whose registered office is at [REGISTERED ADDRESS].
+Integer Lending is a trading name of [FULL LEGAL ENTITY NAME], a company registered in [England and Wales / jurisdiction] with company number [COMPANY NUMBER], whose registered office is at [REGISTERED ADDRESS].
 
 For the purposes of the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018, the data controller is [FULL LEGAL ENTITY NAME].
 
@@ -18,7 +18,7 @@ We are registered with the Information Commissioner's Office (ICO) under registr
 
 If you have any questions about this policy or how we handle your data, contact us at:
 
-- **Email:** info@integerfinance.co.uk
+- **Email:** info@integerlending.co.uk
 - **Post:** [DATA PROTECTION CONTACT / ADDRESS]
 - **Data protection contact:** [NAME / ROLE, if a DPO or lead is appointed]
 

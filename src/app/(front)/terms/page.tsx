@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Terms of Use",
-  description: "Terms of use for the Integer Finance website.",
+  description: "Terms of use for the Integer Lending website.",
   path: "/terms",
 });
 

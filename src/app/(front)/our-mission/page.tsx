@@ -11,7 +11,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Our Mission",
   description:
-    "Integer Finance is dedicated to creating better futures for communities across the UK, supporting real estate developers with the power to dream.",
+    "Integer Lending is dedicated to creating better futures for communities across the UK, supporting real estate developers with the power to dream.",
   path: "/our-mission",
 });
 

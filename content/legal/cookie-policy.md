@@ -23,7 +23,7 @@ We use cookies to:
 
 | Cookie | Provider | Purpose | Type | Duration |
 |---|---|---|---|---|
-| [name] | Integer Finance | Keeps the site secure / enables core functionality | Strictly necessary | [duration] |
+| [name] | Integer Lending | Keeps the site secure / enables core functionality | Strictly necessary | [duration] |
 | [Clerk session cookie] | Clerk | Authentication for account/dashboard areas | Strictly necessary | [duration] |
 | [analytics cookie] | [e.g. Google/Vercel Analytics] | Measures site usage to improve the service | Analytics | [duration] |
 | [YouTube] | Google | Set when a video embed is loaded | Third-party | [duration] |
@@ -47,4 +47,4 @@ We may update this Cookie Policy from time to time. The current version will alw
 
 ## 7. Contact
 
-Questions about our use of cookies? Email info@integerfinance.co.uk.
+Questions about our use of cookies? Email info@integerlending.co.uk.
