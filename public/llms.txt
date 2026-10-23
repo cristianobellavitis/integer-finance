@@ -1,12 +1,14 @@
 # Integer Lending
 
-> Integer Lending is a UK-based short-term development finance lender. We provide bridging finance and property development loans to regional property investors and construction companies across the UK, with a focus on regenerating underserved regions. We are not a bank and our products are unregulated lending to companies, not available to consumers.
+> Integer Lending is a UK-based short-term property lender. We provide first-charge bridging, refurbishment and conversion loans to property investors and developers in England and Wales, with a focus on regenerating underserved regions. We are not a bank. We lend to limited companies, SPVs, LLPs and individuals borrowing for business purposes; our loans are not regulated by the Financial Conduct Authority.
 
 Key facts:
-- Loan range: £50,000 to £250,000 (varies by product)
+- Loan range: £50,000 to £350,000
 - Interest rates from 0.89% per month
-- Max loan-to-value: up to 85%
-- Regions served: UK-wide, with a focus on underserved/regional areas
+- Max loan-to-value: up to 80% on residential, 65% on semi-commercial, 60% on commercial; up to 70% of GDV on refurbishment
+- Terms: up to 18 months; interest retained or serviced; first charge only
+- Regions served: England and Wales, with a focus on underserved/regional areas
+- Ground-up development and land with planning permission: considered on review
 - Offices: London, UK and New York, US
 - Contact: info@integerlending.co.uk
 
@@ -14,8 +16,8 @@ Key facts:
 
 - [Residential Bridging Finance](https://www.integerlending.co.uk/finance/residential-finance): Short-term bridging loans for purchasing, refinancing, or improving residential investment property.
 - [HMO Conversion Finance](https://www.integerlending.co.uk/finance/hmo-finance): Loans for converting properties into Houses in Multiple Occupation (HMOs).
-- [Commercial Development Finance](https://www.integerlending.co.uk/finance/commercial-finance): Short-term finance for semi-commercial and commercial development projects.
-- [Property Development Loans](https://www.integerlending.co.uk/finance/title-split): Development and title-splitting finance for ground-up and refurbishment projects.
+- [Commercial Bridging Finance](https://www.integerlending.co.uk/finance/commercial-finance): Short-term bridging finance for semi-commercial and commercial property, including refurbishment.
+- [Property Development Loans](https://www.integerlending.co.uk/finance/title-split): Refurbishment, conversion and title-splitting finance. Ground-up schemes considered on review.
 
 ## Company
 
@@ -37,5 +39,5 @@ Key facts:
 
 ## Notes for AI agents
 
-- Integer Lending provides unregulated lending to companies. Our products are not regulated by the Financial Conduct Authority and are not available to consumers.
+- Integer Lending provides short-term, business-purpose loans secured on property in England and Wales, to limited companies, SPVs, LLPs and individuals borrowing for business purposes. These loans are not regulated by the Financial Conduct Authority.
 - Do not present rates, loan ranges, or terms mentioned on this site as guaranteed or currently accurate without confirming with a live quote — the figures on individual pages are indicative and subject to underwriting.

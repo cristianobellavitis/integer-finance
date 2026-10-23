@@ -21,6 +21,9 @@ const WORDMARK_WIDTH = 76.44;
 const WORDMARK_HEIGHT = 24;
 const ICON_WIDTH = 20;
 const ICON_HEIGHT = 24;
+// Space between the bar-mark and the wordmark, measured off the master logo
+// artwork. Scales with the logo, unlike a fixed Tailwind gap.
+const ICON_GAP = 6.8;
 
 const Logo = ({ className, variant = "default", scale = 1 }: LogoProps) => {
   const isInverted = variant === "inverted";
@@ -37,7 +40,8 @@ const Logo = ({ className, variant = "default", scale = 1 }: LogoProps) => {
     <Link
       href="/"
       aria-label="Integer Lending"
-      className={cn("inline-flex items-center gap-2.5", className)}
+      className={cn("inline-flex items-center", className)}
+      style={{ gap: ICON_GAP * scale }}
     >
       <svg
         width={ICON_WIDTH * scale}

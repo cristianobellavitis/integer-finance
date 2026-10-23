@@ -21,7 +21,7 @@ import FinanceServiceJsonLd from "../_components/FinanceServiceJsonLd";
 import { buildMetadata } from "@/lib/seo";
 
 const PAGE_DESCRIPTION =
-  "Residential bridging finance from £50,000 to £250,000. Rates from 0.89% per month, up to 85% LTV, terms of 4 to 18 months.";
+  "Residential bridging finance from £50,000 to £350,000 across England and Wales. Rates from 0.89% per month, up to 80% LTV, terms up to 18 months.";
 
 export const metadata: Metadata = buildMetadata({
   title: "Residential Bridging Finance",
@@ -33,32 +33,32 @@ const financeData = [
   {
     title: "Loan Range",
     content:
-      "Our residential bridging finance spans from £50,000 to £250,000, suitable for diverse development projects.",
+      "Our residential bridging finance spans from £50,000 to £350,000, suitable for a wide range of investment properties.",
   },
   {
     title: "Terms",
-    content: "Available with terms ranging from 4 to 18 months.",
+    content: "Available with terms of up to 18 months.",
   },
   {
     title: "Interest Rate",
-    content: "Competitive rates starting at 0.89% per month.",
+    content: "Competitive rates starting at 0.89% per month. Interest can be retained or serviced.",
   },
   {
     title: "Financing Options",
     content:
-      "Up to 85% LTV (Loan to Value) of the purchase price and renovations, or up to 80% of the market value or GDV (Gross Development Value).",
+      "Up to 80% LTV (Loan to Value), based on the lower of the purchase price and the valuation. On refurbishment projects, up to 70% of the GDV (Gross Development Value), with works funding released in stages.",
   },
   {
     title: "Loan Fees",
-    content: "A fee of 2% to 2.5% of the loan amount. No other hidden fees.",
+    content: "An arrangement fee of 2.25% to 2.35% of the loan, an exit fee of 0.95%, a loan management fee of £695 and a disbursement fee of £295.",
   },
   {
     title: "Additional Costs",
-    content: "Legal and inspection fees are charged at cost.",
+    content: "A legal fee of £500 with dual representation. Valuation and inspection fees are charged at cost.",
   },
   {
     title: "Security",
-    content: "First charge on the property and a personal guarantee.",
+    content: "First legal charge on the property and a personal guarantee. Property must be in England or Wales.",
   },
   {
     title: "We welcome both experienced and non-experienced borrowers",

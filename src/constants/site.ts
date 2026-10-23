@@ -4,7 +4,7 @@ export const SITE = {
   // sitemap.ts, robots.ts, and JSON-LD - update here once if it ever changes.
   url: "https://www.integerlending.co.uk",
   description:
-    "Short-term development finance for regional property investors and construction companies across the UK.",
+    "Short-term bridging and refurbishment finance for property investors and developers across England and Wales.",
   contact: {
     email: "info@integerlending.co.uk",
     phone: "+44 7441395334",

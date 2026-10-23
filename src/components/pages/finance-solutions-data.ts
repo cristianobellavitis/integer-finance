@@ -22,9 +22,9 @@ export const financeSolutionsData = [
     href: "/finance/title-split",
   },
   {
-    title: "Commercial Development Finance",
+    title: "Commercial Bridging Finance",
     desc: [
-      "Integer Lending offers short-term commercial development finance solutions tailored for real estate investors and developers. Our lending products support the redevelopment, or renovation of commercial properties, addressing the demand for high-quality commercial spaces in key communities.",
+      "Integer Lending offers short-term commercial and semi-commercial bridging finance tailored for real estate investors and developers. Our lending products support the purchase, refinance and renovation of commercial properties, addressing the demand for high-quality commercial spaces in key communities.",
     ],
     href: "/finance/commercial-finance",
   },

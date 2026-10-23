@@ -25,8 +25,8 @@ const STATS: HeroStat[] = [
     decimals: 2,
     label: "INTEREST RATES FROM",
   },
-  { target: 250, prefix: "£", suffix: "k", label: "MAX LOAN SIZE" },
-  { target: 85, suffix: "%", label: "MAX LTV" },
+  { target: 350, prefix: "£", suffix: "k", label: "MAX LOAN SIZE" },
+  { target: 80, suffix: "%", label: "MAX LTV" },
 ];
 
 const HomeCover = () => {
@@ -37,7 +37,7 @@ const HomeCover = () => {
       <MaxWidthWrapper className="relative pb-8 pt-12 md:pb-10 md:pt-14">
         <div className="max-w-xl">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-brand-200 motion-safe:animate-fade-up motion-safe:[animation-delay:100ms] md:text-brand-400">
-            Property development finance
+            Bridging &amp; refurbishment finance
           </p>
 
           <h1 className="mb-4 font-heading text-3xl font-medium leading-tight text-white motion-safe:animate-fade-up motion-safe:[animation-delay:250ms] md:text-4xl lg:text-5xl">
@@ -46,8 +46,8 @@ const HomeCover = () => {
           </h1>
 
           <p className="mb-6 max-w-lg text-base leading-relaxed text-brand-100 motion-safe:animate-fade-up motion-safe:[animation-delay:400ms]">
-            Tailored short-term development loans, driven by regional
-            knowledge of the ground you build on.
+            Tailored short-term property loans across England and Wales,
+            driven by regional knowledge of the ground you build on.
           </p>
 
           <div className="flex flex-col gap-3 motion-safe:animate-fade-up motion-safe:[animation-delay:550ms] sm:flex-row">

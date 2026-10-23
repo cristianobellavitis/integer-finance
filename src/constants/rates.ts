@@ -1,5 +1,5 @@
 // Single source of truth for bridging-loan rate/fee figures, for loans
-// under £250,000. The homepage calculator (the only rate calculator on the
+// up to £350,000. The homepage calculator (the only rate calculator on the
 // site) reads from here rather than holding its own copy.
 //
 // Figures below integer thousandths/hundredths-of-a-percent (e.g. 890 means
@@ -7,18 +7,15 @@
 // see src/lib/rate-math.ts for why (binary floating point can misround
 // values like 0.925 at display time).
 
-export const LTV_BANDS = [70, 75, 80, 85] as const;
+export const LTV_BANDS = [70, 75, 80] as const;
 export type LtvBand = (typeof LTV_BANDS)[number];
 
-export const MAX_LTV_PERCENT = 85;
-// Above this, the 85% band requires the repeat-borrower-with-good-history gate.
-export const REPEAT_BORROWER_ONLY_LTV_PERCENT = 80;
+export const MAX_LTV_PERCENT = 80;
 
 export const BASE_RATE_THOUSANDTHS: Record<LtvBand, number> = {
   70: 890,
   75: 900,
   80: 925,
-  85: 1000,
 };
 
 // Integer hundredths-of-a-percent (e.g. 225 means 2.25%).
@@ -26,7 +23,6 @@ export const ARRANGEMENT_FEE_HUNDREDTHS: Record<LtvBand, number> = {
   70: 225,
   75: 235,
   80: 235,
-  85: 250,
 };
 
 // Flat across every band.

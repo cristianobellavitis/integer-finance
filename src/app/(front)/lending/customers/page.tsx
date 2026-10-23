@@ -12,7 +12,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "For Developers",
   description:
-    "Accessible, customized property finance solutions for real estate developers. Locally-made lending decisions from £50,000 to £250,000.",
+    "Accessible, customized property finance solutions for real estate developers. Locally-made lending decisions from £50,000 to £350,000.",
   path: "/lending/customers",
 });
 

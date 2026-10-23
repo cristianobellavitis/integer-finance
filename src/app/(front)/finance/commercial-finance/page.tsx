@@ -13,20 +13,20 @@ import FinanceServiceJsonLd from "../_components/FinanceServiceJsonLd";
 import { buildMetadata } from "@/lib/seo";
 
 const PAGE_DESCRIPTION =
-  "Commercial development finance from £150,000 to £250,000. Rates from 11% above BoE base rate, terms up to 24 months.";
+  "Commercial and semi-commercial bridging finance from £50,000 to £350,000 across England and Wales. Up to 60% LTV on commercial and 65% on semi-commercial, terms up to 18 months.";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Commercial Development Finance",
+  title: "Commercial Bridging Finance",
   description: PAGE_DESCRIPTION,
   path: "/finance/commercial-finance",
 });
 
 const bullets = [
-  "Available for semi-commercial investment properties, our finance solutions cover a range of projects and developments",
-  "With terms up to 24 months",
-  "Rates from 11% above BoE base rate",
-  "Both experienced and non-experienced borrowers welcome",
-  "Ranging from £150,000 to £250,000, our commercial development solutions are available for a variety of properties",
+  "Loans from £50,000 to £350,000 on commercial and semi-commercial property in England and Wales",
+  "Up to 65% LTV on semi-commercial (mixed-use) property and up to 60% on commercial property",
+  "Commercial refurbishment up to 55% of the GDV, with works funding released in stages",
+  "Terms of up to 18 months, with interest retained or serviced",
+  "Priced on application. Both experienced and non-experienced borrowers welcome",
 ];
 
 const bridgingData = [
@@ -37,8 +37,8 @@ const bridgingData = [
   },
   {
     icon: BrickWall,
-    title: "New Development Loans",
-    desc: "Our new development loans offer the financial backing needed for ground-up construction projects. Whether you’re building residential units, commercial spaces, or mixed-use developments, we provide the flexible funding options necessary to turn your blueprints into reality.",
+    title: "Ground-up Development",
+    desc: "Ground-up and new-build schemes are considered on review, as is land with planning permission. Tell us about your project and we will let you know how we can help.",
   },
 ];
 
@@ -46,14 +46,14 @@ const Page = () => {
   return (
     <>
       <FinanceServiceJsonLd
-        name="Commercial Development Finance"
+        name="Commercial Bridging Finance"
         description={PAGE_DESCRIPTION}
         path="/finance/commercial-finance"
       />
 
       <FinanceHero
-        title="Commercial Development Finance"
-        description="Integer Lending offers short-term commercial development finance solutions tailored for real estate investors and developers. Our lending products support the redevelopment, or renovation of commercial properties, addressing the demand for high-quality commercial spaces in key communities."
+        title="Commercial Bridging Finance"
+        description="Integer Lending offers short-term commercial and semi-commercial bridging finance tailored for real estate investors and developers. Our lending products support the purchase, refinance and renovation of commercial properties, addressing the demand for high-quality commercial spaces in key communities."
       />
 
       <SectionWrapper className="pt-0">

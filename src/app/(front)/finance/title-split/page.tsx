@@ -20,7 +20,7 @@ import FinanceServiceJsonLd from "../_components/FinanceServiceJsonLd";
 import { buildMetadata } from "@/lib/seo";
 
 const PAGE_DESCRIPTION =
-  "Property development and title-splitting loans from £50,000 to £250,000. Rates between 0.89% and 1.1% per month, terms of 4 to 12 months.";
+  "Refurbishment, conversion and title-splitting loans from £50,000 to £350,000 across England and Wales. Rates from 0.89% per month, up to 70% of GDV, terms up to 18 months.";
 
 export const metadata: Metadata = buildMetadata({
   title: "Property Development & Title-Split Loans",
@@ -32,32 +32,36 @@ const financeData = [
   {
     title: "Loan Range",
     content:
-      "Our property development finance spans from £50,000 to £250,000, suitable for various development projects.",
+      "Our property development finance spans from £50,000 to £350,000, suitable for refurbishment, conversion and title-split projects.",
   },
   {
     title: "Terms",
-    content: "Available with terms ranging from 4 to 12 months.",
+    content: "Available with terms of up to 18 months.",
   },
   {
     title: "Interest Rate",
-    content: "Competitive rates between 0.89% and 1.1% per month.",
+    content:
+      "Competitive rates starting at 0.89% per month. Interest can be retained or serviced.",
   },
   {
     title: "Financing Options",
     content:
-      "Up to 85% LTV (Loan to Value) of the purchase price and renovations, or up to 80% of the market value or GDV (Gross Development Value).",
+      "Up to 80% LTV (Loan to Value), based on the lower of the purchase price and the valuation. On refurbishment projects, up to 70% of the GDV (Gross Development Value), with works funding released in stages.",
   },
   {
     title: "Loan Fees",
-    content: "A fee of 2% to 2.5% of the loan amount. No Other Hidden Fees.",
+    content:
+      "An arrangement fee of 2.25% to 2.35% of the loan, an exit fee of 0.95%, a loan management fee of £695 and a disbursement fee of £295.",
   },
   {
     title: "Additional Costs",
-    content: "Legal and inspection fees are charged at cost.",
+    content:
+      "A legal fee of £500 with dual representation. Valuation and inspection fees are charged at cost.",
   },
   {
     title: "Security",
-    content: "First charge on the property and a personal guarantee.",
+    content:
+      "First legal charge on the property and a personal guarantee. Property must be in England or Wales.",
   },
   {
     title: "We welcome both experienced and non-experienced borrowers",
@@ -81,8 +85,8 @@ const bridgingData = [
   },
   {
     icon: BrickWall,
-    title: "New Development Loans",
-    desc: "Our new development loans offer the financial backing needed for ground-up construction projects. Whether you’re building residential units, commercial spaces, or mixed-use developments, we provide the flexible funding options necessary to turn your blueprints into reality.",
+    title: "Ground-up Development",
+    desc: "Ground-up and new-build schemes are considered on review, as is land with planning permission. Tell us about your project and we will let you know how we can help.",
   },
 ];
 
@@ -97,7 +101,7 @@ const Page = () => {
 
       <FinanceHero
         title="Property Development Loans"
-        description="Targeted at real estate investors, our property development loans offer the financial backing needed to undertake new developments or refurbish existing properties. We provide flexible funding options to help you bring your property visions to life."
+        description="Targeted at real estate investors, our property development loans offer the financial backing needed to refurbish, convert and split existing properties. New-build schemes are considered on review. We provide flexible funding options to help you bring your property visions to life."
       />
 
       <SectionWrapper className="pt-0">

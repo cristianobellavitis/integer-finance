@@ -9,7 +9,6 @@ import {
   LTV_BANDS,
   type LtvBand,
   MAX_LTV_PERCENT,
-  REPEAT_BORROWER_ONLY_LTV_PERCENT,
   BASE_RATE_THOUSANDTHS,
   ARRANGEMENT_FEE_HUNDREDTHS,
   EXIT_FEE_HUNDREDTHS,
@@ -21,7 +20,7 @@ import {
 import { divideRoundHalfUp, formatHundredthsAsPercent } from "@/lib/rate-math";
 
 export const LOAN_MIN = 40_000;
-export const LOAN_MAX = 250_000;
+export const LOAN_MAX = 350_000;
 export const LOAN_STEP = 1_000;
 
 export const VALUE_MIN = 50_000;
@@ -39,7 +38,6 @@ export interface RateCalculatorInputs {
   propertyValue: number;
   fundRenovation: boolean;
   renovationAmount: number;
-  repeatBorrower: boolean;
   creditBand: CreditBand;
   structuralLegal: boolean;
   retainedInterest: boolean;
@@ -47,19 +45,17 @@ export interface RateCalculatorInputs {
 
 type LtvStatus =
   | { kind: "ok"; band: LtvBand; ltvPercent: number }
-  | { kind: "over-max"; ltvPercent: number }
-  | { kind: "needs-repeat-borrower"; ltvPercent: number };
+  | { kind: "over-max"; ltvPercent: number };
 
 // LTV is computed against the PURCHASE LOAN ONLY — renovation funding never
 // enters this ratio (it still adds to the total facility and the interest
 // calculation elsewhere, just not here). The returned ltvPercent is always
 // the true ratio, rounded to a whole percent; it is never silently swapped
-// for a lower/gated band, so the UI can always show the real LTV regardless
-// of which pricing outcome it produces.
+// for a lower band, so the UI can always show the real LTV regardless of
+// which pricing outcome it produces.
 function computeLtvStatus(
   loanAmount: number,
   propertyValue: number,
-  repeatBorrower: boolean,
 ): LtvStatus {
   const ltvPercent = divideRoundHalfUp(loanAmount * 100, propertyValue);
 
@@ -67,19 +63,8 @@ function computeLtvStatus(
     return { kind: "over-max", ltvPercent };
   }
 
-  if (ltvPercent > REPEAT_BORROWER_ONLY_LTV_PERCENT) {
-    // Only the 85% band lives above 80%, and it's gated behind the toggle.
-    if (!repeatBorrower) {
-      return { kind: "needs-repeat-borrower", ltvPercent };
-    }
-    return { kind: "ok", band: 85, ltvPercent };
-  }
-
-  // ltvPercent <= 80: map up to the nearest of 65/70/75/80.
-  const band =
-    LTV_BANDS.find(
-      (b) => ltvPercent <= b && b <= REPEAT_BORROWER_ONLY_LTV_PERCENT,
-    ) ?? REPEAT_BORROWER_ONLY_LTV_PERCENT;
+  // ltvPercent <= 80: map up to the nearest of 70/75/80.
+  const band = LTV_BANDS.find((b) => ltvPercent <= b) ?? MAX_LTV_PERCENT;
 
   return { kind: "ok", band, ltvPercent };
 }
@@ -121,7 +106,6 @@ export interface RateQuoteOk {
   purchaseLoanReceivedDayOne: number;
   monthlyInterestPayment: number;
   legalsFee: number;
-  usedRepeatBorrowerBand: boolean;
 }
 
 export interface RateQuoteOverMax {
@@ -129,32 +113,14 @@ export interface RateQuoteOverMax {
   ltvPercent: number;
 }
 
-export interface RateQuoteNeedsRepeatBorrower {
-  status: "needs-repeat-borrower";
-  ltvPercent: number;
-}
-
-export type RateQuote =
-  | RateQuoteOk
-  | RateQuoteOverMax
-  | RateQuoteNeedsRepeatBorrower;
+export type RateQuote = RateQuoteOk | RateQuoteOverMax;
 
 export function computeRateQuote(inputs: RateCalculatorInputs): RateQuote {
   // LTV uses the purchase loan only — renovation is excluded from this ratio.
-  const ltvStatus = computeLtvStatus(
-    inputs.loanAmount,
-    inputs.propertyValue,
-    inputs.repeatBorrower,
-  );
+  const ltvStatus = computeLtvStatus(inputs.loanAmount, inputs.propertyValue);
 
   if (ltvStatus.kind === "over-max") {
     return { status: "over-max", ltvPercent: ltvStatus.ltvPercent };
-  }
-  if (ltvStatus.kind === "needs-repeat-borrower") {
-    return {
-      status: "needs-repeat-borrower",
-      ltvPercent: ltvStatus.ltvPercent,
-    };
   }
 
   const { band, ltvPercent } = ltvStatus;
@@ -220,6 +186,5 @@ export function computeRateQuote(inputs: RateCalculatorInputs): RateQuote {
     purchaseLoanReceivedDayOne,
     monthlyInterestPayment,
     legalsFee: LEGALS_FEE,
-    usedRepeatBorrowerBand: band === 85,
   };
 }

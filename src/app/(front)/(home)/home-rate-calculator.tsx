@@ -127,7 +127,6 @@ export default function HomeRateCalculator() {
   const [fundRenovation, setFundRenovation] = useState(false);
   const [renovationAmount, setRenovationAmount] = useState(50_000);
   const [retainedInterest, setRetainedInterest] = useState(false);
-  const [repeatBorrower, setRepeatBorrower] = useState(false);
   const [creditBand, setCreditBand] = useState<CreditBand>("850to950");
   const [structuralLegal, setStructuralLegal] = useState(false);
 
@@ -139,7 +138,6 @@ export default function HomeRateCalculator() {
         fundRenovation,
         renovationAmount,
         retainedInterest,
-        repeatBorrower,
         creditBand,
         structuralLegal,
       }),
@@ -149,7 +147,6 @@ export default function HomeRateCalculator() {
       fundRenovation,
       renovationAmount,
       retainedInterest,
-      repeatBorrower,
       creditBand,
       structuralLegal,
     ],
@@ -239,20 +236,6 @@ export default function HomeRateCalculator() {
               />
             </div>
 
-            <div className="flex items-center justify-between rounded-[10px] border border-border p-4">
-              <Label
-                htmlFor="repeat-borrower"
-                className="pr-4 text-sm font-medium text-brand-900"
-              >
-                Repeat borrower with good history?
-              </Label>
-              <Switch
-                id="repeat-borrower"
-                checked={repeatBorrower}
-                onCheckedChange={setRepeatBorrower}
-              />
-            </div>
-
             <div>
               <Label className="mb-2 block text-sm font-medium text-brand-900">
                 Credit score band
@@ -304,24 +287,6 @@ export default function HomeRateCalculator() {
                 <p className="text-sm leading-relaxed text-white">
                   The loan-to-value on this deal is above our maximum. Please
                   reduce the loan amount or speak to us about restructuring.
-                </p>
-              </div>
-            </>
-          ) : quote.status === "needs-repeat-borrower" ? (
-            <>
-              <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-200">
-                Your indicative quote
-              </p>
-              <p className="mt-3 text-2xl font-medium text-white">
-                {quote.ltvPercent}%
-                <span className="ml-2 text-[11px] font-medium uppercase tracking-wider text-brand-200">
-                  Loan to value
-                </span>
-              </p>
-              <div className="mt-4 rounded-[10px] border border-white/20 bg-white/10 p-5">
-                <p className="text-sm leading-relaxed text-white">
-                  80% is our maximum LTV for new borrowers. 85% is available
-                  to repeat borrowers with good history.
                 </p>
               </div>
             </>
@@ -418,13 +383,7 @@ export default function HomeRateCalculator() {
                 </div>
               </div>
 
-              {quote.usedRepeatBorrowerBand && (
-                <p className="mt-6 text-xs text-brand-300">
-                  Available to repeat borrowers with good history
-                </p>
-              )}
-
-              <p className="mt-4 text-xs text-brand-300">
+              <p className="mt-6 text-xs text-brand-300">
                 Legals: £{quote.legalsFee} — paid separately, not deducted
                 above.
               </p>

@@ -12,7 +12,7 @@ export const focusCarouselData = [
     image: "/images/home/carousel1.png",
     title: "A financial institution that promotes regional prosperity",
     caption:
-      "Backing property developers who are regenerating underserved regions across the UK.",
+      "Backing property developers who are regenerating underserved regions across England and Wales.",
   },
   {
     image: "/images/home/carousel2.png",
@@ -30,7 +30,7 @@ export const focusCarouselData = [
     image: "/images/home/carousel4.png",
     title: "A financial institution that's building communities",
     caption:
-      "From HMO conversions to ground-up schemes, we back projects that regenerate neighbourhoods.",
+      "From HMO conversions to heavy refurbishments, we back projects that regenerate neighbourhoods.",
   },
   {
     image: "/images/home/carousel5.png",
@@ -91,10 +91,124 @@ export const overviewData = [
   {
     title: "Distinct Market Position",
     content:
-      "Specialist lender in development finance, with a focus on HMO conversions.",
+      "Specialist bridging lender, with a focus on refurbishment and HMO conversions.",
   },
   {
     title: "Guided by a Wealth of Experience",
     content: "A blend of real estate insight and seasoned financial expertise.",
   },
+];
+
+// "What we lend on" table. Limits match the product guide's Core range;
+// keep the two in step when lending criteria change.
+export type CriteriaStatus = "offered" | "review" | "not-offered";
+
+export const lendingCriteriaData: {
+  group: string;
+  rows: {
+    product: string;
+    detail: string;
+    status: CriteriaStatus;
+    limit: string;
+  }[];
+}[] = [
+  {
+    group: "Bridging",
+    rows: [
+      {
+        product: "Residential",
+        detail: "Purchase, refinance, capital raising, HMOs",
+        status: "offered",
+        limit: "Up to 80% LTV",
+      },
+      {
+        product: "Semi-commercial",
+        detail: "Mixed use, such as shops with flats",
+        status: "offered",
+        limit: "Up to 65% LTV",
+      },
+      {
+        product: "Commercial",
+        detail: "Offices, retail and industrial",
+        status: "offered",
+        limit: "Up to 60% LTV",
+      },
+    ],
+  },
+  {
+    group: "Refurbishment & conversion",
+    rows: [
+      {
+        product: "Light refurbishment",
+        detail: "Cosmetic and non-structural works",
+        status: "offered",
+        limit: "80% LTV · 70% of GDV",
+      },
+      {
+        product: "Heavy refurbishment",
+        detail: "Structural works, planning in place",
+        status: "offered",
+        limit: "80% LTV · 70% of GDV",
+      },
+      {
+        product: "Conversions",
+        detail: "HMOs, title splits, change of use",
+        status: "offered",
+        limit: "80% LTV · 70% of GDV",
+      },
+      {
+        product: "Commercial refurbishment",
+        detail: "Works to commercial property",
+        status: "offered",
+        limit: "60% LTV · 55% of GDV",
+      },
+    ],
+  },
+  {
+    group: "Development & other",
+    rows: [
+      {
+        product: "Ground-up development",
+        detail: "New-build schemes",
+        status: "review",
+        limit: "On review",
+      },
+      {
+        product: "Land with planning permission",
+        detail: "Plots with consent in place",
+        status: "review",
+        limit: "On review",
+      },
+      {
+        product: "Second charges, owner-occupied",
+        detail: "Also regulated loans and land without planning",
+        status: "not-offered",
+        limit: "Not offered",
+      },
+    ],
+  },
+];
+
+export const lendingKeyTerms = [
+  { value: "£50k–£350k", label: "Loan size" },
+  { value: "Up to 18 months", label: "Term" },
+  { value: "Retained or serviced", label: "Interest" },
+  { value: "First charge", label: "Security" },
+  { value: "England & Wales", label: "Location" },
+  {
+    value: "Companies, SPVs, LLPs and individuals",
+    label: "Borrowers, for business purposes",
+  },
+];
+
+export const notFundedData = [
+  "Owner-occupied or regulated loans",
+  "Second charges",
+  "Land without planning permission",
+  "Property outside England and Wales",
+  "Hotels, care homes and pubs",
+  "Petrol stations and golf courses",
+  "Agricultural land",
+  "Mobile homes and houseboats",
+  "Grade I listed buildings",
 ];

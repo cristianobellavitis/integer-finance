@@ -12,8 +12,8 @@ const Footer = () => {
           <div>
             <Logo variant="inverted" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-brand-200">
-              Short-term development finance for regional property investors
-              and construction companies.
+              Short-term bridging and refurbishment finance for property
+              investors and developers across England and Wales.
             </p>
           </div>
 
@@ -69,9 +69,10 @@ const Footer = () => {
 
         <div className="mt-12 space-y-3 border-t border-brand-700 pt-6">
           <p className="text-xs leading-relaxed text-brand-200">
-            {SITE.name} provides unregulated lending to companies. Our
-            products are not regulated by the Financial Conduct Authority and
-            are not available to consumers.
+            {SITE.name} provides short-term, business-purpose loans secured
+            on property in England and Wales, to limited companies, SPVs, LLPs
+            and individuals borrowing for business purposes. These loans are
+            not regulated by the Financial Conduct Authority.
           </p>
           <p className="text-xs text-brand-200">
             &copy; {new Date().getFullYear()} {SITE.name}. All Rights

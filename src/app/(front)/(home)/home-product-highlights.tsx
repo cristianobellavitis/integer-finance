@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Building2, Construction, Gavel, Hammer } from "lucide-react";
+import { Building2, Gavel, Hammer, Store } from "lucide-react";
 
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { cn } from "@/lib/utils";
@@ -28,9 +28,9 @@ const PRODUCTS = [
     iconClassName: "text-brand-600",
   },
   {
-    icon: Construction,
-    title: "Small development",
-    desc: "Ground-up schemes in underserved regions.",
+    icon: Store,
+    title: "Semi-commercial",
+    desc: "Shops and offices with flats above.",
     href: "/finance/commercial-finance",
     accentClassName: "bg-brand-400",
     iconClassName: "text-brand-400",

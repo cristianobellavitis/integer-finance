@@ -14,7 +14,7 @@ const TeamCover = () => {
             <SectionHeading as="h1" title="Our Team" className="text-white" />
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-brand-300">
               Meet the team of dedicated professionals behind Integer
-              Finance. Our experts bring a wealth of experience and regional
+              Lending. Our experts bring a wealth of experience and regional
               knowledge, ensuring exceptional service and support for our
               clients. Key members include our Chief Commercial Officer,
               Senior Credit Partners, and Relationship Managers.

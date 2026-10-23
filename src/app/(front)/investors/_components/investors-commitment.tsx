@@ -20,9 +20,8 @@ export default function InvestorsCommitment() {
             regenerate, and build the future of our local communities.
             Integer Lending prioritizes the renewal and growth of
             communities in need through its lending policy. We offer
-            accessible, tailored property development loan products with
-            incentives for sustainable, zero-carbon developments and
-            projects with high positive social impact across the UK.
+            accessible, tailored property loans for projects with a
+            positive social impact across England and Wales.
           </p>
           <Link
             href="/our-mission"

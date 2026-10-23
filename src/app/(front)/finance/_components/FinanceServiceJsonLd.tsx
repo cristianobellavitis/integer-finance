@@ -24,7 +24,10 @@ export default function FinanceServiceJsonLd({
       name: SITE.name,
       url: SITE.url,
     },
-    areaServed: "GB",
+    areaServed: [
+      { "@type": "AdministrativeArea", name: "England" },
+      { "@type": "AdministrativeArea", name: "Wales" },
+    ],
   };
 
   return (

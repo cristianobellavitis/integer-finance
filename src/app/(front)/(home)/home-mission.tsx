@@ -20,10 +20,10 @@ export default function HomeMission() {
             actively seek diverse perspectives, promoting a culture that
             encourages new ideas and solutions. Our aim is to create an
             environment where everyone feels valued and can contribute to our
-            collective success. We support regional property developers, and
-            construction companies in underserved areas across the UK. Our
-            property development loans range from £50,000 to £250,000, providing
-            the financial backing needed to regenerate and build communities.
+            collective success. We support regional property investors and
+            developers in underserved areas across England and Wales. Our
+            bridging loans range from £50,000 to £350,000, providing the
+            financial backing needed to regenerate and build communities.
           </p>
 
           <Link

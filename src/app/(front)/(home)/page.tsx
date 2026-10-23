@@ -3,6 +3,7 @@ import React from "react";
 import HomeCover from "./home-cover";
 import HomeTicker from "./home-ticker";
 import HomeProductHighlights from "./home-product-highlights";
+import HomeLendingCriteria from "./home-lending-criteria";
 import HomeCtaBanner from "./home-cta-banner";
 import HomeRateCalculator from "./home-rate-calculator";
 import HomeMission from "./home-mission";
@@ -19,6 +20,8 @@ export default function Home() {
       <HomeTicker />
 
       <HomeProductHighlights />
+
+      <HomeLendingCriteria />
 
       <HomeCtaBanner />
 
