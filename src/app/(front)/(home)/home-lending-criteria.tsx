@@ -1,32 +1,16 @@
 import React from "react";
-import {
-  CircleCheck,
-  CircleEllipsis,
-  CircleMinus,
-  CircleX,
-} from "lucide-react";
+import Link from "next/link";
+import { CircleX } from "lucide-react";
 
 import {
-  type CriteriaStatus,
-  lendingCriteriaData,
-  lendingKeyTerms,
-  notFundedData,
-} from "./home-data";
+  CORE_KEY_TERMS,
+  NOT_FUNDED,
+  PRODUCT_MATRIX,
+} from "@/constants/products";
+import RangeCellLabel from "@/components/common/RangeCellLabel";
 import SectionHeading from "@/components/common/SectionHeading";
 import SectionWrapper from "@/components/common/SectionWrapper";
-import { cn } from "@/lib/utils";
-
-const STATUS_ICON: Record<CriteriaStatus, typeof CircleCheck> = {
-  offered: CircleCheck,
-  review: CircleEllipsis,
-  "not-offered": CircleMinus,
-};
-
-const STATUS_CLASSNAME: Record<CriteriaStatus, string> = {
-  offered: "text-brand-900",
-  review: "text-primary",
-  "not-offered": "text-muted-foreground",
-};
+import { buttonVariants } from "@/components/ui/button";
 
 export default function HomeLendingCriteria() {
   return (
@@ -44,7 +28,7 @@ export default function HomeLendingCriteria() {
           </p>
 
           <dl className="mt-8 grid grid-cols-2 gap-3">
-            {lendingKeyTerms.map((term) => (
+            {CORE_KEY_TERMS.map((term) => (
               <div
                 key={term.label}
                 className="rounded-[10px] border border-border p-4"
@@ -63,7 +47,7 @@ export default function HomeLendingCriteria() {
             What we don&apos;t fund
           </h4>
           <ul className="mt-4 space-y-2">
-            {notFundedData.map((item) => (
+            {NOT_FUNDED.map((item) => (
               <li
                 key={item}
                 className="flex items-start gap-2.5 text-base text-muted-foreground"
@@ -73,6 +57,13 @@ export default function HomeLendingCriteria() {
               </li>
             ))}
           </ul>
+
+          <Link
+            href="/product-guide"
+            className={buttonVariants({ size: "lg", className: "mt-8" })}
+          >
+            See the full product guide
+          </Link>
         </div>
 
         <div className="md:col-span-7">
@@ -83,7 +74,7 @@ export default function HomeLendingCriteria() {
                 <th className="pb-3 font-medium">Maximum</th>
               </tr>
             </thead>
-            {lendingCriteriaData.map((group) => (
+            {PRODUCT_MATRIX.map((group) => (
               <tbody key={group.group}>
                 <tr>
                   <th
@@ -93,32 +84,21 @@ export default function HomeLendingCriteria() {
                     {group.group}
                   </th>
                 </tr>
-                {group.rows.map((row) => {
-                  const Icon = STATUS_ICON[row.status];
-                  return (
-                    <tr key={row.product} className="border-b border-border">
-                      <td className="py-3 pr-4 align-top">
-                        <p className="font-medium text-brand-900">
-                          {row.product}
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          {row.detail}
-                        </p>
-                      </td>
-                      <td className="py-3 align-top">
-                        <span
-                          className={cn(
-                            "inline-flex items-start gap-2 font-semibold",
-                            STATUS_CLASSNAME[row.status],
-                          )}
-                        >
-                          <Icon className="mt-0.5 h-4 w-4 flex-shrink-0" />
-                          {row.limit}
-                        </span>
-                      </td>
-                    </tr>
-                  );
-                })}
+                {group.rows.map((row) => (
+                  <tr key={row.product} className="border-b border-border">
+                    <td className="py-3 pr-4 align-top">
+                      <p className="font-medium text-brand-900">
+                        {row.product}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {row.detail}
+                      </p>
+                    </td>
+                    <td className="py-3 align-top">
+                      <RangeCellLabel cell={row.core} />
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             ))}
           </table>

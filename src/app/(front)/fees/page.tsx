@@ -45,7 +45,7 @@ function Page() {
           {mainFees.map((fee) => (
             <div
               key={fee.label}
-              className="flex flex-col-reverse rounded-[10px] border border-border p-4"
+              className="flex flex-col-reverse justify-end rounded-[10px] border border-border p-4"
             >
               <dt className="mt-1 text-sm text-muted-foreground">
                 {fee.label}

@@ -20,3 +20,13 @@ export function formatHundredthsAsPercent(hundredths: number): string {
   const frac = abs % 100;
   return `${negative ? "-" : ""}${whole}.${String(frac).padStart(2, "0")}`;
 }
+
+// Same idea for "thousandths of a percent" rates (e.g. 925 -> "0.925",
+// 890 -> "0.89"): always at least two decimals, a third only when it isn't 0.
+export function formatThousandthsAsPercent(thousandths: number): string {
+  const negative = thousandths < 0;
+  const abs = Math.abs(thousandths);
+  const whole = Math.trunc(abs / 1000);
+  const frac = String(abs % 1000).padStart(3, "0");
+  return `${negative ? "-" : ""}${whole}.${frac.endsWith("0") ? frac.slice(0, 2) : frac}`;
+}

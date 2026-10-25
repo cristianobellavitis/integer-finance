@@ -10,6 +10,10 @@ export const NAV_ITEMS: MainMenuItem[] = [
     href: "/lending/customers",
     subMenuItems: [
       {
+        title: "Product Guide",
+        href: "/product-guide",
+      },
+      {
         title: "Brokers",
         href: "/lending/brokers",
       },

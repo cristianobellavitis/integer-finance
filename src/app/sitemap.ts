@@ -24,6 +24,7 @@ const STATIC_ROUTES: Array<{
   { path: "/finance/hmo-finance", changeFrequency: "monthly", priority: 0.9 },
   { path: "/finance/commercial-finance", changeFrequency: "monthly", priority: 0.9 },
   { path: "/finance/title-split", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/product-guide", changeFrequency: "monthly", priority: 0.9 },
   { path: "/contact", changeFrequency: "yearly", priority: 0.5 },
   { path: "/fees", changeFrequency: "yearly", priority: 0.3 },
   { path: "/news", changeFrequency: "weekly", priority: 0.6 },
