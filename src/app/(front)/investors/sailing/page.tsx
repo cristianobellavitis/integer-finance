@@ -10,7 +10,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Sailing with Integer Lending",
   description:
-    "An exclusive sailing experience for Integer Lending's investors and partners, cruising the Amalfi Coast, Sardinia, and the Sicilian Islands.",
+    "An exclusive sailing experience for Integer Lending's investors and partners, from Sicily through the Greek islands to Marmaris on the Turkish coast.",
   path: "/investors/sailing",
 });
 
