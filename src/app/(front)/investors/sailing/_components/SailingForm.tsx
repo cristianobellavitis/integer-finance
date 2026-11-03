@@ -28,10 +28,10 @@ const SailingForm = () => {
         <div className="mt-10">
           <iframe
             id="sailing-form"
-            src="https://forms.monday.com/forms/embed/4a7ca67bfca965e9c951fb3d6e46599d?r=use1"
+            src="https://forms.monday.com/forms/embed/90d862c3c097267a9d5068f9944e6e64?r=use1"
             className="w-full rounded-xl"
             style={{
-              minHeight: "500px",
+              minHeight: "760px",
               border: 0,
             }}
             allowFullScreen

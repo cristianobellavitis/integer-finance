@@ -6,104 +6,89 @@ import "slick-carousel/slick/slick-theme.css";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
-import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import SectionWrapper from "@/components/common/SectionWrapper";
 import RevealOnScroll from "@/components/common/RevealOnScroll";
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-} from "@/components/ui/dialog";
-
-const AMALFI_VIDEO_ID = "jxIy1g_f968";
 
 const destinations = [
   {
-    month: "May & June",
-    name: "Amalfi Coast",
-    image: `https://img.youtube.com/vi/${AMALFI_VIDEO_ID}/hqdefault.jpg`,
-    videoId: AMALFI_VIDEO_ID,
+    month: "16 May – 4 June",
+    name: "Sicily & the Ionian",
+    image: "/images/sailing/greece/ionian.jpg",
+    credit: null,
     description: (
       <>
-        Sailing the Amalfi Coast is like gliding through a living postcard.
-        Pastel-colored villages cling dramatically to cliff faces,
-        cascading down into the sparkling Tyrrhenian Sea. From the deck of
-        the catamaran, guests will see iconic towns such as{" "}
-        <span className="font-semibold text-brand-900">Positano</span> and{" "}
-        <span className="font-semibold text-brand-900">Amalfi</span>, where
-        narrow cobbled streets lead to hidden piazzas and artisanal shops.
-        Days can be spent dropping anchor in{" "}
-        <span className="font-semibold text-brand-900">
-          secret coves accessible only by boat
-        </span>
-        , swimming in turquoise waters, and indulging in{" "}
-        <span className="font-semibold text-brand-900">
-          world-class cuisine
-        </span>{" "}
-        at seaside trattorias. With its mix of glamour and tradition, this
-        leg of the journey sets the tone for a season of luxury and
-        discovery.
+        We set sail from Sicily&rsquo;s north coast, slip through the
+        Strait of Messina and cross the Ionian Sea to <span className="font-semibold text-brand-900">Lefkada</span>. Here the water turns a
+        startling turquoise beneath white cliffs. Days are spent among the
+        quiet, pine-fringed islands of <span className="font-semibold text-brand-900">Meganisi</span>, Kalamos and Ithaca, before
+        Kefalonia, the famous{" "}
+        <span className="font-semibold text-brand-900">shipwreck cove of Navagio</span> and the Blue Caves of Zakynthos.
       </>
     ),
   },
   {
-    month: "July",
-    name: "Sardinia",
-    image: "/images/sailing/sardinia.jpeg",
-    videoId: null,
+    month: "4 – 23 June",
+    name: "Peloponnese & Western Cyclades",
+    image: "/images/sailing/greece/peloponnese.jpg",
+    credit: null,
     description: (
       <>
-        By July, the catamaran will be gliding through the pristine waters
-        of <span className="font-semibold text-brand-900">Sardinia</span>,
-        an island where nature still feels untouched. The{" "}
-        <span className="font-semibold text-brand-900">Costa Smeralda</span>{" "}
-        is renowned for its dazzling beaches and sophisticated lifestyle,
-        but beyond the polished marinas lie hidden anchorages with white
-        sand and crystal waters that rival the Caribbean. Guests will
-        discover uninhabited islets, snorkel in marine reserves, and enjoy
-        sunsets over rugged granite cliffs. Sardinia also offers
-        opportunities for those who wish to explore ashore, from the
-        charming town of{" "}
-        <span className="font-semibold text-brand-900">La Maddalena</span>{" "}
-        to local vineyards serving distinctive Sardinian wines. Here, every
-        sail is an immersion in both serenity and sophistication.
+        Rounding the Peloponnese, we anchor off the perfect crescent of{" "}
+        <span className="font-semibold text-brand-900">Voidokilia</span>, beneath the Venetian fortress of Methoni and the tower houses
+        of the Mani. The medieval rock town of <span className="font-semibold text-brand-900">Monemvasia</span> marks the jump into the
+        Aegean, followed by the moonscape coves of <span className="font-semibold text-brand-900">Milos</span>, chalk-white Kimolos
+        and the potters&rsquo; island of <span className="font-semibold text-brand-900">Sifnos</span>, then north to Serifos and
+        Kythnos.
       </>
     ),
   },
   {
-    month: "August",
-    name: "Sicilian Islands",
-    image: "/images/sailing/sicilian.jpeg",
-    videoId: null,
+    month: "23 June – 19 July",
+    name: "The Cyclades",
+    image: "/images/sailing/greece/cyclades.jpg",
+    credit: null,
     description: (
       <>
-        The summer crescendos in{" "}
-        <span className="font-semibold text-brand-900">
-          Sicily&rsquo;s island jewels
-        </span>
-        , where history, geology, and culture blend in ways found nowhere
-        else. The{" "}
-        <span className="font-semibold text-brand-900">
-          Aeolian Islands
-        </span>{" "}
-        rise dramatically from the sea:{" "}
-        <span className="font-semibold text-brand-900">
-          Stromboli&rsquo;s active volcano
-        </span>{" "}
-        sends glowing eruptions skyward, while{" "}
-        <span className="font-semibold text-brand-900">Panarea</span>{" "}
-        offers chic, whitewashed charm. Guests can swim in natural thermal
-        pools on <span className="font-semibold text-brand-900">Vulcano</span>
-        , or sip Malvasia wine among the vineyards of{" "}
-        <span className="font-semibold text-brand-900">Salina</span>. For
-        those seeking something wilder, the{" "}
-        <span className="font-semibold text-brand-900">Egadi Islands</span>{" "}
-        near Trapani boast unspoiled bays and crystalline waters perfect for
-        quiet anchorages. Sailing these islands is not just about
-        beauty&mdash;it&rsquo;s about experiencing the living energy of the
-        Mediterranean, where each harbor has its own story.
+        The heart of the voyage: the seaside chapels of Tinos, the ancient
+        sanctuary of Delos, the windmills of Mykonos and the fishing harbours of <span className="font-semibold text-brand-900">Paros</span> and Antiparos. We slow down
+        in the <span className="font-semibold text-brand-900">Small Cyclades</span>, some of the bluest water in Greece, and watch the sun set
+        over the caldera at <span className="font-semibold text-brand-900">Santorini</span>. Then we head for the dramatic cliffs of
+        Amorgos and the remote outer islands.
+      </>
+    ),
+  },
+  {
+    month: "19 July – 13 August",
+    name: "The Eastern Aegean & Dodecanese",
+    image: "/images/sailing/greece/dodecanese.jpg",
+    credit: null,
+    description: (
+      <>
+        From <span className="font-semibold text-brand-900">Patmos</span>, the island of St John, we loop north to Ikaria&rsquo;s
+        wild beaches, the fishing village of Fourni and the deserted islet
+        of <span className="font-semibold text-brand-900">Samiopoula</span> off Samos. Then south through the tiny harbours of
+        Agathonisi, Arki and Lipsi, the elegant bays of Leros and the
+        sponge divers&rsquo; island of Kalymnos. Guests can walk into the
+        sleeping volcano on <span className="font-semibold text-brand-900">Nisyros</span> before the pastel houses of{" "}
+        <span className="font-semibold text-brand-900">Symi</span>.
+      </>
+    ),
+  },
+  {
+    month: "13 – 20 August",
+    name: "Symi to Marmaris",
+    image: "/images/sailing/greece/turkey.jpg",
+    credit: "Photo: Arif Sipahi · CC BY-SA 4.0",
+    description: (
+      <>
+        The final week crosses from Symi to Turkey and follows the coast in
+        one sweep: the sheltered bay of <span className="font-semibold text-brand-900">Selimiye</span>, the boatyards of{" "}
+        <span className="font-semibold text-brand-900">Bozburun</span>, where gulets are still built by hand, and the
+        ancient fortress at Bozukkale, before journey&rsquo;s end in the
+        harbour of <span className="font-semibold text-brand-900">Marmaris</span>.
       </>
     ),
   },
@@ -138,7 +123,6 @@ function NextArrow({ onClick }: { onClick?: () => void }) {
 export default function SailingDestinations() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
-  const [openVideoId, setOpenVideoId] = useState<string | null>(null);
 
   useEffect(() => {
     const query = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -201,22 +185,14 @@ export default function SailingDestinations() {
                         src={item.image}
                         alt={item.name}
                         fill
-                        unoptimized={item.videoId !== null}
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-brand-900/85 via-brand-900/10 to-transparent" />
 
-                      {item.videoId && (
-                        <button
-                          type="button"
-                          onClick={() => setOpenVideoId(item.videoId)}
-                          aria-label={`Watch the ${item.name} video`}
-                          className="absolute inset-0 flex items-center justify-center"
-                        >
-                          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 text-brand-900 shadow-md transition-transform duration-300 group-hover:scale-110">
-                            <Play className="ml-0.5 h-6 w-6 fill-current" />
-                          </span>
-                        </button>
+                      {item.credit && (
+                        <p className="absolute right-3 top-3 rounded bg-black/40 px-2 py-0.5 text-xs text-white/90">
+                          {item.credit}
+                        </p>
                       )}
 
                       <div className="pointer-events-none absolute inset-x-0 bottom-0 p-5">
@@ -233,16 +209,6 @@ export default function SailingDestinations() {
                       <p className="flex-grow text-base leading-relaxed text-muted-foreground">
                         {item.description}
                       </p>
-                      {item.videoId && (
-                        <button
-                          type="button"
-                          onClick={() => setOpenVideoId(item.videoId)}
-                          className="-my-3 mt-1 inline-flex items-center gap-2 self-start py-3 text-sm font-semibold text-primary hover:underline"
-                        >
-                          <Play className="h-4 w-4 fill-current" />
-                          Watch the video
-                        </button>
-                      )}
                     </div>
                   </div>
                 </div>
@@ -251,29 +217,6 @@ export default function SailingDestinations() {
           </Slider>
         </div>
       </RevealOnScroll>
-
-      <Dialog
-        open={openVideoId !== null}
-        onOpenChange={(open) => !open && setOpenVideoId(null)}
-      >
-        <DialogContent className="max-w-3xl p-2">
-          <DialogTitle className="sr-only">
-            Sailing the Amalfi Coast &mdash; video
-          </DialogTitle>
-          {openVideoId && (
-            <div className="aspect-video w-full overflow-hidden rounded-md">
-              <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${openVideoId}?si=GoFPitHNJLyMqkiy&autoplay=1`}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
     </SectionWrapper>
   );
 }
